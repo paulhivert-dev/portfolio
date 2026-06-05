@@ -1,0 +1,462 @@
+// Contenu du portfolio — repris du PDF « PORTFOLIO 2026 HIVERT PAUL ».
+// Édite librement : textes, projets, ordre, images (dans /public/projects).
+
+export const profile = {
+  name: "paul",
+  wordmark: "paulfolio",
+  role: ["Directeur artistique", "Chef de projets"],
+  intro: [
+    "Cela fait désormais 26 ans que je peaufine ce portfolio. En effet, je suis né le 20 novembre 1999 à Saint-Nazaire. Passé 18 ans, je débarque au sein du navire LISAA afin d’entreprendre une prépa Arts Appliqués avant de continuer sur un Bachelor Design Graphique.",
+    "Depuis mes débuts en graphisme, j’ai été habitué à pratiquer dans tous les domaines : logos, affiches, vidéos, flyers, motion design, brochures, cartes de visites, packaging, mais aussi de la vidéo, de la photographie et tout ce qui existe dans les domaines du design graphique.",
+  ],
+  portrait: "/projects/_portrait.jpg",
+  email: "Paulhivert1999@gmail.com",
+  phone: "06 79 48 80 76",
+};
+
+// niveau de 0 à 100 — ajuste librement
+export const software: { name: string; level: number }[] = [
+  { name: "Photoshop", level: 95 },
+  { name: "Illustrator", level: 90 },
+  { name: "Indesign", level: 88 },
+  { name: "Lightroom", level: 85 },
+  { name: "Premiere Pro", level: 90 },
+  { name: "After Effects", level: 75 },
+  { name: "Blender", level: 60 },
+];
+
+export const skills = [
+  "Logos",
+  "Affiches",
+  "Flyers",
+  "Motions Designs",
+  "Brochures",
+  "Cartes de visites",
+  "Packagings",
+  "Photographies",
+  "Vidéos",
+  "Gestion de projets",
+];
+
+export type ProjectImage = { src: string; w: number; h: number };
+
+export type Project = {
+  img: string;
+  w: number;
+  h: number;
+  type: string;
+  title: string;
+  year: string;
+  description: string;
+  href?: string;
+  // Visuels supplémentaires (déclinaisons, mockups…) empilés sous le principal
+  images?: ProjectImage[];
+};
+
+export type Section = {
+  id: string;
+  name: string;
+  projects: Project[];
+  cover?: string; // visuel de la case catégorie (sinon = 1er projet)
+};
+
+export const sections: Section[] = [
+  {
+    id: "logos",
+    name: "logos",
+    projects: [
+      {
+        img: "/projects/logo-atlantic-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Atlantic Bateaux Piriac",
+        year: "2024",
+        description:
+          "Atlantic Bateaux est une entreprise qui, comme son nom l’indique, est dans le nautisme. La demande était de remettre à neuf leur logo vieux de 15 ans. Dans cette proposition, nous retrouvons le design du bateau de l’ancien logo mais en simplifié et plus moderne, tout comme la typo, plus actuelle.",
+        images: [
+          { src: "/projects/atlantic/atlantic-noir-blanc.jpg", w: 1500, h: 879 }, // fond blanc
+          { src: "/projects/atlantic/atlantic-blanc-noir.jpg", w: 1500, h: 879 }, // fond noir
+          { src: "/projects/atlantic/atlantic-noir-argent.jpg", w: 1500, h: 879 }, // fond argent
+          { src: "/projects/atlantic/atlantic-argent-noir.jpg", w: 1500, h: 879 }, // fond noir
+        ],
+      },
+      {
+        img: "/projects/logo-spike-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Spike",
+        year: "2022",
+        description:
+          "Spike est le nom de l’entreprise que j’ai créée pour mon projet de fin d’année en Design Graphique, dans le domaine de l’équipementier sportif et notamment le football. Cette marque fabrique ses produits à l’aide de plastiques des océans et des plages : le S de Spike, le cycle de vie infini du plastique et les crampons avec les deux cercles au centre.",
+        images: [
+          { src: "/projects/spike/spike-blanc-noir.jpg", w: 1080, h: 1083 },
+          { src: "/projects/spike/spike-blanc-vert.jpg", w: 1080, h: 1083 },
+          { src: "/projects/spike/spike-vert-blanc.jpg", w: 1080, h: 1080 },
+          { src: "/projects/spike/spike-mockup.jpg", w: 1500, h: 999 },
+        ],
+      },
+      {
+        img: "/projects/logo-rooster-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Rooster",
+        year: "2026",
+        description:
+          "Rooster est une marque de restaurant de poulet braisé. L’objectif était d’avoir une identité visuelle forte, sortant des codes classiques du poulet (couleurs chaudes), et d’assumer pleinement ce virage à 180 degrés.",
+        images: [
+          { src: "/projects/rooster/rooster-word-violet.jpg", w: 1500, h: 844 }, // texte / blanc
+          { src: "/projects/rooster/rooster-icon-ton.jpg", w: 1500, h: 844 }, // icône / violet
+          { src: "/projects/rooster/rooster-word-blanc.jpg", w: 1500, h: 844 }, // texte / violet
+          { src: "/projects/rooster/rooster-icon-violet.jpg", w: 1500, h: 844 }, // icône / blanc
+          { src: "/projects/rooster/rooster-word-ton.jpg", w: 1500, h: 843 }, // texte / violet
+        ],
+      },
+      {
+        img: "/projects/logo-happy-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Happy Propaganda",
+        year: "2026",
+        description:
+          "Happy Propaganda est une agence de communication qui désirait une identité visuelle forte et assumée, avec un œil et un cœur dedans.",
+        images: [
+          { src: "/projects/happy/happy-rouge.jpg", w: 1500, h: 843 }, // fond rouge
+          { src: "/projects/happy/happy-dark.jpg", w: 1500, h: 843 }, // fond sombre
+          { src: "/projects/happy/happy-blanc.jpg", w: 1500, h: 843 }, // fond blanc
+          { src: "/projects/happy/happy-dark-mono.jpg", w: 1500, h: 843 }, // fond sombre
+        ],
+      },
+      {
+        img: "/projects/logo-first-touch-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "First Touch",
+        year: "2025",
+        description:
+          "First Touch est une agence de joueurs et joueuses de football. L’objectif était d’avoir un logo stable et dynamique avec les critères classiques d’un logo de sport, décliné en deux versions : une couleur claire, simple et douce, et un dégradé de bleus pour un côté plus sport, plus dynamique.",
+        images: [
+          { src: "/projects/firsttouch/ft-logo-blanc.jpg", w: 1500, h: 843 }, // texte / clair
+          { src: "/projects/firsttouch/ft-icon-bleu.jpg", w: 1500, h: 843 }, // icône / bleu
+          { src: "/projects/firsttouch/ft-logo-agency.jpg", w: 1500, h: 843 }, // texte / clair
+          { src: "/projects/firsttouch/ft-icon-blanc.jpg", w: 1500, h: 843 }, // icône / clair
+        ],
+      },
+      {
+        img: "/projects/logo-le-charles-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Le Charles",
+        year: "2024",
+        description:
+          "Le Charles est un bar / restaurant situé dans la périphérie nantaise. La demande était de créer un logo pour ce nouveau bar, avec un cafard et une licorne pour le représenter.",
+      },
+      {
+        img: "/projects/logo-oh-damned-u.jpg",
+        w: 1080,
+        h: 1350,
+        type: "Logo",
+        title: "Oh Damned",
+        year: "2026",
+        description:
+          "Oh Damned, une nouvelle marque de cookies sur Paris, souhaitant une DA simple, épurée et réconfortante attirant les plus jeunes comme les gourmands les plus âgés. L’objectif est d’instaurer un effet de douceur et de confort pour le consommateur, avec un produit de qualité et une DA sans faute.",
+      },
+    ],
+  },
+  {
+    id: "motion-designs",
+    name: "motion designs",
+    cover: "/projects/logo-deezer-u.jpg",
+    projects: [
+      {
+        img: "/projects/p12.jpg",
+        w: 1400,
+        h: 1397,
+        type: "Motion Design",
+        title: "Deezer",
+        year: "2021",
+        description:
+          "Un motion design pour Deezer Premium. Nous désirions une animation haute en couleur, en mouvement et en profondeur, comme ce que peut nous partager Deezer. Tout a été créé pour cette animation, y compris la musique.",
+        href: "https://youtu.be/RIjTaoSKWug",
+      },
+      {
+        img: "/projects/p13.jpg",
+        w: 1400,
+        h: 1103,
+        type: "Motion Design",
+        title: "Spike",
+        year: "2021",
+        description:
+          "Ce motion design fait partie de mon projet de fin d’études. La communication globale est basée sur le côté écologique de la marque ; cette animation montre la qualité de la chaussure, d’une bouteille dans la mer pour finir en apothéose dans l’espace.",
+        href: "https://youtu.be/K8BP2xkXkb8",
+      },
+    ],
+  },
+  {
+    id: "affiches",
+    name: "affiches",
+    projects: [
+      {
+        img: "/projects/p15.jpg",
+        w: 1400,
+        h: 2045,
+        type: "Affiche",
+        title: "Spike",
+        year: "2022",
+        description:
+          "Le support de communication principal du projet Spike : une chaussure se noyant dans l’eau, rappelant le plastique utilisé pour sa fabrication. Le but est de ressentir une forme de culpabilité — les dernières bulles d’air comme dernier souffle, une chute dans des eaux sombres, et de l’eau sur toute l’affiche comme si, pour la lire, il fallait être en apnée.",
+      },
+      {
+        img: "/projects/p16.jpg",
+        w: 1400,
+        h: 2018,
+        type: "Affiche",
+        title: "Gomu Californian",
+        year: "2026",
+        description:
+          "La gamme Californian est un menu de burgers inspirés de ce qu’on retrouve aux États-Unis. Des produits simples, économiques mais terriblement efficaces en bouche, mis en valeur avec un style rétro et américain.",
+      },
+      {
+        img: "/projects/p17.jpg",
+        w: 1400,
+        h: 1961,
+        type: "Affiche",
+        title: "Gomu × Le Mans",
+        year: "2025",
+        description:
+          "Un support de communication pour GOMU au moment des 24h du Mans. On y retrouve le côté asiatique de la marque, le menu promu lors de la campagne ainsi qu’une voiture rappelant les 24h du Mans et l’univers Tokyo Drift.",
+      },
+      {
+        img: "/projects/p18.jpg",
+        w: 1400,
+        h: 1985,
+        type: "Affiche",
+        title: "Gomu Waffle",
+        year: "2025",
+        description:
+          "Cette affiche promeut la nouvelle Bubble Waffle GOMU. Un produit d’été, d’où ces couleurs plutôt vives et cet environnement frais.",
+      },
+      {
+        img: "/projects/p19.jpg",
+        w: 1400,
+        h: 1981,
+        type: "Affiche",
+        title: "Korean Gomu — Classique",
+        year: "2025",
+        description:
+          "Support de communication pour la campagne GOMU portée sur la culture coréenne. On y retrouve les trois produits phares de la campagne dans un environnement traditionnel coréen.",
+      },
+      {
+        img: "/projects/p20.jpg",
+        w: 1400,
+        h: 1983,
+        type: "Affiche",
+        title: "Korean Gomu — Moderne",
+        year: "2025",
+        description:
+          "Variante contemporaine de la campagne coréenne GOMU : les trois produits phares mis en scène dans un environnement coréen moderne.",
+      },
+      {
+        img: "/projects/p21.jpg",
+        w: 1400,
+        h: 1947,
+        type: "Affiche",
+        title: "Gomu Jalapeño",
+        year: "2025",
+        description:
+          "Cette affiche présente les produits et offres d’une nouvelle campagne des restaurants GOMU, à travers de nouveaux parfums, de nouvelles saveurs et une identité nouvelle.",
+      },
+      {
+        img: "/projects/p22.jpg",
+        w: 1400,
+        h: 787,
+        type: "Affiche",
+        title: "Le Jour de la Nuit",
+        year: "2024",
+        description:
+          "Le Jour de la Nuit est un festival combattant les pollutions lumineuses. Pour cette affiche, un chat dans un univers nocturne — symbole de la nature pouvant regarder et profiter pleinement du ciel et des étoiles, sans aucune pollution lumineuse.",
+      },
+      {
+        img: "/projects/p23.jpg",
+        w: 1400,
+        h: 1980,
+        type: "Affiche",
+        title: "Chikin Bang",
+        year: "2026",
+        description:
+          "Affiches pour le restaurant Chikin Bang : les supports principaux de leurs dernières campagnes, sucrées comme salées. Une direction artistique colorée, des affiches remplies d’informations et beaucoup de fantaisie — tout ce que représente la marque.",
+      },
+    ],
+  },
+  {
+    id: "visuels-instagram",
+    name: "visuels instagram",
+    cover: "/covers/cover-visuels.jpg",
+    projects: [
+      {
+        img: "/projects/p25.jpg",
+        w: 1400,
+        h: 2485,
+        type: "Visuels Instagram",
+        title: "UEFA Youth League",
+        year: "2024",
+        description:
+          "Tom Mabon, gardien de l’équipe des jeunes du FC Nantes, m’a fait confiance pour ses visuels de matchs durant leur parcours historique en coupe d’Europe, tout comme ses coéquipiers Louis Leroux et Mathis Philippe. Pour chacun, j’ai cherché des visuels différents, avec des techniques et thématiques variées.",
+      },
+      {
+        img: "/projects/p26.jpg",
+        w: 1400,
+        h: 1751,
+        type: "Visuels Instagram",
+        title: "Championnat de France",
+        year: "2025",
+        description:
+          "Ces visuels présentent la nouvelle saison de Ligue 1 McDonald’s. On y retrouve des éléments rappelant l’identité des clubs et des villes par les couleurs, les joueurs et les références visuelles.",
+      },
+      {
+        img: "/projects/p27.jpg",
+        w: 1400,
+        h: 2482,
+        type: "Visuels Instagram",
+        title: "Ilan Djadja",
+        year: "2025–2026",
+        description:
+          "Ilan est un joueur de football évoluant en U19 National. Je suis chargé de le photographier pendant ses matchs et de lui faire des visuels pour tous ses rendez-vous du week-end contre des gros clubs, notamment l’OL.",
+      },
+      {
+        img: "/projects/p28.jpg",
+        w: 1400,
+        h: 2490,
+        type: "Visuels Instagram",
+        title: "Europa League",
+        year: "2024",
+        description:
+          "Quentin Merlin, ancien joueur de l’Olympique de Marseille, m’a demandé de réaliser deux visuels pour ses matchs de coupe d’Europe contre l’Atalanta de Bergame et le Shakhtar. Deux créations bien différentes, montrant l’enjeu de l’événement pour le joueur et l’équipe.",
+      },
+      {
+        img: "/projects/p29.jpg",
+        w: 1400,
+        h: 2485,
+        type: "Visuels Instagram",
+        title: "Aïman",
+        year: "2025–2026",
+        description:
+          "Aïman est un joueur de football évoluant en U19 National. Je suis chargé de le photographier pendant ses matchs et de lui faire des visuels pour tous ses rendez-vous du week-end contre des gros clubs, notamment le PSG.",
+      },
+    ],
+  },
+  {
+    id: "autres-projets",
+    name: "autres projets",
+    cover: "/covers/cover-autres.jpg",
+    projects: [
+      {
+        img: "/projects/p31.jpg",
+        w: 1400,
+        h: 1958,
+        type: "Photographie",
+        title: "Championnat National",
+        year: "2025–2026",
+        description:
+          "Aïman et Ilan évoluent tous les deux en U19 National. Ayant la possibilité de signer un contrat professionnel, leur image doit être soignée — et cela commence par la photographie en bord de terrain. Je suis chargé de les photographier pendant leurs matchs, puis de traiter les images pour leurs réseaux.",
+      },
+      {
+        img: "/projects/p32.jpg",
+        w: 1400,
+        h: 1780,
+        type: "Menu",
+        title: "Birdz",
+        year: "2025",
+        description:
+          "Le menu du restaurant BIRDZ devait être en adéquation avec l’univers de la marque, inspirée des restaurants de poulet américains type « Nashville ». L’objectif : réaliser un menu avec les codes de la marque.",
+      },
+      {
+        img: "/projects/p33.jpg",
+        w: 1400,
+        h: 1958,
+        type: "Photographie",
+        title: "Raffiné",
+        year: "2025",
+        description:
+          "Raffiné est un restaurant premium, cuisinant de bons produits dans un établissement visuellement très beau. Les photos devaient représenter le restaurant et alimenter sa belle image.",
+      },
+      {
+        img: "/projects/p34.jpg",
+        w: 1400,
+        h: 1049,
+        type: "Packaging",
+        title: "Chikin Bang",
+        year: "2025",
+        description:
+          "Chikin Bang, restaurant de street food coréenne, m’a demandé de nouveaux packagings pour leurs corndogs, tout en gardant le style pop coréen que l’on retrouve dans l’identité de leurs restaurants.",
+      },
+      {
+        img: "/projects/p35.jpg",
+        w: 1400,
+        h: 945,
+        type: "Photographie",
+        title: "Birdz",
+        year: "2025",
+        description:
+          "Avant son ouverture, un shooting produits de Birdz pour ses menus, ses visuels et ses réseaux, afin d’exposer partout sa gamme de produits Nashville. En voici une légère partie sur l’ensemble des photos prises.",
+      },
+      {
+        img: "/projects/p36.jpg",
+        w: 1400,
+        h: 991,
+        type: "Menu",
+        title: "Somar",
+        year: "2026",
+        description:
+          "Le SOMAR est un restaurant de produits principalement marins sur la côte bauloise. Une carte complète à refaire de zéro pour s’installer dans un style plus moderne : des couleurs proches de la carte originelle mais plus dans l’air du temps, et un choix typographique réfléchi entre modernité et identité.",
+      },
+    ],
+  },
+];
+
+// ——— Helpers de routage (slugs uniques par catégorie) ———
+
+export type ProjectWithSlug = Project & { slug: string };
+
+export function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getSection(categoryId: string): Section | undefined {
+  return sections.find((s) => s.id === categoryId);
+}
+
+// Retourne les projets d'une catégorie avec un slug unique et stable.
+export function getProjectsWithSlugs(categoryId: string): ProjectWithSlug[] {
+  const section = getSection(categoryId);
+  if (!section) return [];
+  const counts: Record<string, number> = {};
+  return section.projects.map((p) => {
+    const base = slugify(p.title);
+    counts[base] = (counts[base] ?? 0) + 1;
+    const slug = counts[base] > 1 ? `${base}-${counts[base]}` : base;
+    return { ...p, slug };
+  });
+}
+
+export function getProject(
+  categoryId: string,
+  slug: string
+): { section: Section; project: ProjectWithSlug; index: number } | undefined {
+  const section = getSection(categoryId);
+  if (!section) return undefined;
+  const projects = getProjectsWithSlugs(categoryId);
+  const index = projects.findIndex((p) => p.slug === slug);
+  if (index === -1) return undefined;
+  return { section, project: projects[index], index };
+}
