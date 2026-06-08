@@ -57,6 +57,12 @@ export default async function ProjectPage({
   const next = index < siblings.length - 1 ? siblings[index + 1] : null;
   const others = sections.filter((s) => s.id !== section.id);
 
+  // Visuel principal + déclinaisons réunis pour un affichage uniforme (2 par 2)
+  const visuals = [
+    { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
+    ...(project.images ?? []),
+  ];
+
   return (
     <>
       <Header />
@@ -104,50 +110,53 @@ export default async function ProjectPage({
             </div>
 
             {/* Colonne visuels */}
-            <div className="space-y-6">
+            {visuals.length === 1 ? (
               <figure>
                 <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
                   <Image
-                    src={project.img}
+                    src={visuals[0].src}
                     alt={`${project.title} — ${project.type}`}
-                    width={project.w}
-                    height={project.h}
+                    width={visuals[0].w}
+                    height={visuals[0].h}
                     sizes="(max-width: 1024px) 100vw, 640px"
                     className="h-auto w-full"
                     priority
                   />
                 </div>
-                {project.imgCaption && (
+                {visuals[0].caption && (
                   <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
-                    {project.imgCaption}
+                    {visuals[0].caption}
                   </figcaption>
                 )}
               </figure>
-
-              {project.images && project.images.length > 0 && (
-                <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 sm:gap-5">
-                  {project.images.map((im, i) => (
-                    <figure key={im.src}>
-                      <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
-                        <Image
-                          src={im.src}
-                          alt={`${project.title} — déclinaison ${i + 1}`}
-                          width={im.w}
-                          height={im.h}
-                          sizes="(max-width: 1024px) 100vw, 320px"
-                          className="h-auto w-full"
-                        />
-                      </div>
-                      {im.caption && (
-                        <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
-                          {im.caption}
-                        </figcaption>
-                      )}
-                    </figure>
-                  ))}
-                </div>
-              )}
-            </div>
+            ) : (
+              <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 sm:gap-5">
+                {visuals.map((v, i) => (
+                  <figure key={v.src}>
+                    <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
+                      <Image
+                        src={v.src}
+                        alt={
+                          i === 0
+                            ? `${project.title} — ${project.type}`
+                            : `${project.title} — déclinaison ${i}`
+                        }
+                        width={v.w}
+                        height={v.h}
+                        sizes="(max-width: 1024px) 100vw, 320px"
+                        className="h-auto w-full"
+                        priority={i === 0}
+                      />
+                    </div>
+                    {v.caption && (
+                      <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
+                        {v.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Navigation projet précédent / suivant */}
