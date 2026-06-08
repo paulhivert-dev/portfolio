@@ -236,6 +236,13 @@ export const sections: Section[] = [
         year: "2026",
         description:
           "La gamme Californian est un menu de burgers inspirés de ce qu’on retrouve aux États-Unis. Des produits simples, économiques mais terriblement efficaces en bouche, mis en valeur avec un style rétro et américain.",
+        images: [
+          { src: "/projects/californian/cal-collection.jpg", w: 1240, h: 1753 },
+          { src: "/projects/californian/cal-jalapeno-1.jpg", w: 1240, h: 1753 },
+          { src: "/projects/californian/cal-cheese.jpg", w: 1240, h: 1753 },
+          { src: "/projects/californian/cal-jalapeno-2.jpg", w: 1240, h: 1753 },
+          { src: "/projects/californian/cal-californians.jpg", w: 1240, h: 1753 },
+        ],
       },
       {
         img: "/projects/p17.jpg",
