@@ -24,7 +24,7 @@ export default function About() {
         {/* Texte */}
         <div className="flex flex-col">
           <div className="flex items-start justify-between gap-6">
-            <h2 className="font-brush text-6xl leading-none sm:text-7xl">
+            <h2 className="font-wordmark text-4xl font-extrabold leading-[1.0] tracking-[-0.02em] sm:text-6xl">
               {profile.name}
             </h2>
             <p className="pt-3 text-right text-sm font-light leading-relaxed text-foreground/90 sm:text-base">
@@ -48,11 +48,15 @@ export default function About() {
           </div>
 
           {/* Logiciels */}
-          <h3 className="mt-12 font-brush text-3xl">Logiciels</h3>
+          <h3 className="mt-12 font-wordmark text-2xl font-bold tracking-[-0.01em]">
+            Logiciels
+          </h3>
           <SoftwarePills software={software} />
 
           {/* Compétences */}
-          <h3 className="mt-12 font-brush text-3xl">Compétences</h3>
+          <h3 className="mt-12 font-wordmark text-2xl font-bold tracking-[-0.01em]">
+            Compétences
+          </h3>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
             {skills.map((s) => (
               <li key={s} className="text-sm font-light text-foreground/90">

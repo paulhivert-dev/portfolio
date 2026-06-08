@@ -30,7 +30,7 @@ function ProjectThumb({
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border/60 bg-card transition duration-300 group-hover:border-accent/70 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] sm:rounded-3xl">
         <Image
-          src={project.img}
+          src={project.thumb ?? project.img}
           alt={`${project.title} — ${project.type}`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -101,9 +101,11 @@ export default async function CategoryPage({
               <span>// {section.name}</span>
               <span>Direction artistique</span>
             </div>
-            <h1 className="mt-7 text-center text-6xl leading-[0.95] tracking-tight sm:text-8xl">
+            <h1 className="mt-7 text-center text-5xl leading-[0.95] tracking-tight sm:text-7xl">
               <span className="font-light text-foreground/85">Mes </span>
-              <span className="font-brush text-accent">{section.name}</span>
+              <span className="font-wordmark font-extrabold tracking-[-0.02em] text-accent">
+                {section.name}
+              </span>
             </h1>
           </div>
 

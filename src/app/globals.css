@@ -10,12 +10,15 @@
 }
 
 :root {
-  --background: #1a1a1a;
-  --foreground: #f4f3f1;
-  --muted: #9a9a96;
-  --border: #34332f;
-  --card: #1f1f1e;
+  --background: #17120f;
+  --foreground: #f5f1ec;
+  --muted: #a39a90;
+  --border: #352b24;
+  --card: #201813;
   --accent: #c8a898;
+
+  /* Grain argentique réutilisable partout */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @theme inline {
@@ -30,14 +33,16 @@
   --font-sans: "Avenir Next", "Avenir", var(--font-mulish), ui-sans-serif,
     system-ui, sans-serif;
   --font-brush: "Biro Script", "Brush Script MT", cursive;
+  --font-wordmark: var(--font-syne), "Avenir Next", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: "Avenir Next", "Avenir", var(--font-mulish), ui-sans-serif,
     system-ui, sans-serif;
@@ -82,8 +87,72 @@ body {
   }
 }
 
+/* Ambiance DA — fixée derrière tout le contenu du site */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(70% 55% at 50% -5%, rgba(200, 168, 152, 0.1), transparent 65%),
+    radial-gradient(48% 42% at 8% 104%, rgba(184, 116, 80, 0.08), transparent 66%),
+    radial-gradient(48% 46% at 96% 88%, rgba(150, 96, 70, 0.07), transparent 66%);
+}
+
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 220px 220px;
+  opacity: 0.1;
+  mix-blend-mode: soft-light;
+}
+
+@keyframes aura-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-4%, 3%);
+  }
+  50% {
+    transform: translate(3%, -2%);
+  }
+  75% {
+    transform: translate(-2%, -3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.hero-aura {
+  animation: aura-breathe 9s ease-in-out infinite;
+}
+
+.hero-grain {
+  animation: grain-shift 7s steps(6) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .hero-aura,
+  .hero-grain {
+    animation: none;
   }
 }

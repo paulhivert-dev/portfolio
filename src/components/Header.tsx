@@ -3,11 +3,11 @@ import { profile, sections } from "@/data/portfolio";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link
           href="/"
-          className="font-brush text-2xl leading-none transition-opacity hover:opacity-60"
+          className="font-wordmark text-xl font-extrabold tracking-[-0.02em] leading-none transition-opacity hover:opacity-60"
         >
           {profile.wordmark}
         </Link>

@@ -14,7 +14,7 @@ export default function CtaBand() {
       <div className="relative mx-auto max-w-4xl text-center">
         <h2 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
           Prêt à{" "}
-          <span className="font-brush font-normal text-accent">donner vie</span>{" "}
+          <span className="font-wordmark font-extrabold tracking-[-0.02em] text-accent">donner vie</span>{" "}
           à votre projet{" "}?
         </h2>
 

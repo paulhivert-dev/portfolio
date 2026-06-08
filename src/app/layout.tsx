@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
+import { Mulish, Syne } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
@@ -8,6 +8,13 @@ const mulish = Mulish({
   variable: "--font-mulish",
   subsets: ["latin"],
   weight: ["200", "300", "400", "600"],
+});
+
+// Typo display du wordmark (titre du site)
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -21,8 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${mulish.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="fr" className={`${mulish.variable} ${syne.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        <div className="site-bg" aria-hidden />
+        {children}
+      </body>
     </html>
   );
 }

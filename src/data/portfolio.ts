@@ -41,9 +41,10 @@ export const skills = [
 export type ProjectImage = { src: string; w: number; h: number };
 
 export type Project = {
-  img: string;
+  img: string; // visuel principal (haut de la page projet)
   w: number;
   h: number;
+  thumb?: string; // vignette pour la grille (sinon = img)
   type: string;
   title: string;
   year: string;
@@ -131,19 +132,18 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/logo-first-touch-u.jpg",
-        w: 1080,
-        h: 1350,
+        img: "/projects/firsttouch/ft-logo-agency.jpg",
+        w: 1500,
+        h: 843,
+        thumb: "/projects/logo-first-touch-u.jpg", // vignette de la case (icône détourée propre)
         type: "Logo",
         title: "First Touch",
         year: "2025",
         description:
           "First Touch est une agence de joueurs et joueuses de football. L’objectif était d’avoir un logo stable et dynamique avec les critères classiques d’un logo de sport, décliné en deux versions : une couleur claire, simple et douce, et un dégradé de bleus pour un côté plus sport, plus dynamique.",
         images: [
-          { src: "/projects/firsttouch/ft-logo-blanc.jpg", w: 1500, h: 843 }, // texte / clair
-          { src: "/projects/firsttouch/ft-icon-bleu.jpg", w: 1500, h: 843 }, // icône / bleu
-          { src: "/projects/firsttouch/ft-logo-agency.jpg", w: 1500, h: 843 }, // texte / clair
-          { src: "/projects/firsttouch/ft-icon-blanc.jpg", w: 1500, h: 843 }, // icône / clair
+          { src: "/projects/firsttouch/ft-icon-bleu.jpg", w: 1500, h: 843 }, // icône / bleu dégradé
+          { src: "/projects/firsttouch/ft-icon-light.jpg", w: 1500, h: 844 }, // icône / off-white très léger
         ],
       },
       {
@@ -155,6 +155,9 @@ export const sections: Section[] = [
         year: "2024",
         description:
           "Le Charles est un bar / restaurant situé dans la périphérie nantaise. La demande était de créer un logo pour ce nouveau bar, avec un cafard et une licorne pour le représenter.",
+        images: [
+          { src: "/projects/lecharles/charles-mockup.jpg", w: 1500, h: 1000 }, // mockup mur
+        ],
       },
       {
         img: "/projects/logo-oh-damned-u.jpg",
@@ -165,6 +168,13 @@ export const sections: Section[] = [
         year: "2026",
         description:
           "Oh Damned, une nouvelle marque de cookies sur Paris, souhaitant une DA simple, épurée et réconfortante attirant les plus jeunes comme les gourmands les plus âgés. L’objectif est d’instaurer un effet de douceur et de confort pour le consommateur, avec un produit de qualité et une DA sans faute.",
+        images: [
+          { src: "/projects/ohdamned/od-dark.jpg", w: 1400, h: 839 }, // fond sombre
+          { src: "/projects/ohdamned/od-brun.jpg", w: 1400, h: 833 }, // fond brun
+          { src: "/projects/ohdamned/od-cream.jpg", w: 1400, h: 840 }, // fond cream
+          { src: "/projects/ohdamned/od-dark-outline-big.jpg", w: 1400, h: 680 }, // fond sombre (outline, logo agrandi)
+          { src: "/projects/ohdamned/od-brun-fonce.jpg", w: 1400, h: 837 }, // fond brun
+        ],
       },
     ],
   },

@@ -18,7 +18,7 @@ export default function CategoryGrid() {
       />
 
       <div className="relative mx-auto max-w-6xl">
-        <h2 className="mb-14 text-center font-brush text-5xl leading-none sm:text-7xl">
+        <h2 className="mb-14 text-center font-wordmark text-5xl font-extrabold leading-none tracking-[-0.02em] sm:text-7xl">
           projets
         </h2>
 

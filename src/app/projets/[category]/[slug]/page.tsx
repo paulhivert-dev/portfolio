@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 import CtaBand from "@/components/CtaBand";
+import CategoryCard from "@/components/CategoryCard";
 import { sections, getProject, getProjectsWithSlugs } from "@/data/portfolio";
 
 type Params = { category: string; slug: string };
@@ -54,6 +55,7 @@ export default async function ProjectPage({
   const siblings = getProjectsWithSlugs(category);
   const prev = index > 0 ? siblings[index - 1] : null;
   const next = index < siblings.length - 1 ? siblings[index + 1] : null;
+  const others = sections.filter((s) => s.id !== section.id);
 
   return (
     <>
@@ -73,7 +75,7 @@ export default async function ProjectPage({
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
                 {project.type}
               </p>
-              <h1 className="mt-4 font-brush text-6xl leading-[1.05] sm:text-7xl">
+              <h1 className="mt-4 font-wordmark text-4xl font-extrabold leading-[1.0] tracking-[-0.02em] sm:text-6xl">
                 {project.title}
               </h1>
               <p className="mt-6 max-w-md text-base font-light leading-relaxed text-muted">
@@ -94,7 +96,7 @@ export default async function ProjectPage({
                 </a>
               )}
 
-              <dl className="mt-10 space-y-3 border-t border-border/60 pt-8">
+              <dl className="mt-10 space-y-3">
                 <MetaRow label="Catégorie" value={section.name} />
                 <MetaRow label="Type" value={project.type} />
                 <MetaRow label="Année" value={project.year} />
@@ -165,6 +167,22 @@ export default async function ProjectPage({
             ) : (
               <span />
             )}
+          </nav>
+
+          {/* Autres catégories */}
+          <nav className="mt-28 border-t border-border/60 pt-12">
+            <p className="mb-8 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              Autres catégories
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {others.map((s) => (
+                <CategoryCard
+                  key={s.id}
+                  section={s}
+                  className="w-[calc(50%_-_8px)] lg:w-[calc(25%_-_12px)]"
+                />
+              ))}
+            </div>
           </nav>
         </div>
       </main>
