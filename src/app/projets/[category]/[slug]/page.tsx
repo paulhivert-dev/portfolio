@@ -124,25 +124,29 @@ export default async function ProjectPage({
                 )}
               </figure>
 
-              {project.images?.map((im, i) => (
-                <figure key={im.src}>
-                  <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
-                    <Image
-                      src={im.src}
-                      alt={`${project.title} — déclinaison ${i + 1}`}
-                      width={im.w}
-                      height={im.h}
-                      sizes="(max-width: 1024px) 100vw, 640px"
-                      className="h-auto w-full"
-                    />
-                  </div>
-                  {im.caption && (
-                    <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
-                      {im.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              ))}
+              {project.images && project.images.length > 0 && (
+                <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 sm:gap-5">
+                  {project.images.map((im, i) => (
+                    <figure key={im.src}>
+                      <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
+                        <Image
+                          src={im.src}
+                          alt={`${project.title} — déclinaison ${i + 1}`}
+                          width={im.w}
+                          height={im.h}
+                          sizes="(max-width: 1024px) 100vw, 320px"
+                          className="h-auto w-full"
+                        />
+                      </div>
+                      {im.caption && (
+                        <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
+                          {im.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
