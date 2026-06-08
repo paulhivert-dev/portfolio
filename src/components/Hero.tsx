@@ -10,38 +10,38 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond navy profond (DA Bieber sombre) */}
+      {/* Fond sombre légèrement chaud (DA Bieber rose-orange) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 95% at 50% 28%, #12222f 0%, #0b141d 48%, #060a10 82%, #04070b 100%)",
+            "radial-gradient(120% 95% at 50% 28%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%)",
         }}
       />
 
-      {/* Halo lumineux — anneaux cyan autour d'un cœur laiteux (style pochette) */}
+      {/* Halo lumineux — anneaux rose-orange autour d'un cœur laiteux */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[140vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 hero-aura"
         style={{
           background: [
-            "radial-gradient(circle at 50% 50%, rgba(210,232,244,0.34) 0%, rgba(150,205,235,0.16) 20%, transparent 40%)",
-            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(86,180,224,0.42) 45%, rgba(48,120,178,0.16) 57%, transparent 67%)",
-            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(150,210,236,0.18) 63%, transparent 76%)",
+            "radial-gradient(circle at 50% 50%, rgba(246,228,222,0.34) 0%, rgba(236,176,158,0.16) 20%, transparent 40%)",
+            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(226,148,124,0.42) 45%, rgba(196,104,84,0.16) 57%, transparent 67%)",
+            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(238,180,168,0.18) 63%, transparent 76%)",
           ].join(","),
           filter: "blur(28px)",
         }}
       />
 
-      {/* Nappes diffuses (cyan + bleu nuit) */}
+      {/* Nappes diffuses (rose + orange) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background: [
-            "radial-gradient(48% 52% at 16% 18%, rgba(86,180,224,0.26), transparent 70%)",
-            "radial-gradient(44% 46% at 86% 84%, rgba(60,100,160,0.24), transparent 70%)",
+            "radial-gradient(48% 52% at 16% 18%, rgba(226,148,124,0.26), transparent 70%)",
+            "radial-gradient(44% 46% at 86% 84%, rgba(210,118,138,0.24), transparent 70%)",
           ].join(","),
           filter: "blur(20px)",
         }}

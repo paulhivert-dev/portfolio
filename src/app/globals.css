@@ -10,12 +10,12 @@
 }
 
 :root {
-  --background: #080d14;
-  --foreground: #eef1f4;
-  --muted: #8a93a0;
-  --border: #1d2632;
-  --card: #101824;
-  --accent: #74b6e2;
+  --background: #0c090b;
+  --foreground: #f0eee9;
+  --muted: #9c938c;
+  --border: #2a201f;
+  --card: #18110f;
+  --accent: #e0a890;
 
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -101,9 +101,9 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(64% 52% at 50% -4%, rgba(86, 180, 224, 0.14), transparent 66%),
-    radial-gradient(50% 44% at 8% 104%, rgba(60, 110, 170, 0.12), transparent 66%),
-    radial-gradient(50% 46% at 96% 90%, rgba(120, 180, 220, 0.1), transparent 66%);
+    radial-gradient(64% 52% at 50% -4%, rgba(226, 152, 130, 0.14), transparent 66%),
+    radial-gradient(50% 44% at 8% 104%, rgba(204, 116, 96, 0.12), transparent 66%),
+    radial-gradient(50% 46% at 96% 90%, rgba(228, 164, 154, 0.1), transparent 66%);
 }
 
 .site-bg::after {
