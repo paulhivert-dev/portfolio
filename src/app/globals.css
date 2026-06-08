@@ -10,12 +10,12 @@
 }
 
 :root {
-  --background: #c5c6be;
-  --foreground: #1c1d1a;
-  --muted: #6a6c63;
-  --border: #aeafa5;
-  --card: #cdcec6;
-  --accent: #8a9aa2;
+  --background: #080d14;
+  --foreground: #eef1f4;
+  --muted: #8a93a0;
+  --border: #1d2632;
+  --card: #101824;
+  --accent: #74b6e2;
 
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -101,9 +101,9 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 20% 8%, rgba(120, 160, 190, 0.22), transparent 68%),
-    radial-gradient(52% 46% at 86% 92%, rgba(206, 150, 130, 0.18), transparent 68%),
-    radial-gradient(70% 60% at 50% 45%, rgba(240, 238, 230, 0.25), transparent 66%);
+    radial-gradient(64% 52% at 50% -4%, rgba(86, 180, 224, 0.14), transparent 66%),
+    radial-gradient(50% 44% at 8% 104%, rgba(60, 110, 170, 0.12), transparent 66%),
+    radial-gradient(50% 46% at 96% 90%, rgba(120, 180, 220, 0.1), transparent 66%);
 }
 
 .site-bg::after {
@@ -112,8 +112,8 @@ body {
   inset: 0;
   background-image: var(--grain);
   background-size: 200px 200px;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
+  opacity: 0.13;
+  mix-blend-mode: soft-light;
 }
 
 @keyframes aura-breathe {

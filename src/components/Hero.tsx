@@ -10,56 +10,57 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond délavé dreamy (DA Bieber) */}
+      {/* Fond navy profond (DA Bieber sombre) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 95% at 50% 32%, #d6d8cf 0%, #c4c7bd 48%, #abaea4 80%, #999c93 100%)",
+            "radial-gradient(120% 95% at 50% 28%, #12222f 0%, #0b141d 48%, #060a10 82%, #04070b 100%)",
         }}
       />
 
-      {/* Halo lumineux délavé — bleu poussiéreux / blanc laiteux */}
+      {/* Halo lumineux — anneaux cyan autour d'un cœur laiteux (style pochette) */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[140vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 hero-aura"
         style={{
           background: [
-            "radial-gradient(circle at 50% 50%, rgba(244,244,238,0.55) 0%, rgba(244,244,238,0.18) 22%, transparent 42%)",
-            "radial-gradient(circle at 50% 50%, transparent 34%, rgba(120,160,190,0.30) 46%, rgba(120,160,190,0.10) 57%, transparent 66%)",
+            "radial-gradient(circle at 50% 50%, rgba(210,232,244,0.34) 0%, rgba(150,205,235,0.16) 20%, transparent 40%)",
+            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(86,180,224,0.42) 45%, rgba(48,120,178,0.16) 57%, transparent 67%)",
+            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(150,210,236,0.18) 63%, transparent 76%)",
           ].join(","),
           filter: "blur(28px)",
         }}
       />
 
-      {/* Nappes diffuses (bleu poussiéreux + pêche fanée) */}
+      {/* Nappes diffuses (cyan + bleu nuit) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background: [
-            "radial-gradient(48% 52% at 16% 18%, rgba(120,160,190,0.28), transparent 70%)",
-            "radial-gradient(44% 46% at 86% 84%, rgba(208,150,130,0.24), transparent 70%)",
+            "radial-gradient(48% 52% at 16% 18%, rgba(86,180,224,0.26), transparent 70%)",
+            "radial-gradient(44% 46% at 86% 84%, rgba(60,100,160,0.24), transparent 70%)",
           ].join(","),
           filter: "blur(20px)",
         }}
       />
 
-      {/* Grain argentique appuyé */}
+      {/* Grain argentique */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-multiply hero-grain"
+        className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light hero-grain"
         style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
       />
 
-      {/* Vignette douce */}
+      {/* Vignette */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(115% 95% at 50% 45%, transparent 60%, rgba(70,76,70,0.38) 100%)",
+            "radial-gradient(115% 95% at 50% 45%, transparent 55%, rgba(0,0,0,0.6) 100%)",
         }}
       />
 
