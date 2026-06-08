@@ -10,71 +10,69 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond profond brun-taupe */}
+      {/* Fond délavé dreamy (DA Bieber) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 100% at 50% 14%, #251d18 0%, #1a1411 48%, #0f0b09 100%)",
+            "radial-gradient(120% 95% at 50% 32%, #d6d8cf 0%, #c4c7bd 48%, #abaea4 80%, #999c93 100%)",
         }}
       />
 
-      {/* Halo lumineux — cœur taupe/pêche, anneaux chauds */}
+      {/* Halo lumineux délavé — bleu poussiéreux / blanc laiteux */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[140vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 hero-aura"
         style={{
           background: [
-            "radial-gradient(circle at 50% 50%, rgba(220,184,164,0.36) 0%, rgba(198,142,106,0.18) 17%, transparent 36%)",
-            "radial-gradient(circle at 50% 50%, transparent 32%, rgba(200,168,152,0.22) 45%, rgba(170,110,80,0.12) 56%, transparent 66%)",
-            "radial-gradient(circle at 50% 50%, transparent 54%, rgba(226,196,176,0.16) 62%, transparent 75%)",
+            "radial-gradient(circle at 50% 50%, rgba(244,244,238,0.55) 0%, rgba(244,244,238,0.18) 22%, transparent 42%)",
+            "radial-gradient(circle at 50% 50%, transparent 34%, rgba(120,160,190,0.30) 46%, rgba(120,160,190,0.10) 57%, transparent 66%)",
           ].join(","),
-          filter: "blur(26px)",
+          filter: "blur(28px)",
         }}
       />
 
-      {/* Nappes colorées diffuses (tons chauds) */}
+      {/* Nappes diffuses (bleu poussiéreux + pêche fanée) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background: [
-            "radial-gradient(48% 50% at 50% 92%, rgba(200,168,152,0.22), transparent 72%)",
-            "radial-gradient(42% 46% at 14% 16%, rgba(184,116,80,0.18), transparent 70%)",
-            "radial-gradient(38% 42% at 86% 82%, rgba(150,96,70,0.16), transparent 70%)",
+            "radial-gradient(48% 52% at 16% 18%, rgba(120,160,190,0.28), transparent 70%)",
+            "radial-gradient(44% 46% at 86% 84%, rgba(208,150,130,0.24), transparent 70%)",
           ].join(","),
           filter: "blur(20px)",
         }}
       />
 
-      {/* Grain argentique */}
+      {/* Grain argentique appuyé */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light hero-grain"
-        style={{ backgroundImage: GRAIN, backgroundSize: "220px 220px" }}
+        className="pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-multiply hero-grain"
+        style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
       />
 
-      {/* Vignette */}
+      {/* Vignette douce */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(115% 90% at 50% 45%, transparent 55%, rgba(0,0,0,0.55) 100%)",
+            "radial-gradient(115% 95% at 50% 45%, transparent 60%, rgba(70,76,70,0.38) 100%)",
         }}
       />
 
       {/* Contenu */}
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <p className="mb-5 font-mono text-xs uppercase tracking-[0.35em] text-accent/90">
-          Portfolio · 2026
+        <p className="mb-5 text-[11px] lowercase tracking-[0.06em] text-foreground/55">
+          🎧 a sprinkle of happiness · portfolio ’26
         </p>
-        <h1 className="font-wordmark text-6xl font-extrabold leading-[0.92] tracking-[-0.02em] text-foreground drop-shadow-[0_2px_30px_rgba(200,168,152,0.22)] sm:text-8xl">
+        <h1 className="font-wordmark text-6xl leading-[0.95] text-foreground sm:text-8xl">
           {profile.wordmark}
         </h1>
-        <p className="mt-7 max-w-xl text-base font-light leading-relaxed tracking-wide text-foreground/70 sm:text-lg">
-          {profile.role.join("  ·  ")}
+        <p className="mt-6 max-w-xl text-sm lowercase tracking-[0.04em] text-foreground/60 sm:text-base">
+          {profile.role.join("  ·  ").toLowerCase()}
         </p>
       </div>
 
