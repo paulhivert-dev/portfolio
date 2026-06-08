@@ -38,7 +38,12 @@ export const skills = [
   "Gestion de projets",
 ];
 
-export type ProjectImage = { src: string; w: number; h: number };
+export type ProjectImage = {
+  src: string;
+  w: number;
+  h: number;
+  caption?: string; // légende affichée sous le visuel
+};
 
 export type Project = {
   img: string; // visuel principal (haut de la page projet)
@@ -50,6 +55,7 @@ export type Project = {
   year: string;
   description: string;
   href?: string;
+  imgCaption?: string; // légende sous le visuel principal
   // Visuels supplémentaires (déclinaisons, mockups…) empilés sous le principal
   images?: ProjectImage[];
 };
@@ -256,20 +262,21 @@ export const sections: Section[] = [
         w: 1400,
         h: 1981,
         type: "Affiche",
-        title: "Korean Gomu — Classique",
+        title: "Korean Gomu",
         year: "2025",
         description:
-          "Support de communication pour la campagne GOMU portée sur la culture coréenne. On y retrouve les trois produits phares de la campagne dans un environnement traditionnel coréen.",
-      },
-      {
-        img: "/projects/p20.jpg",
-        w: 1400,
-        h: 1983,
-        type: "Affiche",
-        title: "Korean Gomu — Moderne",
-        year: "2025",
-        description:
-          "Variante contemporaine de la campagne coréenne GOMU : les trois produits phares mis en scène dans un environnement coréen moderne.",
+          "Campagne de communication GOMU portée sur la culture coréenne, déclinée en deux ambiances autour des trois produits phares.",
+        imgCaption:
+          "Classique — Les trois produits phares de la campagne dans un environnement coréen traditionnel.",
+        images: [
+          {
+            src: "/projects/p20.jpg",
+            w: 1400,
+            h: 1983,
+            caption:
+              "Moderne — Variante contemporaine : les trois produits phares mis en scène dans un environnement coréen moderne.",
+          },
+        ],
       },
       {
         img: "/projects/p21.jpg",

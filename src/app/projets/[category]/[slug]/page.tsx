@@ -105,32 +105,43 @@ export default async function ProjectPage({
 
             {/* Colonne visuels */}
             <div className="space-y-6">
-              <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
-                <Image
-                  src={project.img}
-                  alt={`${project.title} — ${project.type}`}
-                  width={project.w}
-                  height={project.h}
-                  sizes="(max-width: 1024px) 100vw, 640px"
-                  className="h-auto w-full"
-                  priority
-                />
-              </div>
-
-              {project.images?.map((im, i) => (
-                <div
-                  key={im.src}
-                  className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl"
-                >
+              <figure>
+                <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
                   <Image
-                    src={im.src}
-                    alt={`${project.title} — déclinaison ${i + 1}`}
-                    width={im.w}
-                    height={im.h}
+                    src={project.img}
+                    alt={`${project.title} — ${project.type}`}
+                    width={project.w}
+                    height={project.h}
                     sizes="(max-width: 1024px) 100vw, 640px"
                     className="h-auto w-full"
+                    priority
                   />
                 </div>
+                {project.imgCaption && (
+                  <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
+                    {project.imgCaption}
+                  </figcaption>
+                )}
+              </figure>
+
+              {project.images?.map((im, i) => (
+                <figure key={im.src}>
+                  <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
+                    <Image
+                      src={im.src}
+                      alt={`${project.title} — déclinaison ${i + 1}`}
+                      width={im.w}
+                      height={im.h}
+                      sizes="(max-width: 1024px) 100vw, 640px"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                  {im.caption && (
+                    <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
+                      {im.caption}
+                    </figcaption>
+                  )}
+                </figure>
               ))}
             </div>
           </div>
