@@ -218,9 +218,9 @@ export const sections: Section[] = [
     name: "affiches",
     projects: [
       {
-        img: "/projects/p15.jpg",
-        w: 1400,
-        h: 2045,
+        img: "/projects/spike-affiche.jpg",
+        w: 1240,
+        h: 1831,
         type: "Affiche",
         title: "Spike",
         year: "2022",
