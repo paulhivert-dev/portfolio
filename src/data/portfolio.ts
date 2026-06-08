@@ -296,9 +296,9 @@ export const sections: Section[] = [
           "Cette affiche présente les produits et offres d’une nouvelle campagne des restaurants GOMU, à travers de nouveaux parfums, de nouvelles saveurs et une identité nouvelle.",
       },
       {
-        img: "/projects/p22.jpg",
-        w: 1400,
-        h: 787,
+        img: "/projects/jour-de-la-nuit.jpg",
+        w: 1240,
+        h: 1754,
         type: "Affiche",
         title: "Le Jour de la Nuit",
         year: "2024",
