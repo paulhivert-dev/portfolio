@@ -141,7 +141,7 @@ export const sections: Section[] = [
         img: "/projects/firsttouch/ft-gradient.jpg",
         w: 1600,
         h: 900,
-        thumb: "/projects/logo-first-touch-u.jpg", // vignette de la case (icône détourée propre)
+        thumb: "/projects/firsttouch/ft-gradient.jpg", // vignette = visuel dégradé de bleus
         type: "Logo",
         title: "First Touch",
         year: "2025",
