@@ -369,9 +369,9 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/p27.jpg",
-        w: 1400,
-        h: 2482,
+        img: "/projects/ilan/ilan-dfco.jpg",
+        w: 1080,
+        h: 1920,
         type: "Visuels Instagram",
         title: "Ilan Djadja",
         year: "2025–2026",
@@ -380,7 +380,7 @@ export const sections: Section[] = [
         images: [
           { src: "/projects/ilan/ilan-auxerre.jpg", w: 1080, h: 1920 },
           { src: "/projects/ilan/ilan-dijon-asptt.jpg", w: 1080, h: 1920 },
-          { src: "/projects/ilan/ilan-dfco.jpg", w: 1080, h: 1920 },
+          { src: "/projects/p27.jpg", w: 1400, h: 2482 },
           { src: "/projects/ilan/ilan-saintpriest.jpg", w: 1080, h: 1920 },
           { src: "/projects/ilan/ilan-metz.jpg", w: 1080, h: 1920 },
         ],
