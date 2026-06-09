@@ -322,6 +322,10 @@ export const sections: Section[] = [
         description:
           "Ce motion design fait partie de mon projet de fin d’études. La communication globale est basée sur le côté écologique de la marque ; cette animation montre la qualité de la chaussure, d’une bouteille dans la mer pour finir en apothéose dans l’espace.",
         href: "https://youtu.be/K8BP2xkXkb8",
+        images: [
+          { src: "/projects/spikemotion/spike-motion-1.jpg", w: 1500, h: 874 },
+          { src: "/projects/spikemotion/spike-motion-2.jpg", w: 1500, h: 797 },
+        ],
       },
     ],
   },

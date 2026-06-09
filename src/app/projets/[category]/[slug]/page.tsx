@@ -62,8 +62,8 @@ export default async function ProjectPage({
     { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
     ...(project.images ?? []),
   ];
-  // Logos : visuels empilés (une seule colonne) ; autres : grille 2 par 2
-  const isStacked = section.id === "logos";
+  // Logos & motion designs : visuels empilés (une colonne) ; autres : grille 2 par 2
+  const isStacked = section.id === "logos" || section.id === "motion-designs";
 
   return (
     <>
