@@ -62,8 +62,13 @@ export default async function ProjectPage({
     { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
     ...(project.images ?? []),
   ];
-  // Logos & motion designs : visuels empilés (une colonne) ; autres : grille 2 par 2
+  // Logos & motion designs : empilés (1 colonne) ; autres projets : grille 4 par 4 ; reste : 2 par 2
   const isStacked = section.id === "logos" || section.id === "motion-designs";
+  const galleryGrid = isStacked
+    ? "grid grid-cols-1"
+    : section.id === "autres-projets"
+    ? "grid grid-cols-2 lg:grid-cols-4"
+    : "grid grid-cols-1 sm:grid-cols-2";
 
   return (
     <>
@@ -132,11 +137,7 @@ export default async function ProjectPage({
                 )}
               </figure>
             ) : (
-              <div
-                className={`grid grid-cols-1 items-start gap-4 sm:gap-5 ${
-                  isStacked ? "" : "sm:grid-cols-2"
-                }`}
-              >
+              <div className={`${galleryGrid} items-start gap-4 sm:gap-5`}>
                 {visuals.map((v, i) => (
                   <figure key={v.src}>
                     <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
