@@ -199,9 +199,9 @@ export const sections: Section[] = [
           "Le support de communication principal du projet Spike : une chaussure se noyant dans l’eau, rappelant le plastique utilisé pour sa fabrication. Le but est de ressentir une forme de culpabilité — les dernières bulles d’air comme dernier souffle, une chute dans des eaux sombres, et de l’eau sur toute l’affiche comme si, pour la lire, il fallait être en apnée.",
       },
       {
-        img: "/projects/p16.jpg",
-        w: 1400,
-        h: 2018,
+        img: "/projects/californian/cal-jalapeno-1.jpg",
+        w: 1240,
+        h: 1753,
         type: "Affiche",
         title: "Gomu Californian",
         year: "2026",
@@ -209,10 +209,10 @@ export const sections: Section[] = [
           "La gamme Californian est un menu de burgers inspirés de ce qu’on retrouve aux États-Unis. Des produits simples, économiques mais terriblement efficaces en bouche, mis en valeur avec un style rétro et américain.",
         images: [
           { src: "/projects/californian/cal-collection.jpg", w: 1240, h: 1753 },
-          { src: "/projects/californian/cal-jalapeno-1.jpg", w: 1240, h: 1753 },
           { src: "/projects/californian/cal-cheese.jpg", w: 1240, h: 1753 },
           { src: "/projects/californian/cal-jalapeno-2.jpg", w: 1240, h: 1753 },
           { src: "/projects/californian/cal-californians.jpg", w: 1240, h: 1753 },
+          { src: "/projects/p16.jpg", w: 1400, h: 2018 },
         ],
       },
       {
