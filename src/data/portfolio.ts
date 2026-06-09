@@ -226,7 +226,7 @@ export const sections: Section[] = [
           "Un support de communication pour GOMU au moment des 24h du Mans. On y retrouve le côté asiatique de la marque, le menu promu lors de la campagne ainsi qu’une voiture rappelant les 24h du Mans et l’univers Tokyo Drift.",
       },
       {
-        img: "/projects/p18.jpg",
+        img: "/projects/gomu-waffle.jpg",
         w: 1400,
         h: 1985,
         type: "Affiche",
