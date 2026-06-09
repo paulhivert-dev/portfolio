@@ -71,8 +71,11 @@ export default function Hero() {
         </p>
 
         <h1
-          className="font-poster bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.82] tracking-[0.005em] text-transparent drop-shadow-[0_8px_44px_rgba(224,148,124,0.28)]"
-          style={{ fontSize: "clamp(3.75rem, 17vw, 13.5rem)" }}
+          className="bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.86] tracking-[0.01em] text-transparent drop-shadow-[0_8px_44px_rgba(224,148,124,0.28)]"
+          style={{
+            fontFamily: "var(--font-anton), 'Helvetica Neue', sans-serif",
+            fontSize: "clamp(2.5rem, 12vw, 9rem)",
+          }}
         >
           paul
           <br />
