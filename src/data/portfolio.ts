@@ -138,7 +138,7 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/firsttouch/ft-logo-agency.jpg",
+        img: "/projects/firsttouch/ft-icon-bleu.jpg",
         w: 1500,
         h: 843,
         thumb: "/projects/logo-first-touch-u.jpg", // vignette de la case (icône détourée propre)
@@ -148,7 +148,7 @@ export const sections: Section[] = [
         description:
           "First Touch est une agence de joueurs et joueuses de football. L’objectif était d’avoir un logo stable et dynamique avec les critères classiques d’un logo de sport, décliné en deux versions : une couleur claire, simple et douce, et un dégradé de bleus pour un côté plus sport, plus dynamique.",
         images: [
-          { src: "/projects/firsttouch/ft-icon-bleu.jpg", w: 1500, h: 843 }, // icône / bleu dégradé
+          { src: "/projects/firsttouch/ft-logo-agency.jpg", w: 1500, h: 843 }, // logo agence
           { src: "/projects/firsttouch/ft-icon-light.jpg", w: 1500, h: 844 }, // icône / off-white très léger
         ],
       },
