@@ -394,6 +394,9 @@ export const sections: Section[] = [
         year: "2024",
         description:
           "Quentin Merlin, ancien joueur de l’Olympique de Marseille, m’a demandé de réaliser deux visuels pour ses matchs de coupe d’Europe contre l’Atalanta de Bergame et le Shakhtar. Deux créations bien différentes, montrant l’enjeu de l’événement pour le joueur et l’équipe.",
+        images: [
+          { src: "/projects/europa/europa-shakhtar.jpg", w: 1080, h: 1920 },
+        ],
       },
       {
         img: "/projects/p29.jpg",
