@@ -7,7 +7,10 @@ export default function Contact() {
       className="mt-auto scroll-mt-20 border-t border-border/60 px-6 py-24 sm:px-10 sm:py-32"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-wordmark text-6xl font-extrabold leading-none tracking-[-0.02em] sm:text-8xl">
+        <h2
+          className="text-6xl font-bold lowercase leading-none tracking-[-0.02em] text-white sm:text-8xl"
+          style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+        >
           contacts
         </h2>
         <div className="mt-8 space-y-1">
