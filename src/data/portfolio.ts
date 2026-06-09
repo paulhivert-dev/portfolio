@@ -303,6 +303,7 @@ export const sections: Section[] = [
         img: "/projects/p12.jpg",
         w: 1400,
         h: 1397,
+        thumb: "/projects/motion-deezer.jpg", // logo réduit pour la case
         type: "Motion Design",
         title: "Deezer",
         year: "2021",
@@ -314,6 +315,7 @@ export const sections: Section[] = [
         img: "/projects/p13.jpg",
         w: 1400,
         h: 1103,
+        thumb: "/projects/motion-spike.jpg", // logo réduit pour la case
         type: "Motion Design",
         title: "Spike",
         year: "2021",
