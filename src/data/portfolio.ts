@@ -300,9 +300,9 @@ export const sections: Section[] = [
     cover: "/projects/logo-deezer-u.jpg",
     projects: [
       {
-        img: "/projects/p12.jpg",
+        img: "/projects/motion-deezer-main.jpg",
         w: 1400,
-        h: 1397,
+        h: 1400,
         thumb: "/projects/motion-deezer.jpg", // logo réduit pour la case
         type: "Motion Design",
         title: "Deezer",
