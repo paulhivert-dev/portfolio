@@ -399,9 +399,9 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/p29.jpg",
-        w: 1400,
-        h: 2485,
+        img: "/projects/aiman/aiman-orleans.jpg",
+        w: 1080,
+        h: 1920,
         type: "Visuels Instagram",
         title: "Aïman",
         year: "2025–2026",
@@ -409,7 +409,7 @@ export const sections: Section[] = [
           "Aïman est un joueur de football évoluant en U19 National. Je suis chargé de le photographier pendant ses matchs et de lui faire des visuels pour tous ses rendez-vous du week-end contre des gros clubs, notamment le PSG.",
         images: [
           { src: "/projects/aiman/aiman-amiens.jpg", w: 1080, h: 1920 },
-          { src: "/projects/aiman/aiman-orleans.jpg", w: 1080, h: 1920 },
+          { src: "/projects/p29.jpg", w: 1400, h: 2485 },
           { src: "/projects/aiman/aiman-quevilly.jpg", w: 1080, h: 1920 },
           { src: "/projects/aiman/aiman-racing.jpg", w: 1080, h: 1920 },
           { src: "/projects/aiman/aiman-sarcelles.jpg", w: 1080, h: 1920 },
