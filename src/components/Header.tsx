@@ -7,7 +7,8 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link
           href="/"
-          className="font-wordmark text-xl font-extrabold tracking-[-0.02em] leading-none transition-opacity hover:opacity-60"
+          className="text-xl font-semibold lowercase leading-none tracking-[-0.01em] text-white transition-opacity hover:opacity-60"
+          style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
         >
           {profile.wordmark}
         </Link>
