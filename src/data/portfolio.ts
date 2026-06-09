@@ -277,9 +277,9 @@ export const sections: Section[] = [
           "Le Jour de la Nuit est un festival combattant les pollutions lumineuses. Pour cette affiche, un chat dans un univers nocturne — symbole de la nature pouvant regarder et profiter pleinement du ciel et des étoiles, sans aucune pollution lumineuse.",
       },
       {
-        img: "/projects/p23.jpg",
-        w: 1400,
-        h: 1980,
+        img: "/projects/chikin/chikin-korean-burgers.jpg",
+        w: 1240,
+        h: 1754,
         type: "Affiche",
         title: "Chikin Bang",
         year: "2026",
@@ -288,7 +288,7 @@ export const sections: Section[] = [
         images: [
           { src: "/projects/chikin/chikin-paques.jpg", w: 874, h: 1240 },
           { src: "/projects/chikin/chikin-cheddar.jpg", w: 1240, h: 1754 },
-          { src: "/projects/chikin/chikin-korean-burgers.jpg", w: 1240, h: 1754 },
+          { src: "/projects/p23.jpg", w: 1400, h: 1980 },
         ],
       },
     ],
