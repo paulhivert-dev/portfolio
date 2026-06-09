@@ -407,6 +407,13 @@ export const sections: Section[] = [
         year: "2025–2026",
         description:
           "Aïman est un joueur de football évoluant en U19 National. Je suis chargé de le photographier pendant ses matchs et de lui faire des visuels pour tous ses rendez-vous du week-end contre des gros clubs, notamment le PSG.",
+        images: [
+          { src: "/projects/aiman/aiman-amiens.jpg", w: 1080, h: 1920 },
+          { src: "/projects/aiman/aiman-orleans.jpg", w: 1080, h: 1920 },
+          { src: "/projects/aiman/aiman-quevilly.jpg", w: 1080, h: 1920 },
+          { src: "/projects/aiman/aiman-racing.jpg", w: 1080, h: 1920 },
+          { src: "/projects/aiman/aiman-sarcelles.jpg", w: 1080, h: 1920 },
+        ],
       },
     ],
   },
