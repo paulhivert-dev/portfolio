@@ -67,13 +67,13 @@ export default function Hero() {
       {/* Contenu — nom géant "poster" sur une seule ligne, pleine largeur */}
       <div className="relative z-10 w-full">
         {/* Écho haut */}
-        <p className="mb-2 text-center font-poster text-[2.6vw] uppercase tracking-[0.5em] text-accent/35">
+        <p className="mb-2 text-center text-[2.6vw] font-bold uppercase tracking-[0.5em] text-accent/35">
           paul hivert
         </p>
 
-        {/* Nom étiré bord à bord */}
+        {/* Nom étiré bord à bord — Helvetica très gras (DA du site) */}
         <svg
-          viewBox="0 0 100 18"
+          viewBox="0 0 100 17"
           className="w-full drop-shadow-[0_10px_50px_rgba(224,148,124,0.3)]"
           role="img"
           aria-label="Paul Hivert"
@@ -87,20 +87,23 @@ export default function Hero() {
           </defs>
           <text
             x="50"
-            y="15.2"
+            y="14.6"
             textAnchor="middle"
             textLength="99"
             lengthAdjust="spacingAndGlyphs"
-            className="font-poster"
-            fontSize="20.5"
+            fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
+            fontWeight="700"
+            fontSize="19"
             fill="url(#hivertGrad)"
+            stroke="url(#hivertGrad)"
+            strokeWidth="0.35"
           >
             PAUL HIVERT
           </text>
         </svg>
 
         {/* Écho bas */}
-        <p className="mt-2 text-center font-poster text-[2.6vw] uppercase tracking-[0.5em] text-accent/35">
+        <p className="mt-2 text-center text-[2.6vw] font-bold uppercase tracking-[0.5em] text-accent/35">
           paul hivert
         </p>
 
