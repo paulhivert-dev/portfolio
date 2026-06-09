@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
+      className="relative flex min-h-[88vh] items-center overflow-hidden px-3 sm:px-4"
     >
       {/* Fond sombre légèrement chaud (DA Bieber rose-orange) */}
       <div
@@ -64,22 +64,18 @@ export default function Hero() {
         }}
       />
 
-      {/* Contenu — gros titre "poster" */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
-        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/50 sm:text-xs">
-          paul&nbsp;hivert
-        </p>
-
+      {/* Contenu — nom géant "poster" pleine largeur */}
+      <div className="relative z-10 w-full text-center">
         <h1
-          className="font-poster bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.82] tracking-[0.005em] text-transparent drop-shadow-[0_8px_44px_rgba(224,148,124,0.28)]"
-          style={{ fontSize: "clamp(3.75rem, 17vw, 13.5rem)" }}
+          className="font-poster bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.78] tracking-[0.01em] text-transparent drop-shadow-[0_10px_50px_rgba(224,148,124,0.3)]"
+          style={{ fontSize: "min(34vw, 20rem)" }}
         >
           paul
           <br />
           hivert
         </h1>
 
-        <p className="mt-7 text-sm lowercase tracking-[0.08em] text-foreground/60 sm:text-base">
+        <p className="mt-6 text-sm lowercase tracking-[0.1em] text-foreground/60 sm:text-base">
           {profile.role.join("  ·  ").toLowerCase()}
         </p>
       </div>
