@@ -185,35 +185,6 @@ export const sections: Section[] = [
     ],
   },
   {
-    id: "motion-designs",
-    name: "motion designs",
-    cover: "/projects/logo-deezer-u.jpg",
-    projects: [
-      {
-        img: "/projects/p12.jpg",
-        w: 1400,
-        h: 1397,
-        type: "Motion Design",
-        title: "Deezer",
-        year: "2021",
-        description:
-          "Un motion design pour Deezer Premium. Nous désirions une animation haute en couleur, en mouvement et en profondeur, comme ce que peut nous partager Deezer. Tout a été créé pour cette animation, y compris la musique.",
-        href: "https://youtu.be/RIjTaoSKWug",
-      },
-      {
-        img: "/projects/p13.jpg",
-        w: 1400,
-        h: 1103,
-        type: "Motion Design",
-        title: "Spike",
-        year: "2021",
-        description:
-          "Ce motion design fait partie de mon projet de fin d’études. La communication globale est basée sur le côté écologique de la marque ; cette animation montre la qualité de la chaussure, d’une bouteille dans la mer pour finir en apothéose dans l’espace.",
-        href: "https://youtu.be/K8BP2xkXkb8",
-      },
-    ],
-  },
-  {
     id: "affiches",
     name: "affiches",
     projects: [
@@ -319,6 +290,35 @@ export const sections: Section[] = [
           { src: "/projects/chikin/chikin-cheddar.jpg", w: 1240, h: 1754 },
           { src: "/projects/chikin/chikin-korean-burgers.jpg", w: 1240, h: 1754 },
         ],
+      },
+    ],
+  },
+  {
+    id: "motion-designs",
+    name: "motion designs",
+    cover: "/projects/logo-deezer-u.jpg",
+    projects: [
+      {
+        img: "/projects/p12.jpg",
+        w: 1400,
+        h: 1397,
+        type: "Motion Design",
+        title: "Deezer",
+        year: "2021",
+        description:
+          "Un motion design pour Deezer Premium. Nous désirions une animation haute en couleur, en mouvement et en profondeur, comme ce que peut nous partager Deezer. Tout a été créé pour cette animation, y compris la musique.",
+        href: "https://youtu.be/RIjTaoSKWug",
+      },
+      {
+        img: "/projects/p13.jpg",
+        w: 1400,
+        h: 1103,
+        type: "Motion Design",
+        title: "Spike",
+        year: "2021",
+        description:
+          "Ce motion design fait partie de mon projet de fin d’études. La communication globale est basée sur le côté écologique de la marque ; cette animation montre la qualité de la chaussure, d’une bouteille dans la mer pour finir en apothéose dans l’espace.",
+        href: "https://youtu.be/K8BP2xkXkb8",
       },
     ],
   },
