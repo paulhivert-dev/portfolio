@@ -310,6 +310,10 @@ export const sections: Section[] = [
         description:
           "Un motion design pour Deezer Premium. Nous désirions une animation haute en couleur, en mouvement et en profondeur, comme ce que peut nous partager Deezer. Tout a été créé pour cette animation, y compris la musique.",
         href: "https://youtu.be/RIjTaoSKWug",
+        images: [
+          { src: "/projects/deezermotion/deezer-motion-1.jpg", w: 1500, h: 874 },
+          { src: "/projects/deezermotion/deezer-motion-2.jpg", w: 1500, h: 797 },
+        ],
       },
       {
         img: "/projects/p13.jpg",
@@ -322,10 +326,6 @@ export const sections: Section[] = [
         description:
           "Ce motion design fait partie de mon projet de fin d’études. La communication globale est basée sur le côté écologique de la marque ; cette animation montre la qualité de la chaussure, d’une bouteille dans la mer pour finir en apothéose dans l’espace.",
         href: "https://youtu.be/K8BP2xkXkb8",
-        images: [
-          { src: "/projects/spikemotion/spike-motion-1.jpg", w: 1500, h: 874 },
-          { src: "/projects/spikemotion/spike-motion-2.jpg", w: 1500, h: 797 },
-        ],
       },
     ],
   },
