@@ -377,6 +377,13 @@ export const sections: Section[] = [
         year: "2025–2026",
         description:
           "Ilan est un joueur de football évoluant en U19 National. Je suis chargé de le photographier pendant ses matchs et de lui faire des visuels pour tous ses rendez-vous du week-end contre des gros clubs, notamment l’OL.",
+        images: [
+          { src: "/projects/ilan/ilan-auxerre.jpg", w: 1080, h: 1920 },
+          { src: "/projects/ilan/ilan-dijon-asptt.jpg", w: 1080, h: 1920 },
+          { src: "/projects/ilan/ilan-dfco.jpg", w: 1080, h: 1920 },
+          { src: "/projects/ilan/ilan-saintpriest.jpg", w: 1080, h: 1920 },
+          { src: "/projects/ilan/ilan-metz.jpg", w: 1080, h: 1920 },
+        ],
       },
       {
         img: "/projects/p28.jpg",
