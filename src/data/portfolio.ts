@@ -314,6 +314,11 @@ export const sections: Section[] = [
         year: "2026",
         description:
           "Affiches pour le restaurant Chikin Bang : les supports principaux de leurs dernières campagnes, sucrées comme salées. Une direction artistique colorée, des affiches remplies d’informations et beaucoup de fantaisie — tout ce que représente la marque.",
+        images: [
+          { src: "/projects/chikin/chikin-paques.jpg", w: 874, h: 1240 },
+          { src: "/projects/chikin/chikin-cheddar.jpg", w: 1240, h: 1754 },
+          { src: "/projects/chikin/chikin-korean-burgers.jpg", w: 1240, h: 1754 },
+        ],
       },
     ],
   },
