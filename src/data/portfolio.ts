@@ -347,6 +347,11 @@ export const sections: Section[] = [
         year: "2024",
         description:
           "Tom Mabon, gardien de l’équipe des jeunes du FC Nantes, m’a fait confiance pour ses visuels de matchs durant leur parcours historique en coupe d’Europe, tout comme ses coéquipiers Louis Leroux et Mathis Philippe. Pour chacun, j’ai cherché des visuels différents, avec des techniques et thématiques variées.",
+        images: [
+          { src: "/projects/youth/youth-olympiakos.jpg", w: 1080, h: 1920 },
+          { src: "/projects/youth/youth-finale.jpg", w: 962, h: 1726 },
+          { src: "/projects/youth/youth-eiffel.jpg", w: 968, h: 1728 },
+        ],
       },
       {
         img: "/projects/p26.jpg",
