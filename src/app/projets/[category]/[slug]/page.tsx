@@ -57,11 +57,13 @@ export default async function ProjectPage({
   const next = index < siblings.length - 1 ? siblings[index + 1] : null;
   const others = sections.filter((s) => s.id !== section.id);
 
-  // Visuel principal + déclinaisons réunis pour un affichage uniforme (2 par 2)
+  // Visuel principal + déclinaisons réunis
   const visuals = [
     { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
     ...(project.images ?? []),
   ];
+  // Logos : visuels empilés (une seule colonne) ; autres : grille 2 par 2
+  const isStacked = section.id === "logos";
 
   return (
     <>
@@ -130,7 +132,11 @@ export default async function ProjectPage({
                 )}
               </figure>
             ) : (
-              <div className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 sm:gap-5">
+              <div
+                className={`grid grid-cols-1 items-start gap-4 sm:gap-5 ${
+                  isStacked ? "" : "sm:grid-cols-2"
+                }`}
+              >
                 {visuals.map((v, i) => (
                   <figure key={v.src}>
                     <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
@@ -143,7 +149,11 @@ export default async function ProjectPage({
                         }
                         width={v.w}
                         height={v.h}
-                        sizes="(max-width: 1024px) 100vw, 320px"
+                        sizes={
+                          isStacked
+                            ? "(max-width: 1024px) 100vw, 640px"
+                            : "(max-width: 1024px) 100vw, 320px"
+                        }
                         className="h-auto w-full"
                         priority={i === 0}
                       />
