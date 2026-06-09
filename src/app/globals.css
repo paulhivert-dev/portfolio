@@ -33,9 +33,8 @@
   --font-sans: "Avenir Next", "Avenir", var(--font-mulish), ui-sans-serif,
     system-ui, sans-serif;
   --font-brush: "Biro Script", "Brush Script MT", cursive;
-  /* DA Bieber : Helvetica brut */
-  --font-wordmark: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* Typo "poster" du hero */
+  /* Typo "poster" : Anton condensé pour les titres */
+  --font-wordmark: var(--font-anton), "Helvetica Neue", sans-serif;
   --font-poster: var(--font-anton), "Helvetica Neue", sans-serif;
 }
 
@@ -53,11 +52,22 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* DA Bieber : tous les titres wordmark en minuscules, poids contenu */
+/* DA "poster" : tous les grands titres en Anton, capitales, dégradé corail/rouille + lueur */
 .font-wordmark {
-  text-transform: lowercase;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-family: var(--font-anton), "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  background-image: linear-gradient(
+    to bottom,
+    #f6cab2 0%,
+    #e0a890 55%,
+    #bb6c4d 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 26px rgba(224, 148, 124, 0.18));
 }
 
 ::selection {

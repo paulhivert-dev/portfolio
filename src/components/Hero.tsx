@@ -67,7 +67,7 @@ export default function Hero() {
       {/* Contenu — gros titre "poster" */}
       <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
         <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/50 sm:text-xs">
-          paul&nbsp;hivert
+          portfolio
         </p>
 
         <h1
