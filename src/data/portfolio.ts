@@ -362,6 +362,11 @@ export const sections: Section[] = [
         year: "2025",
         description:
           "Ces visuels présentent la nouvelle saison de Ligue 1 McDonald’s. On y retrouve des éléments rappelant l’identité des clubs et des villes par les couleurs, les joueurs et les références visuelles.",
+        images: [
+          { src: "/projects/cdf/cdf-greenwood.jpg", w: 1080, h: 1350 },
+          { src: "/projects/cdf/cdf-cowboy.jpg", w: 1080, h: 1350 },
+          { src: "/projects/cdf/cdf-saison.jpg", w: 1080, h: 1350 },
+        ],
       },
       {
         img: "/projects/p27.jpg",
