@@ -71,6 +71,7 @@ export const sections: Section[] = [
   {
     id: "logos",
     name: "logos",
+    cover: "/projects/logo-happy-u.jpg",
     projects: [
       {
         img: "/projects/logo-atlantic-u.jpg",
