@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mulish, Syne } from "next/font/google";
+import { Mulish, Syne, Anton } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
@@ -17,6 +17,13 @@ const syne = Syne({
   weight: ["600", "700", "800"],
 });
 
+// Typo "poster" condensée bold pour le hero
+const anton = Anton({
+  variable: "--font-anton",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: `Paul Hivert — ${profile.role.join(" · ")}`,
   description: profile.intro[1],
@@ -28,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${mulish.variable} ${syne.variable} h-full antialiased`}>
+    <html
+      lang="fr"
+      className={`${mulish.variable} ${syne.variable} ${anton.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
         <div className="site-bg" aria-hidden />
         {children}

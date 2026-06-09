@@ -64,15 +64,22 @@ export default function Hero() {
         }}
       />
 
-      {/* Contenu */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <p className="mb-5 text-[11px] lowercase tracking-[0.06em] text-foreground/55">
-          🎧 a sprinkle of happiness · portfolio ’26
+      {/* Contenu — gros titre "poster" */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
+        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/50 sm:text-xs">
+          paul&nbsp;hivert
         </p>
-        <h1 className="font-wordmark text-6xl leading-[0.95] text-foreground sm:text-8xl">
-          {profile.wordmark}
+
+        <h1
+          className="font-poster bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.82] tracking-[0.005em] text-transparent drop-shadow-[0_8px_44px_rgba(224,148,124,0.28)]"
+          style={{ fontSize: "clamp(3.75rem, 17vw, 13.5rem)" }}
+        >
+          paul
+          <br />
+          hivert
         </h1>
-        <p className="mt-6 max-w-xl text-sm lowercase tracking-[0.04em] text-foreground/60 sm:text-base">
+
+        <p className="mt-7 text-sm lowercase tracking-[0.08em] text-foreground/60 sm:text-base">
           {profile.role.join("  ·  ").toLowerCase()}
         </p>
       </div>

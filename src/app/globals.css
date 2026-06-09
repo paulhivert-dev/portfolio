@@ -35,6 +35,8 @@
   --font-brush: "Biro Script", "Brush Script MT", cursive;
   /* DA Bieber : Helvetica brut */
   --font-wordmark: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Typo "poster" du hero */
+  --font-poster: var(--font-anton), "Helvetica Neue", sans-serif;
 }
 
 html {
