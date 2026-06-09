@@ -64,18 +64,47 @@ export default function Hero() {
         }}
       />
 
-      {/* Contenu — nom géant "poster" pleine largeur */}
-      <div className="relative z-10 w-full text-center">
-        <h1
-          className="font-poster bg-gradient-to-b from-[#f6cab2] via-[#e0a890] to-[#bb6c4d] bg-clip-text uppercase leading-[0.78] tracking-[0.01em] text-transparent drop-shadow-[0_10px_50px_rgba(224,148,124,0.3)]"
-          style={{ fontSize: "min(34vw, 20rem)" }}
-        >
-          paul
-          <br />
-          hivert
-        </h1>
+      {/* Contenu — nom géant "poster" sur une seule ligne, pleine largeur */}
+      <div className="relative z-10 w-full">
+        {/* Écho haut */}
+        <p className="mb-2 text-center font-poster text-[2.6vw] uppercase tracking-[0.5em] text-accent/35">
+          paul hivert
+        </p>
 
-        <p className="mt-6 text-sm lowercase tracking-[0.1em] text-foreground/60 sm:text-base">
+        {/* Nom étiré bord à bord */}
+        <svg
+          viewBox="0 0 100 18"
+          className="w-full drop-shadow-[0_10px_50px_rgba(224,148,124,0.3)]"
+          role="img"
+          aria-label="Paul Hivert"
+        >
+          <defs>
+            <linearGradient id="hivertGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#f6cab2" />
+              <stop offset="0.55" stopColor="#e0a890" />
+              <stop offset="1" stopColor="#bb6c4d" />
+            </linearGradient>
+          </defs>
+          <text
+            x="50"
+            y="15.2"
+            textAnchor="middle"
+            textLength="99"
+            lengthAdjust="spacingAndGlyphs"
+            className="font-poster"
+            fontSize="20.5"
+            fill="url(#hivertGrad)"
+          >
+            PAUL HIVERT
+          </text>
+        </svg>
+
+        {/* Écho bas */}
+        <p className="mt-2 text-center font-poster text-[2.6vw] uppercase tracking-[0.5em] text-accent/35">
+          paul hivert
+        </p>
+
+        <p className="mt-6 text-center text-sm lowercase tracking-[0.1em] text-foreground/60 sm:text-base">
           {profile.role.join("  ·  ").toLowerCase()}
         </p>
       </div>
