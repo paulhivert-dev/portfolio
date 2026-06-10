@@ -112,7 +112,7 @@ export default async function CategoryPage({
           {/* Animation 3D du logo Spike mise de côté (trop lourde).
               Réactivable : décommenter l'import SpikeLogo3D et l'ajouter ici. */}
 
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-12 [&:has(a:hover)>a:not(:hover)]:opacity-40">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-12 [&:has(a:hover)>a:not(:hover)]:opacity-40 [&:has(a:hover)>a:not(:hover)]:blur-[2px]">
             {projects.map((project) => (
               <ProjectThumb
                 key={project.slug}
