@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 import CtaBand from "@/components/CtaBand";
 import CategoryCard from "@/components/CategoryCard";
+import ProjectGallery from "@/components/ProjectGallery";
 import { sections, getProject, getProjectsWithSlugs } from "@/data/portfolio";
 
 type Params = { category: string; slug: string };
@@ -62,15 +62,13 @@ export default async function ProjectPage({
     { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
     ...(project.images ?? []),
   ];
-  // Logos & motion designs : empilés (1 colonne) ; autres projets : grille 4 par 4 ; reste : 2 par 2
-  const isStacked = section.id === "logos" || section.id === "motion-designs";
-  const galleryGrid = isStacked
-    ? "grid grid-cols-1"
-    : section.id === "autres-projets"
-    ? "grid grid-cols-2 lg:grid-cols-4"
-    : "grid grid-cols-1 sm:grid-cols-2";
-  // Autres projets : cellules au format uniforme (grille bien alignée)
-  const uniformCells = section.id === "autres-projets";
+  // Disposition de la galerie : logos & motion designs empilés ; autres projets en grille 4 (alignée) ; reste 2 colonnes
+  const galleryLayout: "stacked" | "grid2" | "grid4" =
+    section.id === "logos" || section.id === "motion-designs"
+      ? "stacked"
+      : section.id === "autres-projets"
+      ? "grid4"
+      : "grid2";
 
   return (
     <>
@@ -118,73 +116,13 @@ export default async function ProjectPage({
               </dl>
             </div>
 
-            {/* Colonne visuels */}
-            {visuals.length === 1 ? (
-              <figure>
-                <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
-                  <Image
-                    src={visuals[0].src}
-                    alt={`${project.title} — ${project.type}`}
-                    width={visuals[0].w}
-                    height={visuals[0].h}
-                    sizes="(max-width: 1024px) 100vw, 640px"
-                    className="h-auto w-full"
-                    priority
-                  />
-                </div>
-                {visuals[0].caption && (
-                  <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
-                    {visuals[0].caption}
-                  </figcaption>
-                )}
-              </figure>
-            ) : (
-              <div className={`${galleryGrid} items-start gap-4 sm:gap-5`}>
-                {visuals.map((v, i) => (
-                  <figure key={v.src}>
-                    <div
-                      className={`overflow-hidden rounded-2xl bg-card sm:rounded-3xl ${
-                        uniformCells ? "relative aspect-[2/3]" : ""
-                      }`}
-                    >
-                      {uniformCells ? (
-                        <Image
-                          src={v.src}
-                          alt={`${project.title} — ${i + 1}`}
-                          fill
-                          sizes="(max-width: 1024px) 50vw, 280px"
-                          className="object-cover"
-                          priority={i === 0}
-                        />
-                      ) : (
-                        <Image
-                          src={v.src}
-                          alt={
-                            i === 0
-                              ? `${project.title} — ${project.type}`
-                              : `${project.title} — déclinaison ${i}`
-                          }
-                          width={v.w}
-                          height={v.h}
-                          sizes={
-                            isStacked
-                              ? "(max-width: 1024px) 100vw, 640px"
-                              : "(max-width: 1024px) 100vw, 320px"
-                          }
-                          className="h-auto w-full"
-                          priority={i === 0}
-                        />
-                      )}
-                    </div>
-                    {v.caption && (
-                      <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
-                        {v.caption}
-                      </figcaption>
-                    )}
-                  </figure>
-                ))}
-              </div>
-            )}
+            {/* Colonne visuels — galerie cliquable (lightbox) */}
+            <ProjectGallery
+              visuals={visuals}
+              title={project.title}
+              type={project.type}
+              layout={galleryLayout}
+            />
           </div>
 
           {/* Navigation projet précédent / suivant */}
