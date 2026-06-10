@@ -304,12 +304,14 @@ body {
   }
 }
 
+/* Démarrage différé : pendant l'intro (~3,9s) le fond reste statique pour que la
+   révélation du texte soit parfaitement lisse, puis l'ambiance reprend en douceur. */
 .hero-aura {
-  animation: aura-breathe 9s ease-in-out infinite;
+  animation: aura-breathe 9s ease-in-out 4s infinite;
 }
 
 .hero-grain {
-  animation: grain-shift 7s steps(6) infinite;
+  animation: grain-shift 7s steps(6) 4s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
