@@ -458,6 +458,7 @@ export const sections: Section[] = [
         img: "/projects/birdzmenu/birdz-menu-1.jpg",
         w: 1200,
         h: 1527,
+        thumb: "/projects/birdz-logo-blanc.jpg", // vignette de la case = logo sur fond blanc
         type: "Menu",
         title: "Birdz",
         year: "2025",
