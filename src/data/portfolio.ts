@@ -454,9 +454,9 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/birdz-logo-blanc.jpg",
+        img: "/projects/birdzmenu/birdz-menu-1.jpg",
         w: 1200,
-        h: 1200,
+        h: 1527,
         type: "Menu",
         title: "Birdz",
         year: "2025",
