@@ -68,7 +68,7 @@ export default async function ProjectPage({
       ? project.gallery
       : section.id === "logos" || section.id === "motion-designs"
       ? "stacked"
-      : section.id === "autres-projets"
+      : section.id === "autres-projets" || section.id === "photographie"
       ? "grid4"
       : "grid2";
   // Format des cellules de la grille uniforme
