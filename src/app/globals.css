@@ -93,7 +93,8 @@ body {
   z-index: 2;
 }
 .photo-grid figure button:hover {
-  transform: scale(1.07);
+  transform: scale(1.22);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
 }
 
 /* Transitions de page fluides (View Transitions API) */
