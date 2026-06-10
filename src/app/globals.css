@@ -178,7 +178,7 @@ body {
      fin, en même temps que le voile : les deux images sont identiques => le
      cercle devient le dégradé sans aucune coupure. */
   100% {
-    transform: scale(3.4) translateZ(0) rotate(16deg);
+    transform: scale(3.2) translateZ(0) rotate(16deg);
     opacity: 0;
   }
 }
@@ -304,14 +304,14 @@ body {
   }
 }
 
-/* Démarrage différé : pendant l'intro (~3,9s) le fond reste statique pour que la
-   révélation du texte soit parfaitement lisse, puis l'ambiance reprend en douceur. */
+/* Fond figé : une fois l'intro finie, le background reste exactement tel quel
+   (grand anneau centré + grain statique), sans respiration ni glissement. */
 .hero-aura {
-  animation: aura-breathe 9s ease-in-out 3.5s infinite;
+  animation: none;
 }
 
 .hero-grain {
-  animation: grain-shift 7s steps(6) 3.5s infinite;
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

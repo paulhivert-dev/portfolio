@@ -20,30 +20,18 @@ export default function Hero() {
         }}
       />
 
-      {/* Halo lumineux — anneaux rose-orange autour d'un cœur laiteux */}
+      {/* Grand anneau rose-orange centré (état de repos = aboutissement de l'intro,
+          même dégradé que le blob agrandi => le blob s'y fond sans couture). */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[140vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 hero-aura"
+        className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[160vmin] -translate-x-1/2 -translate-y-1/2 hero-aura"
         style={{
           background: [
             "radial-gradient(circle at 50% 50%, rgba(246,228,222,0.34) 0%, rgba(236,176,158,0.16) 20%, transparent 40%)",
             "radial-gradient(circle at 50% 50%, transparent 33%, rgba(226,148,124,0.42) 45%, rgba(196,104,84,0.16) 57%, transparent 67%)",
             "radial-gradient(circle at 50% 50%, transparent 55%, rgba(238,180,168,0.18) 63%, transparent 76%)",
           ].join(","),
-          filter: "blur(28px)",
-        }}
-      />
-
-      {/* Nappes diffuses (rose + orange) */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: [
-            "radial-gradient(48% 52% at 16% 18%, rgba(226,148,124,0.26), transparent 70%)",
-            "radial-gradient(44% 46% at 86% 84%, rgba(210,118,138,0.24), transparent 70%)",
-          ].join(","),
-          filter: "blur(20px)",
+          filter: "blur(52px)",
         }}
       />
 
