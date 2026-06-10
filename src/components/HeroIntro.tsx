@@ -22,7 +22,7 @@ export default function HeroIntro() {
     const raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => setPlay(true));
     });
-    const t = setTimeout(() => setShow(false), 3900);
+    const t = setTimeout(() => setShow(false), 3400);
     return () => {
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
