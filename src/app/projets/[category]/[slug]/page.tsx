@@ -64,8 +64,8 @@ export default async function ProjectPage({
   ];
   // Disposition de la galerie : override par projet, sinon par catégorie
   const galleryLayout: "stacked" | "grid2" | "grid3" | "grid4" =
-    project.gallery === "grid3"
-      ? "grid3"
+    project.gallery
+      ? project.gallery
       : section.id === "logos" || section.id === "motion-designs"
       ? "stacked"
       : section.id === "autres-projets"

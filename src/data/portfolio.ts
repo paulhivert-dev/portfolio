@@ -58,7 +58,7 @@ export type Project = {
   imgCaption?: string; // légende sous le visuel principal
   // Visuels supplémentaires (déclinaisons, mockups…) empilés sous le principal
   images?: ProjectImage[];
-  gallery?: "grid3"; // override d'affichage de la galerie pour ce projet
+  gallery?: "grid3" | "stacked"; // override d'affichage de la galerie pour ce projet
 };
 
 export type Section = {
@@ -568,6 +568,7 @@ export const sections: Section[] = [
         year: "2026",
         description:
           "Le SOMAR est un restaurant de produits principalement marins sur la côte bauloise. Une carte complète à refaire de zéro pour s’installer dans un style plus moderne : des couleurs proches de la carte originelle mais plus dans l’air du temps, et un choix typographique réfléchi entre modernité et identité.",
+        gallery: "stacked",
         images: [
           { src: "/projects/somar/somar-menu-1.jpg", w: 1500, h: 1061 },
           { src: "/projects/somar/somar-menu-2.jpg", w: 1500, h: 1061 },
