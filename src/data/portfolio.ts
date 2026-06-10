@@ -523,14 +523,23 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/p34.jpg",
-        w: 1400,
-        h: 1049,
+        img: "/projects/chikinpack/cp-corndog-bleu.jpg",
+        w: 1500,
+        h: 1125,
         type: "Packaging",
         title: "Chikin Bang",
         year: "2025",
         description:
           "Chikin Bang, restaurant de street food coréenne, m’a demandé de nouveaux packagings pour leurs corndogs, tout en gardant le style pop coréen que l’on retrouve dans l’identité de leurs restaurants.",
+        images: [
+          { src: "/projects/chikinpack/cp-wings-jaune.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-corndog-rouge.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-wings-violet.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-corndog-jaune.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-wings-rouge.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-corndog-violet.jpg", w: 1500, h: 1125 },
+          { src: "/projects/chikinpack/cp-wings-bleu.jpg", w: 1500, h: 1125 },
+        ],
       },
       {
         img: "/projects/birdz-photo/birdz-13.jpg",
