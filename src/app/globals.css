@@ -97,6 +97,86 @@ body {
   box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.8);
 }
 
+/* Intro homepage : un cercle dégradé se déploie en gradient + révèle le texte */
+.hero-intro-veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 95% at 50% 28%, #1a1014 0%, #0c0709 62%, #050304 100%);
+}
+.hero-intro-blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46vmin;
+  height: 46vmin;
+  margin: -23vmin 0 0 -23vmin;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(246, 228, 222, 0.55) 0%, rgba(236, 176, 158, 0.32) 22%, transparent 46%),
+    radial-gradient(circle at 50% 50%, transparent 34%, rgba(226, 148, 124, 0.62) 46%, rgba(196, 104, 84, 0.22) 58%, transparent 70%);
+  will-change: transform, filter, opacity;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-intro-veil {
+    animation: intro-veil 2.7s ease forwards;
+  }
+  .hero-intro-blob {
+    animation: intro-blob 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero-reveal {
+    animation: hero-reveal-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro {
+    display: none !important;
+  }
+}
+@keyframes intro-veil {
+  0%,
+  58% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes intro-blob {
+  0% {
+    transform: scale(0.2) rotate(0deg);
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  55% {
+    transform: scale(1.7) rotate(70deg);
+    border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%;
+    filter: blur(24px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5.6) rotate(150deg);
+    border-radius: 44% 56% 52% 48%;
+    filter: blur(64px);
+    opacity: 0;
+  }
+}
+@keyframes hero-reveal-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
 /* Transitions de page fluides (View Transitions API) */
 @media (prefers-reduced-motion: no-preference) {
   ::view-transition-old(root) {
