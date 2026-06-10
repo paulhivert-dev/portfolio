@@ -15,7 +15,7 @@ export default function HeroIntro() {
       setShow(false);
       return;
     }
-    const t = setTimeout(() => setShow(false), 2800);
+    const t = setTimeout(() => setShow(false), 3800);
     return () => clearTimeout(t);
   }, []);
 

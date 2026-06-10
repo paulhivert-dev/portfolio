@@ -118,13 +118,13 @@ body {
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-intro-veil {
-    animation: intro-veil 2.7s ease forwards;
+    animation: intro-veil 3.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   .hero-intro-blob {
-    animation: intro-blob 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: intro-blob 3.6s cubic-bezier(0.45, 0.05, 0.2, 1) forwards;
   }
   .hero-reveal {
-    animation: hero-reveal-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both;
+    animation: hero-reveal-in 1.7s cubic-bezier(0.16, 1, 0.3, 1) 1.9s both;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -134,7 +134,7 @@ body {
 }
 @keyframes intro-veil {
   0%,
-  58% {
+  32% {
     opacity: 1;
   }
   100% {
@@ -143,32 +143,43 @@ body {
 }
 @keyframes intro-blob {
   0% {
-    transform: scale(0.2) rotate(0deg);
-    border-radius: 50%;
-    filter: blur(4px);
+    transform: scale(0.55) translate(0, 4%) rotate(-6deg);
+    border-radius: 46% 54% 52% 48% / 54% 48% 52% 46%;
+    filter: blur(18px);
     opacity: 0;
   }
-  16% {
+  14% {
     opacity: 1;
   }
-  55% {
-    transform: scale(1.7) rotate(70deg);
-    border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%;
-    filter: blur(24px);
+  30% {
+    transform: scale(0.92) translate(-1.5%, 2%) rotate(4deg);
+    border-radius: 58% 42% 47% 53% / 45% 56% 44% 55%;
+    filter: blur(26px);
+  }
+  50% {
+    transform: scale(1.45) translate(1.5%, 0) rotate(9deg);
+    border-radius: 44% 56% 60% 40% / 56% 44% 57% 43%;
+    filter: blur(34px);
     opacity: 1;
+  }
+  72% {
+    transform: scale(2.3) translate(0, -1.5%) rotate(15deg);
+    border-radius: 52% 48% 44% 56% / 47% 53% 47% 53%;
+    filter: blur(46px);
+    opacity: 0.9;
   }
   100% {
-    transform: scale(5.6) rotate(150deg);
-    border-radius: 44% 56% 52% 48%;
-    filter: blur(64px);
+    transform: scale(3.7) translate(0, -3%) rotate(20deg);
+    border-radius: 50%;
+    filter: blur(66px);
     opacity: 0;
   }
 }
 @keyframes hero-reveal-in {
   0% {
     opacity: 0;
-    transform: translateY(18px);
-    filter: blur(6px);
+    transform: translateY(20px);
+    filter: blur(7px);
   }
   100% {
     opacity: 1;
