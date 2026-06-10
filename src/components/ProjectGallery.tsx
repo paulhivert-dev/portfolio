@@ -10,11 +10,13 @@ export default function ProjectGallery({
   title,
   type,
   layout,
+  cellAspect = "2 / 3",
 }: {
   visuals: Visual[];
   title: string;
   type: string;
   layout: "stacked" | "grid2" | "grid4";
+  cellAspect?: string;
 }) {
   const [open, setOpen] = useState<number | null>(null);
   const count = visuals.length;
@@ -63,8 +65,9 @@ export default function ProjectGallery({
         onClick={() => setOpen(i)}
         aria-label={`Agrandir ${title} — ${i + 1}`}
         className={`block w-full cursor-pointer overflow-hidden rounded-2xl bg-card sm:rounded-3xl ${
-          uniform ? "relative aspect-[2/3]" : ""
+          uniform ? "relative" : ""
         }`}
+        style={uniform ? { aspectRatio: cellAspect } : undefined}
       >
         {uniform ? (
           <Image

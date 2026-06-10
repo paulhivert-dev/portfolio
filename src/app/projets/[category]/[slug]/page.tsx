@@ -69,6 +69,12 @@ export default async function ProjectPage({
       : section.id === "autres-projets"
       ? "grid4"
       : "grid2";
+  // Format des cellules de la grille uniforme selon l'orientation des photos
+  const galleryImgs = project.images ?? [];
+  const landscape =
+    galleryImgs.length > 0 &&
+    galleryImgs.filter((im) => im.w > im.h).length > galleryImgs.length / 2;
+  const cellAspect = landscape ? "3 / 2" : "2 / 3";
 
   return (
     <>
@@ -122,6 +128,7 @@ export default async function ProjectPage({
               title={project.title}
               type={project.type}
               layout={galleryLayout}
+              cellAspect={cellAspect}
             />
           </div>
 
