@@ -136,7 +136,7 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   /* l'intro ne démarre qu'une fois la classe --play posée (frame propre) */
   .hero-intro--play .hero-intro-veil {
-    animation: intro-veil 3s cubic-bezier(0.33, 0, 0.2, 1) forwards;
+    animation: intro-veil 3.2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
   }
   .hero-intro--play .hero-intro-blob {
     animation: intro-blob 3.2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
@@ -169,8 +169,13 @@ body {
   22% {
     opacity: 1;
   }
+  /* le blob s'est dissous avant la fin : le dernier instant visible
+     est le simple crossfade du voile vers le hero (transition douce) */
+  82% {
+    opacity: 0;
+  }
   100% {
-    transform: scale(1.9) translateZ(0) rotate(26deg);
+    transform: scale(1.7) translateZ(0) rotate(24deg);
     opacity: 0;
   }
 }
