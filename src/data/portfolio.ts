@@ -536,7 +536,7 @@ export const sections: Section[] = [
   {
     id: "autres-projets",
     name: "projets prints",
-    cover: "/covers/cover-autres.jpg",
+    cover: "/projects/chikinpack/cp-corndog-jaune.jpg",
     projects: [
       {
         img: "/projects/birdzmenu/birdz-menu-1.jpg",
