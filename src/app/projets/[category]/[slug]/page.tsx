@@ -62,9 +62,11 @@ export default async function ProjectPage({
     { src: project.img, w: project.w, h: project.h, caption: project.imgCaption },
     ...(project.images ?? []),
   ];
-  // Disposition de la galerie : logos & motion designs empilés ; autres projets en grille 4 (alignée) ; reste 2 colonnes
-  const galleryLayout: "stacked" | "grid2" | "grid4" =
-    section.id === "logos" || section.id === "motion-designs"
+  // Disposition de la galerie : override par projet, sinon par catégorie
+  const galleryLayout: "stacked" | "grid2" | "grid3" | "grid4" =
+    project.gallery === "grid3"
+      ? "grid3"
+      : section.id === "logos" || section.id === "motion-designs"
       ? "stacked"
       : section.id === "autres-projets"
       ? "grid4"

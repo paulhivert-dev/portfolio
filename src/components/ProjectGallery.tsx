@@ -15,7 +15,7 @@ export default function ProjectGallery({
   visuals: Visual[];
   title: string;
   type: string;
-  layout: "stacked" | "grid2" | "grid4";
+  layout: "stacked" | "grid2" | "grid3" | "grid4";
   cellAspect?: string;
 }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -50,6 +50,8 @@ export default function ProjectGallery({
       ? "grid grid-cols-1"
       : layout === "grid4"
       ? "grid grid-cols-2 lg:grid-cols-4"
+      : layout === "grid3"
+      ? "grid grid-cols-2 lg:grid-cols-3"
       : "grid grid-cols-1 sm:grid-cols-2";
 
   const Caption = ({ text }: { text: string }) => (

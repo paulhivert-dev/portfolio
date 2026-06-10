@@ -58,6 +58,7 @@ export type Project = {
   imgCaption?: string; // légende sous le visuel principal
   // Visuels supplémentaires (déclinaisons, mockups…) empilés sous le principal
   images?: ProjectImage[];
+  gallery?: "grid3"; // override d'affichage de la galerie pour ce projet
 };
 
 export type Section = {
@@ -462,6 +463,7 @@ export const sections: Section[] = [
         year: "2025",
         description:
           "Le menu du restaurant BIRDZ devait être en adéquation avec l’univers de la marque, inspirée des restaurants de poulet américains type « Nashville ». L’objectif : réaliser un menu avec les codes de la marque.",
+        gallery: "grid3",
         images: [
           { src: "/projects/birdzmenu/birdz-menu-2.jpg", w: 1200, h: 1527 },
           { src: "/projects/birdzmenu/birdz-menu-3.jpg", w: 1200, h: 1527 },
