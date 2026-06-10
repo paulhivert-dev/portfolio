@@ -454,7 +454,7 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/birdz-logo.jpg",
+        img: "/projects/birdz-logo-blanc.jpg",
         w: 1200,
         h: 1200,
         type: "Menu",
