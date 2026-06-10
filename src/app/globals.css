@@ -101,7 +101,9 @@ body {
 .hero-intro-veil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 95% at 50% 28%, #1a1014 0%, #0c0709 62%, #050304 100%);
+  /* MÊME fond sombre que le hero (cf. Hero.tsx) : en s'effaçant, le voile révèle
+     un dégradé identique => aucune cassure entre les deux images de fin. */
+  background: radial-gradient(120% 95% at 50% 28%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%);
   /* couche GPU pré-créée => le fondu se fait en composité, pas en repaint */
   will-change: opacity;
   transform: translateZ(0);
