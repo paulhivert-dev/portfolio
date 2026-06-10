@@ -77,17 +77,23 @@ body {
 
 /* Galerie : mise en évidence de la photo survolée, les autres s'estompent */
 .gallery-grid figure {
+  position: relative;
   transition: opacity 0.35s ease, filter 0.35s ease;
-}
-.gallery-grid figure button {
-  transition: transform 0.35s ease;
 }
 .gallery-grid:has(button:hover) figure:not(:hover) {
   opacity: 0.4;
   filter: blur(2px);
 }
-.gallery-grid figure button:hover {
-  transform: scale(1.03);
+
+/* Grilles photo (Birdz, Raffiné, Championnat National) : la case grandit au survol */
+.photo-grid figure button {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photo-grid figure:hover {
+  z-index: 2;
+}
+.photo-grid figure button:hover {
+  transform: scale(1.07);
 }
 
 /* Transitions de page fluides (View Transitions API) */

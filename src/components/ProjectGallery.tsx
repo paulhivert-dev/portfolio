@@ -103,7 +103,11 @@ export default function ProjectGallery({
       {single ? (
         <Thumb v={visuals[0]} i={0} />
       ) : (
-        <div className={`gallery-grid ${gridClass} items-start gap-4 sm:gap-5`}>
+        <div
+          className={`gallery-grid ${
+            layout === "grid4" ? "photo-grid" : ""
+          } ${gridClass} items-start gap-4 sm:gap-5`}
+        >
           {visuals.map((v, i) => (
             <Thumb key={v.src} v={v} i={i} />
           ))}
