@@ -62,7 +62,7 @@ export default function ProjectGallery({
         type="button"
         onClick={() => setOpen(i)}
         aria-label={`Agrandir ${title} — ${i + 1}`}
-        className={`block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-card transition duration-300 hover:opacity-90 sm:rounded-3xl ${
+        className={`block w-full cursor-pointer overflow-hidden rounded-2xl bg-card sm:rounded-3xl ${
           uniform ? "relative aspect-[2/3]" : ""
         }`}
       >
@@ -100,7 +100,7 @@ export default function ProjectGallery({
       {single ? (
         <Thumb v={visuals[0]} i={0} />
       ) : (
-        <div className={`${gridClass} items-start gap-4 sm:gap-5`}>
+        <div className={`gallery-grid ${gridClass} items-start gap-4 sm:gap-5`}>
           {visuals.map((v, i) => (
             <Thumb key={v.src} v={v} i={i} />
           ))}
@@ -109,11 +109,24 @@ export default function ProjectGallery({
 
       {open !== null && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-10"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-10"
           onClick={close}
           role="dialog"
           aria-modal="true"
+          style={{
+            background:
+              "radial-gradient(120% 95% at 50% 12%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%)",
+          }}
         >
+          {/* halo rose-orange (DA) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(48% 42% at 50% 32%, rgba(226,148,124,0.16), transparent 70%)",
+            }}
+          />
           <button
             type="button"
             onClick={close}
