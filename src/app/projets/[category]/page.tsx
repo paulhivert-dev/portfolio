@@ -96,7 +96,13 @@ export default async function CategoryPage({
 
           {/* En-tête catégorie */}
           <div className="mt-12 mb-16">
-            <h1 className="text-center text-5xl leading-[0.95] tracking-tight sm:text-7xl">
+            <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              <span className="tabular-nums">
+                {String(projects.length).padStart(2, "0")}
+              </span>
+              <span>Direction artistique</span>
+            </div>
+            <h1 className="mt-7 text-center text-5xl leading-[0.95] tracking-tight sm:text-7xl">
               <span className="font-wordmark font-extrabold tracking-[-0.02em] text-accent">
                 {section.name}
               </span>
