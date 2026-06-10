@@ -463,7 +463,6 @@ export const sections: Section[] = [
         description:
           "Le menu du restaurant BIRDZ devait être en adéquation avec l’univers de la marque, inspirée des restaurants de poulet américains type « Nashville ». L’objectif : réaliser un menu avec les codes de la marque.",
         images: [
-          { src: "/projects/birdzmenu/birdz-menu-1.jpg", w: 1200, h: 1527 },
           { src: "/projects/birdzmenu/birdz-menu-2.jpg", w: 1200, h: 1527 },
           { src: "/projects/birdzmenu/birdz-menu-3.jpg", w: 1200, h: 1527 },
           { src: "/projects/birdzmenu/birdz-menu-4.jpg", w: 1200, h: 1527 },
