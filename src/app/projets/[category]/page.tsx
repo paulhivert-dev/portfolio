@@ -104,7 +104,6 @@ export default async function CategoryPage({
               <span>Direction artistique</span>
             </div>
             <h1 className="mt-7 text-center text-5xl leading-[0.95] tracking-tight sm:text-7xl">
-              <span className="font-light text-foreground/85">Mes </span>
               <span className="font-wordmark font-extrabold tracking-[-0.02em] text-accent">
                 {section.name}
               </span>
