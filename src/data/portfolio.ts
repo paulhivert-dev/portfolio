@@ -560,14 +560,18 @@ export const sections: Section[] = [
         ],
       },
       {
-        img: "/projects/p36.jpg",
-        w: 1400,
-        h: 991,
+        img: "/projects/somar/somar-mockup.jpg",
+        w: 1600,
+        h: 1066,
         type: "Menu",
         title: "Somar",
         year: "2026",
         description:
           "Le SOMAR est un restaurant de produits principalement marins sur la côte bauloise. Une carte complète à refaire de zéro pour s’installer dans un style plus moderne : des couleurs proches de la carte originelle mais plus dans l’air du temps, et un choix typographique réfléchi entre modernité et identité.",
+        images: [
+          { src: "/projects/somar/somar-menu-1.jpg", w: 1500, h: 1061 },
+          { src: "/projects/somar/somar-menu-2.jpg", w: 1500, h: 1061 },
+        ],
       },
     ],
   },
