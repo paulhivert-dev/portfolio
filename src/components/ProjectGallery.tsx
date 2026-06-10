@@ -107,7 +107,7 @@ export default function ProjectGallery({
       ) : (
         <div
           className={`gallery-grid ${
-            layout === "grid4" ? "photo-grid" : ""
+            layout === "grid4" || layout === "grid3" ? "photo-grid" : ""
           } ${gridClass} items-start gap-4 sm:gap-5`}
         >
           {visuals.map((v, i) => (
