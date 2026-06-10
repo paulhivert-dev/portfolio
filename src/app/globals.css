@@ -102,22 +102,29 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(120% 95% at 50% 28%, #1a1014 0%, #0c0709 62%, #050304 100%);
+  /* couche GPU pré-créée => le fondu se fait en composité, pas en repaint */
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 .hero-intro-blob {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 72vmin;
-  height: 72vmin;
-  margin: -36vmin 0 0 -36vmin;
+  width: 60vmin;
+  height: 60vmin;
+  margin: -30vmin 0 0 -30vmin;
   /* forme organique FIXE (le morph vient de la rotation, pas de l'animation du border-radius) */
   border-radius: 47% 53% 56% 44% / 54% 47% 53% 46%;
   background:
     radial-gradient(circle at 50% 50%, rgba(246, 228, 222, 0.55) 0%, rgba(236, 176, 158, 0.32) 22%, transparent 46%),
     radial-gradient(circle at 50% 50%, transparent 34%, rgba(226, 148, 124, 0.62) 46%, rgba(196, 104, 84, 0.22) 58%, transparent 70%);
-  /* flou FIXE : rasterisé une fois puis transformé en GPU => pas de saccade */
-  filter: blur(32px);
+  /* flou FIXE et modéré : rasterisé une fois puis transformé en GPU => pas de saccade */
+  filter: blur(26px);
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  /* caché tant que l'animation n'a pas démarré (évite tout flash) */
+  opacity: 0;
 }
 /* Couche GPU dédiée : le titre (dégradé clip-text + drop-shadow) est rasterisé
    une seule fois, puis seulement composité => apparition sans saccade. */
@@ -127,10 +134,11 @@ body {
   backface-visibility: hidden;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hero-intro-veil {
+  /* l'intro ne démarre qu'une fois la classe --play posée (frame propre) */
+  .hero-intro--play .hero-intro-veil {
     animation: intro-veil 3.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
-  .hero-intro-blob {
+  .hero-intro--play .hero-intro-blob {
     animation: intro-blob 3.6s cubic-bezier(0.45, 0.05, 0.2, 1) forwards;
   }
   .hero-reveal {
@@ -166,11 +174,11 @@ body {
     opacity: 1;
   }
   70% {
-    transform: scale(1.8) translate3d(1%, -1%, 0) rotate(24deg);
+    transform: scale(1.65) translate3d(1%, -1%, 0) rotate(24deg);
     opacity: 0.92;
   }
   100% {
-    transform: scale(2.8) translate3d(0, -2.5%, 0) rotate(40deg);
+    transform: scale(2.4) translate3d(0, -2.5%, 0) rotate(40deg);
     opacity: 0;
   }
 }
