@@ -110,15 +110,18 @@ body {
 .hero-intro-blob {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 44%;
   width: 50vmin;
   height: 50vmin;
   margin: -25vmin 0 0 -25vmin;
   /* forme organique FIXE (le morph vient de la rotation, pas de l'animation du border-radius) */
   border-radius: 47% 53% 56% 44% / 54% 47% 53% 46%;
+  /* MÊME dégradé que l'aura du hero (.hero-aura) : en grandissant, le cercle
+     devient l'aura du hero => le fondu final est invisible (vrai morph). */
   background:
-    radial-gradient(circle at 50% 50%, rgba(246, 228, 222, 0.5) 0%, rgba(236, 176, 158, 0.3) 24%, transparent 50%),
-    radial-gradient(circle at 50% 50%, transparent 36%, rgba(226, 148, 124, 0.55) 48%, rgba(196, 104, 84, 0.18) 60%, transparent 72%);
+    radial-gradient(circle at 50% 50%, rgba(246, 228, 222, 0.34) 0%, rgba(236, 176, 158, 0.16) 20%, transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 33%, rgba(226, 148, 124, 0.42) 45%, rgba(196, 104, 84, 0.16) 57%, transparent 67%),
+    radial-gradient(circle at 50% 50%, transparent 55%, rgba(238, 180, 168, 0.18) 63%, transparent 76%);
   /* flou FIXE léger : rasterisé une fois puis transformé en GPU => pas de saccade */
   filter: blur(18px);
   will-change: transform, opacity;
@@ -163,19 +166,17 @@ body {
    La forme organique fixe + la rotation donnent l'effet de morph liquide. */
 @keyframes intro-blob {
   0% {
-    transform: scale(0.6) translateZ(0) rotate(-8deg);
+    transform: scale(0.5) translateZ(0) rotate(-8deg);
     opacity: 0;
   }
-  22% {
+  20% {
     opacity: 1;
   }
-  /* le blob s'est dissous avant la fin : le dernier instant visible
-     est le simple crossfade du voile vers le hero (transition douce) */
-  82% {
-    opacity: 0;
-  }
+  /* le cercle grandit jusqu'à la taille de l'aura du hero et se fond PILE à la
+     fin, en même temps que le voile : les deux images sont identiques => le
+     cercle devient le dégradé sans aucune coupure. */
   100% {
-    transform: scale(1.7) translateZ(0) rotate(24deg);
+    transform: scale(3.4) translateZ(0) rotate(16deg);
     opacity: 0;
   }
 }
