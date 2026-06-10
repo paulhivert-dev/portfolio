@@ -58,7 +58,7 @@ export type Project = {
   imgCaption?: string; // légende sous le visuel principal
   // Visuels supplémentaires (déclinaisons, mockups…) empilés sous le principal
   images?: ProjectImage[];
-  gallery?: "grid2" | "grid3" | "stacked"; // override d'affichage de la galerie pour ce projet
+  gallery?: "grid2" | "grid2u" | "grid3" | "stacked"; // override d'affichage de la galerie pour ce projet
 };
 
 export type Section = {
@@ -209,6 +209,7 @@ export const sections: Section[] = [
         year: "2026",
         description:
           "La gamme Californian est un menu de burgers inspirés de ce qu’on retrouve aux États-Unis. Des produits simples, économiques mais terriblement efficaces en bouche, mis en valeur avec un style rétro et américain.",
+        gallery: "grid2u",
         images: [
           { src: "/projects/californian/cal-collection.jpg", w: 1240, h: 1753 },
           { src: "/projects/californian/cal-cheese.jpg", w: 1240, h: 1753 },

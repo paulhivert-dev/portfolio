@@ -63,7 +63,7 @@ export default async function ProjectPage({
     ...(project.images ?? []),
   ];
   // Disposition de la galerie : override par projet, sinon par catégorie
-  const galleryLayout: "stacked" | "grid2" | "grid3" | "grid4" =
+  const galleryLayout: "stacked" | "grid2" | "grid2u" | "grid3" | "grid4" =
     project.gallery
       ? project.gallery
       : section.id === "logos" || section.id === "motion-designs"
@@ -71,12 +71,18 @@ export default async function ProjectPage({
       : section.id === "autres-projets"
       ? "grid4"
       : "grid2";
-  // Format des cellules de la grille uniforme selon l'orientation des photos
+  // Format des cellules de la grille uniforme
   const galleryImgs = project.images ?? [];
   const landscape =
     galleryImgs.length > 0 &&
     galleryImgs.filter((im) => im.w > im.h).length > galleryImgs.length / 2;
-  const cellAspect = landscape ? "3 / 2" : "2 / 3";
+  // grid2u : on cale les cellules sur le ratio du visuel principal (affiches au même format, sans recadrage)
+  const cellAspect =
+    galleryLayout === "grid2u"
+      ? `${project.w} / ${project.h}`
+      : landscape
+      ? "3 / 2"
+      : "2 / 3";
 
   return (
     <>

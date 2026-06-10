@@ -15,7 +15,7 @@ export default function ProjectGallery({
   visuals: Visual[];
   title: string;
   type: string;
-  layout: "stacked" | "grid2" | "grid3" | "grid4";
+  layout: "stacked" | "grid2" | "grid2u" | "grid3" | "grid4";
   cellAspect?: string;
 }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -43,7 +43,7 @@ export default function ProjectGallery({
     };
   }, [open, close, go]);
 
-  const uniform = layout === "grid4";
+  const uniform = layout === "grid4" || layout === "grid2u";
   const single = count === 1;
   const gridClass =
     layout === "stacked"
