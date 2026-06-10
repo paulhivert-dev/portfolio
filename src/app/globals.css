@@ -119,6 +119,13 @@ body {
   filter: blur(32px);
   will-change: transform, opacity;
 }
+/* Couche GPU dédiée : le titre (dégradé clip-text + drop-shadow) est rasterisé
+   une seule fois, puis seulement composité => apparition sans saccade. */
+.hero-reveal {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 @media (prefers-reduced-motion: no-preference) {
   .hero-intro-veil {
     animation: intro-veil 3.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
