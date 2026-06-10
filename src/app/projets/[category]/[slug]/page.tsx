@@ -69,6 +69,8 @@ export default async function ProjectPage({
     : section.id === "autres-projets"
     ? "grid grid-cols-2 lg:grid-cols-4"
     : "grid grid-cols-1 sm:grid-cols-2";
+  // Autres projets : cellules au format uniforme (grille bien alignée)
+  const uniformCells = section.id === "autres-projets";
 
   return (
     <>
@@ -140,24 +142,39 @@ export default async function ProjectPage({
               <div className={`${galleryGrid} items-start gap-4 sm:gap-5`}>
                 {visuals.map((v, i) => (
                   <figure key={v.src}>
-                    <div className="overflow-hidden rounded-2xl bg-card sm:rounded-3xl">
-                      <Image
-                        src={v.src}
-                        alt={
-                          i === 0
-                            ? `${project.title} — ${project.type}`
-                            : `${project.title} — déclinaison ${i}`
-                        }
-                        width={v.w}
-                        height={v.h}
-                        sizes={
-                          isStacked
-                            ? "(max-width: 1024px) 100vw, 640px"
-                            : "(max-width: 1024px) 100vw, 320px"
-                        }
-                        className="h-auto w-full"
-                        priority={i === 0}
-                      />
+                    <div
+                      className={`overflow-hidden rounded-2xl bg-card sm:rounded-3xl ${
+                        uniformCells ? "relative aspect-[2/3]" : ""
+                      }`}
+                    >
+                      {uniformCells ? (
+                        <Image
+                          src={v.src}
+                          alt={`${project.title} — ${i + 1}`}
+                          fill
+                          sizes="(max-width: 1024px) 50vw, 280px"
+                          className="object-cover"
+                          priority={i === 0}
+                        />
+                      ) : (
+                        <Image
+                          src={v.src}
+                          alt={
+                            i === 0
+                              ? `${project.title} — ${project.type}`
+                              : `${project.title} — déclinaison ${i}`
+                          }
+                          width={v.w}
+                          height={v.h}
+                          sizes={
+                            isStacked
+                              ? "(max-width: 1024px) 100vw, 640px"
+                              : "(max-width: 1024px) 100vw, 320px"
+                          }
+                          className="h-auto w-full"
+                          priority={i === 0}
+                        />
+                      )}
                     </div>
                     {v.caption && (
                       <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
