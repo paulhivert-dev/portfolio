@@ -526,6 +526,7 @@ export const sections: Section[] = [
         img: "/projects/chikinpack/cp-corndog-jaune.jpg",
         w: 1500,
         h: 1125,
+        thumb: "/projects/chikinpack/cp-corndog-jaune-thumb.jpg", // vignette dézoomée (fond jaune)
         type: "Packaging",
         title: "Chikin Bang",
         year: "2025",
