@@ -541,7 +541,6 @@ export const sections: Section[] = [
           { src: "/projects/birdz-photo/birdz-07.jpg", w: 1200, h: 701 },
           { src: "/projects/birdz-photo/birdz-08.jpg", w: 1200, h: 801 },
           { src: "/projects/birdz-photo/birdz-09.jpg", w: 1200, h: 800 },
-          { src: "/projects/birdz-photo/birdz-10.jpg", w: 1200, h: 1796 },
           { src: "/projects/birdz-photo/birdz-11.jpg", w: 1200, h: 801 },
           { src: "/projects/birdz-photo/birdz-12.jpg", w: 1200, h: 801 },
           { src: "/projects/birdz-photo/birdz-13.jpg", w: 1200, h: 726 },
