@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { profile, sections } from "@/data/portfolio";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
@@ -29,12 +30,7 @@ export default function Header() {
             Contacts
           </a>
         </nav>
-        <a
-          href="#contacts"
-          className="text-sm font-light text-muted transition-colors hover:text-foreground sm:hidden"
-        >
-          Contacts
-        </a>
+        <MobileMenu items={sections.map((s) => ({ id: s.id, name: s.name }))} />
       </div>
     </header>
   );

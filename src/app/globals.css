@@ -80,21 +80,23 @@ body {
   position: relative;
   transition: opacity 0.35s ease, filter 0.35s ease;
 }
-.gallery-grid:has(button:hover) figure:not(:hover) {
-  opacity: 0.4;
-  filter: blur(2px);
-}
-
-/* Grilles photo (Birdz, Raffiné, Championnat National) : la case grandit au survol */
 .photo-grid figure button {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.photo-grid figure:hover {
-  z-index: 2;
-}
-.photo-grid figure button:hover {
-  transform: scale(1.45);
-  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.8);
+/* Effets de survol réservés aux appareils avec un vrai pointeur (desktop) :
+   identiques sur desktop, désactivés au toucher pour éviter les états "collés". */
+@media (hover: hover) {
+  .gallery-grid:has(button:hover) figure:not(:hover) {
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  .photo-grid figure:hover {
+    z-index: 2;
+  }
+  .photo-grid figure button:hover {
+    transform: scale(1.45);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.8);
+  }
 }
 
 /* Intro homepage : un cercle dégradé se déploie en gradient + révèle le texte */
@@ -190,6 +192,29 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Menu mobile : apparition de l'overlay + entrée échelonnée des liens.
+   Scopé à .mobile-menu (rendu uniquement en < sm) => aucun effet sur le desktop. */
+.mobile-menu {
+  animation: menu-fade 0.22s ease both;
+}
+.mobile-menu nav a {
+  animation: fade-in-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu nav a {
+    animation: none;
   }
 }
 
