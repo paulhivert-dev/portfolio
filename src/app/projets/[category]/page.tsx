@@ -118,7 +118,7 @@ export default async function CategoryPage({
                 key={project.slug}
                 project={project}
                 categoryId={section.id}
-                className="w-full sm:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]"
+                className="w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]"
               />
             ))}
           </div>
