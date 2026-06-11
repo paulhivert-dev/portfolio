@@ -23,11 +23,11 @@ export default function About() {
 
         {/* Texte */}
         <div className="flex flex-col">
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
             <h2 className="font-wordmark text-4xl font-extrabold leading-[1.0] tracking-[-0.02em] sm:text-6xl">
               {profile.name}
             </h2>
-            <p className="pt-3 text-right text-sm font-light leading-relaxed text-foreground/90 sm:text-base">
+            <p className="text-sm font-light leading-relaxed text-foreground/90 sm:pt-3 sm:text-right sm:text-base">
               {profile.role.map((r) => (
                 <span key={r} className="block">
                   {r}
