@@ -23,7 +23,7 @@ export default function About() {
 
         {/* Texte */}
         <div className="flex flex-col">
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex items-end justify-between gap-6 sm:items-start">
             <h2 className="font-wordmark text-4xl font-extrabold leading-[1.0] tracking-[-0.02em] sm:text-6xl">
               {profile.name}
             </h2>
