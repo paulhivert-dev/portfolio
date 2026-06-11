@@ -59,10 +59,9 @@ export default function Hero() {
         </p>
 
         <h1
-          className="bg-gradient-to-b from-[#fff3ec] via-[#f7b596] to-[#e1733f] bg-clip-text uppercase leading-[0.86] tracking-[0.01em] text-transparent"
+          className="bg-gradient-to-b from-[#fff3ec] via-[#f7b596] to-[#e1733f] bg-clip-text uppercase leading-[0.86] tracking-[0.01em] text-transparent text-[clamp(3.5rem,19vw,6rem)] sm:text-[clamp(2.5rem,12vw,9rem)]"
           style={{
             fontFamily: "var(--font-anton), 'Helvetica Neue', sans-serif",
-            fontSize: "clamp(2.5rem, 12vw, 9rem)",
             filter:
               "drop-shadow(0 2px 10px rgba(255,180,140,0.45)) drop-shadow(0 6px 40px rgba(240,140,95,0.5))",
           }}
