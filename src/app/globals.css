@@ -83,9 +83,9 @@ body {
 .photo-grid figure button {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-/* Effets de survol réservés aux appareils avec un vrai pointeur (desktop) :
-   identiques sur desktop, désactivés au toucher pour éviter les états "collés". */
-@media (hover: hover) {
+/* Effets de survol réservés au desktop (≥ 640px) : identiques sur desktop,
+   totalement coupés sur mobile — même en fenêtre étroite avec une souris. */
+@media (min-width: 640px) {
   .gallery-grid:has(button:hover) figure:not(:hover) {
     opacity: 0.4;
     filter: blur(2px);

@@ -52,7 +52,7 @@ export default function ProjectGallery({
       ? "grid grid-cols-2 lg:grid-cols-4"
       : layout === "grid3"
       ? "grid grid-cols-2 lg:grid-cols-3"
-      : "grid grid-cols-1 sm:grid-cols-2";
+      : "grid grid-cols-2";
 
   const Caption = ({ text }: { text: string }) => (
     <figcaption className="mt-3 px-1 text-sm font-light leading-relaxed text-muted">
