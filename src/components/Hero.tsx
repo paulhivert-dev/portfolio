@@ -71,8 +71,8 @@ export default function Hero() {
           hivert
         </h1>
 
-        <p className="mt-7 text-sm lowercase tracking-[0.08em] text-foreground/60 sm:text-base">
-          {profile.role.join("  ·  ").toLowerCase()}
+        <p className="mt-7 text-sm tracking-[0.08em] text-foreground/60 sm:text-base">
+          {profile.role.join("  ·  ")}
         </p>
       </div>
 
