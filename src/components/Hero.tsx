@@ -1,8 +1,7 @@
 import { profile } from "@/data/portfolio";
 
-// Grain argentique (SVG feTurbulence en data-URI) — pas d'animation requise
-const GRAIN =
-  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
+// Le fond (dégradé + grain) est rendu une seule fois pour tout le site par
+// .site-bg (cf. layout.tsx et globals.css) : le hero le laisse simplement voir.
 
 export default function Hero() {
   return (
@@ -10,20 +9,6 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond : gris très sombre, uni */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{ background: "var(--background)" }}
-      />
-
-      {/* Grain argentique */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.075] hero-grain"
-        style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
-      />
-
       {/* Contenu — gros titre "poster" */}
       <div className="hero-reveal relative z-10 mx-auto w-full max-w-6xl text-center">
         <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/70 sm:mb-9 sm:text-xs">

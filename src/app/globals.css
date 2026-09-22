@@ -10,7 +10,7 @@
 }
 
 :root {
-  --background: #121212;
+  --background: #141414;
   --foreground: #f2f0ec;
   --muted: #918d89;
   --border: #2b2b2b;
@@ -196,13 +196,22 @@ body {
   }
 }
 
-/* Fond du site : noir plein, le grain seul donne la matière */
+/* Fond du site : surface charbon éclairée en haut à gauche, qui s'assombrit
+   vers les bords, + grain argentique marqué. Fixé derrière tout le contenu. */
 .site-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: var(--background);
+  background:
+    radial-gradient(
+      115% 85% at 34% 10%,
+      #2b2b2b 0%,
+      #212121 26%,
+      #171717 52%,
+      #0e0e0e 78%,
+      #080808 100%
+    );
 }
 
 .site-bg::after {
@@ -212,7 +221,7 @@ body {
   background-image: var(--grain);
   background-size: 200px 200px;
   /* fusion normale : sur un fond aussi sombre, soft-light serait invisible */
-  opacity: 0.07;
+  opacity: 0.15;
 }
 
 @media (prefers-reduced-motion: reduce) {

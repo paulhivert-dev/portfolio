@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 import CtaBand from "@/components/CtaBand";
 import CategoryCard from "@/components/CategoryCard";
-import PageGradient from "@/components/PageGradient";
 // import SpikeLogo3D from "@/components/SpikeLogo3D"; // animation 3D mise de côté (trop lourde) — réactivable
 import {
   sections,
@@ -83,7 +82,6 @@ export default async function CategoryPage({
 
   return (
     <>
-      <PageGradient />
       <Header />
       <main className="px-6 py-16 sm:px-10 sm:py-20">
         <div className="mx-auto max-w-6xl">
