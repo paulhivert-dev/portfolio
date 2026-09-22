@@ -124,7 +124,7 @@ export default function ProjectGallery({
           aria-modal="true"
           style={{
             background:
-              "radial-gradient(120% 95% at 50% 12%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%)",
+              "radial-gradient(120% 95% at 50% 12%, #1a0006 0%, #0d0003 48%, #050001 82%, #000000 100%)",
           }}
         >
           {/* halo rose-orange (DA) */}
@@ -133,7 +133,7 @@ export default function ProjectGallery({
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(48% 42% at 50% 32%, rgba(226,148,124,0.16), transparent 70%)",
+                "radial-gradient(48% 42% at 50% 32%, rgba(255,0,40,0.12), transparent 70%)",
             }}
           />
           <button

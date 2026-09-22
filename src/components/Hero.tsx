@@ -10,26 +10,26 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond sombre légèrement chaud (DA Bieber rose-orange) */}
+      {/* Fond noir profond (DA couverture portfolio : noir + rouge) */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 95% at 50% 28%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%)",
+            "radial-gradient(120% 95% at 50% 28%, #1a0006 0%, #0d0003 48%, #050001 82%, #000000 100%)",
         }}
       />
 
-      {/* Grand anneau rose-orange centré (état de repos = aboutissement de l'intro,
+      {/* Grand anneau rouge centré (état de repos = aboutissement de l'intro,
           même dégradé que le blob agrandi => le blob s'y fond sans couture). */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[160vmin] -translate-x-1/2 -translate-y-1/2 hero-aura"
         style={{
           background: [
-            "radial-gradient(circle at 50% 50%, rgba(246,228,222,0.34) 0%, rgba(236,176,158,0.16) 20%, transparent 40%)",
-            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(226,148,124,0.42) 45%, rgba(196,104,84,0.16) 57%, transparent 67%)",
-            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(238,180,168,0.18) 63%, transparent 76%)",
+            "radial-gradient(circle at 50% 50%, rgba(255,60,90,0.20) 0%, rgba(255,0,40,0.10) 20%, transparent 40%)",
+            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(255,0,40,0.22) 45%, rgba(179,0,28,0.10) 57%, transparent 67%)",
+            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(255,60,90,0.10) 63%, transparent 76%)",
           ].join(","),
           filter: "blur(52px)",
         }}
@@ -38,7 +38,7 @@ export default function Hero() {
       {/* Grain argentique */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light hero-grain"
+        className="pointer-events-none absolute inset-0 opacity-[0.06] hero-grain"
         style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
       />
 
@@ -48,22 +48,20 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(115% 95% at 50% 45%, transparent 55%, rgba(0,0,0,0.6) 100%)",
+            "radial-gradient(115% 95% at 50% 45%, transparent 55%, rgba(0,0,0,0.7) 100%)",
         }}
       />
 
       {/* Contenu — gros titre "poster" */}
       <div className="hero-reveal relative z-10 mx-auto w-full max-w-6xl text-center">
-        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/50 sm:text-xs">
+        <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.55em] text-accent/70 sm:mb-9 sm:text-xs">
           portfolio
         </p>
 
         <h1
-          className="bg-gradient-to-b from-[#fff3ec] via-[#f7b596] to-[#e1733f] bg-clip-text uppercase leading-[0.86] tracking-[0.01em] text-transparent text-[clamp(3.5rem,19vw,6rem)] sm:text-[clamp(2.5rem,12vw,9rem)]"
+          className="uppercase leading-[0.82] tracking-[0.005em] text-accent text-[clamp(5.5rem,34vw,11rem)] sm:text-[clamp(8rem,29vw,24rem)]"
           style={{
             fontFamily: "var(--font-anton), 'Helvetica Neue', sans-serif",
-            filter:
-              "drop-shadow(0 2px 10px rgba(255,180,140,0.45)) drop-shadow(0 6px 40px rgba(240,140,95,0.5))",
           }}
         >
           paul
@@ -79,7 +77,7 @@ export default function Hero() {
       <a
         href="#a-propos"
         aria-label="Défiler"
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-foreground/50 transition-opacity hover:opacity-100"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-accent/70 transition-opacity hover:opacity-100"
       >
         ↓
       </a>

@@ -46,7 +46,7 @@ export default function MobileMenu({ items }: { items: Item[] }) {
           className="mobile-menu fixed inset-0 z-[90] flex flex-col px-6 py-4"
           style={{
             background:
-              "radial-gradient(120% 95% at 50% 28%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%)",
+              "radial-gradient(120% 95% at 50% 28%, #0d0003 0%, #050001 48%, #000000 82%, #000000 100%)",
           }}
         >
           {/* Barre du haut : wordmark + fermer */}

@@ -114,7 +114,7 @@ export default async function ProjectPage({
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+                  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-black transition-colors hover:bg-foreground"
                 >
                   Voir la vidéo
                   <span className="transition-transform group-hover:translate-x-0.5">

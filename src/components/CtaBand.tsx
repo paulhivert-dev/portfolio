@@ -7,7 +7,7 @@ export default function CtaBand() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(55% 55% at 50% 58%, rgba(226,148,124,0.18), transparent 70%)",
+            "radial-gradient(55% 55% at 50% 58%, rgba(255,0,40,0.14), transparent 70%)",
         }}
       />
 
@@ -25,7 +25,7 @@ export default function CtaBand() {
 
         <a
           href="#contacts"
-          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 text-sm font-medium lowercase text-background transition-opacity hover:opacity-85"
+          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-medium lowercase text-black transition-colors hover:bg-foreground"
         >
           travaillons ensemble
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-background/20 transition-transform duration-300 group-hover:translate-x-0.5">

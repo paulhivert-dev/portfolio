@@ -8,22 +8,22 @@ export default function PageGradient() {
       aria-hidden
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
     >
-      {/* Base navy/brun profond */}
+      {/* Base noir profond */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 50% 10%, #261720 0%, #180d12 45%, #0c0709 78%, #070405 100%)",
+            "radial-gradient(120% 90% at 50% 10%, #1a0006 0%, #0d0003 45%, #050001 78%, #000000 100%)",
         }}
       />
-      {/* Halo rose-orange en haut */}
+      {/* Halo rouge en haut */}
       <div
         className="absolute left-1/2 top-0 aspect-square w-[120vw] max-w-[1100px] -translate-x-1/2 -translate-y-1/3"
         style={{
           background: [
-            "radial-gradient(circle at 50% 50%, rgba(246,228,222,0.20) 0%, rgba(236,176,158,0.12) 20%, transparent 42%)",
-            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(226,148,124,0.34) 45%, rgba(196,104,84,0.12) 57%, transparent 67%)",
-            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(238,180,168,0.14) 63%, transparent 76%)",
+            "radial-gradient(circle at 50% 50%, rgba(255,60,90,0.14) 0%, rgba(255,0,40,0.08) 20%, transparent 42%)",
+            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(255,0,40,0.20) 45%, rgba(179,0,28,0.08) 57%, transparent 67%)",
+            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(255,60,90,0.10) 63%, transparent 76%)",
           ].join(","),
           filter: "blur(30px)",
         }}
@@ -33,15 +33,15 @@ export default function PageGradient() {
         className="absolute inset-0"
         style={{
           background: [
-            "radial-gradient(46% 40% at 12% 8%, rgba(226,148,124,0.18), transparent 70%)",
-            "radial-gradient(42% 42% at 88% 82%, rgba(210,118,138,0.16), transparent 70%)",
+            "radial-gradient(46% 40% at 12% 8%, rgba(255,0,40,0.10), transparent 70%)",
+            "radial-gradient(42% 42% at 88% 82%, rgba(255,0,40,0.09), transparent 70%)",
           ].join(","),
           filter: "blur(20px)",
         }}
       />
       {/* Grain */}
       <div
-        className="absolute inset-0 opacity-[0.14] mix-blend-soft-light"
+        className="absolute inset-0 opacity-[0.055]"
         style={{ backgroundImage: GRAIN, backgroundSize: "220px 220px" }}
       />
     </div>

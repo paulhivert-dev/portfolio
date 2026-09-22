@@ -10,12 +10,13 @@
 }
 
 :root {
-  --background: #0c090b;
-  --foreground: #f0eee9;
-  --muted: #9c938c;
-  --border: #2a201f;
-  --card: #18110f;
-  --accent: #e0a890;
+  --background: #000000;
+  --foreground: #f2f0ec;
+  --muted: #8a8784;
+  --border: #1f1f1f;
+  --card: #0b0b0b;
+  /* Rouge de la couverture du portfolio 2026 */
+  --accent: #ff0028;
 
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -52,27 +53,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* DA "poster" : tous les grands titres en Anton, capitales, dégradé corail/rouille + lueur */
+/* DA "poster" : tous les grands titres en Anton, capitales, rouge plein
+   (comme la couverture du portfolio : aucun dégradé, contraste maximal sur le noir) */
 .font-wordmark {
   font-family: var(--font-anton), "Helvetica Neue", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.01em;
-  background-image: linear-gradient(
-    to bottom,
-    #f6cab2 0%,
-    #e0a890 55%,
-    #bb6c4d 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 6px 26px rgba(224, 148, 124, 0.18));
+  color: var(--accent);
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--accent);
+  color: #000;
 }
 
 /* Galerie : mise en évidence de la photo survolée, les autres s'estompent */
@@ -105,7 +98,7 @@ body {
   inset: 0;
   /* MÊME fond sombre que le hero (cf. Hero.tsx) : en s'effaçant, le voile révèle
      un dégradé identique => aucune cassure entre les deux images de fin. */
-  background: radial-gradient(120% 95% at 50% 28%, #261720 0%, #180d12 48%, #0c0709 82%, #070405 100%);
+  background: radial-gradient(120% 95% at 50% 28%, #1a0006 0%, #0d0003 48%, #050001 82%, #000000 100%);
   /* couche GPU pré-créée => le fondu se fait en composité, pas en repaint */
   will-change: opacity;
   transform: translateZ(0);
@@ -123,9 +116,9 @@ body {
   /* MÊME dégradé que l'aura du hero (.hero-aura) : en grandissant, le cercle
      devient l'aura du hero => le fondu final est invisible (vrai morph). */
   background:
-    radial-gradient(circle at 50% 50%, rgba(246, 228, 222, 0.34) 0%, rgba(236, 176, 158, 0.16) 20%, transparent 40%),
-    radial-gradient(circle at 50% 50%, transparent 33%, rgba(226, 148, 124, 0.42) 45%, rgba(196, 104, 84, 0.16) 57%, transparent 67%),
-    radial-gradient(circle at 50% 50%, transparent 55%, rgba(238, 180, 168, 0.18) 63%, transparent 76%);
+    radial-gradient(circle at 50% 50%, rgba(255, 60, 90, 0.30) 0%, rgba(255, 0, 40, 0.16) 20%, transparent 40%),
+    radial-gradient(circle at 50% 50%, transparent 33%, rgba(255, 0, 40, 0.38) 45%, rgba(179, 0, 28, 0.16) 57%, transparent 67%),
+    radial-gradient(circle at 50% 50%, transparent 55%, rgba(255, 60, 90, 0.16) 63%, transparent 76%);
   /* flou FIXE léger : rasterisé une fois puis transformé en GPU => pas de saccade */
   filter: blur(18px);
   will-change: transform, opacity;
@@ -284,9 +277,9 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(64% 52% at 50% -4%, rgba(226, 152, 130, 0.14), transparent 66%),
-    radial-gradient(50% 44% at 8% 104%, rgba(204, 116, 96, 0.12), transparent 66%),
-    radial-gradient(50% 46% at 96% 90%, rgba(228, 164, 154, 0.1), transparent 66%);
+    radial-gradient(64% 52% at 50% -4%, rgba(255, 0, 40, 0.10), transparent 66%),
+    radial-gradient(50% 44% at 8% 104%, rgba(255, 0, 40, 0.07), transparent 66%),
+    radial-gradient(50% 46% at 96% 90%, rgba(255, 60, 90, 0.06), transparent 66%);
 }
 
 .site-bg::after {
@@ -295,8 +288,8 @@ body {
   inset: 0;
   background-image: var(--grain);
   background-size: 200px 200px;
-  opacity: 0.13;
-  mix-blend-mode: soft-light;
+  /* soft-light est invisible sur du noir pur : fusion normale, très légère */
+  opacity: 0.055;
 }
 
 @keyframes aura-breathe {

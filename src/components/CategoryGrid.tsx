@@ -13,7 +13,7 @@ export default function CategoryGrid() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(50% 50% at 50% 45%, rgba(226,148,124,0.16), transparent 72%)",
+            "radial-gradient(50% 50% at 50% 45%, rgba(255,0,40,0.10), transparent 72%)",
         }}
       />
 
