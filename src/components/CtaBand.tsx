@@ -7,7 +7,7 @@ export default function CtaBand() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(55% 55% at 50% 58%, rgba(255,0,40,0.14), transparent 70%)",
+            "var(--background)",
         }}
       />
 

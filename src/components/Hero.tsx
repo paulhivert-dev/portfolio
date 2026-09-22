@@ -10,29 +10,11 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond noir profond (DA couverture portfolio : noir + rouge) */}
+      {/* Fond : noir plein */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(120% 95% at 50% 28%, #1a0006 0%, #0d0003 48%, #050001 82%, #000000 100%)",
-        }}
-      />
-
-      {/* Grand anneau rouge centré (état de repos = aboutissement de l'intro,
-          même dégradé que le blob agrandi => le blob s'y fond sans couture). */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[44%] aspect-square w-[160vmin] -translate-x-1/2 -translate-y-1/2 hero-aura"
-        style={{
-          background: [
-            "radial-gradient(circle at 50% 50%, rgba(255,60,90,0.20) 0%, rgba(255,0,40,0.10) 20%, transparent 40%)",
-            "radial-gradient(circle at 50% 50%, transparent 33%, rgba(255,0,40,0.22) 45%, rgba(179,0,28,0.10) 57%, transparent 67%)",
-            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(255,60,90,0.10) 63%, transparent 76%)",
-          ].join(","),
-          filter: "blur(52px)",
-        }}
+        style={{ background: "var(--background)" }}
       />
 
       {/* Grain argentique */}
@@ -40,16 +22,6 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06] hero-grain"
         style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
-      />
-
-      {/* Vignette */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(115% 95% at 50% 45%, transparent 55%, rgba(0,0,0,0.7) 100%)",
-        }}
       />
 
       {/* Contenu — gros titre "poster" */}

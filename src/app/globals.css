@@ -92,89 +92,15 @@ body {
   }
 }
 
-/* Intro homepage : un cercle dégradé se déploie en gradient + révèle le texte */
-.hero-intro-veil {
-  position: absolute;
-  inset: 0;
-  /* MÊME fond sombre que le hero (cf. Hero.tsx) : en s'effaçant, le voile révèle
-     un dégradé identique => aucune cassure entre les deux images de fin. */
-  background: radial-gradient(120% 95% at 50% 28%, #1a0006 0%, #0d0003 48%, #050001 82%, #000000 100%);
-  /* couche GPU pré-créée => le fondu se fait en composité, pas en repaint */
-  will-change: opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-.hero-intro-blob {
-  position: absolute;
-  left: 50%;
-  top: 44%;
-  width: 50vmin;
-  height: 50vmin;
-  margin: -25vmin 0 0 -25vmin;
-  /* forme organique FIXE (le morph vient de la rotation, pas de l'animation du border-radius) */
-  border-radius: 47% 53% 56% 44% / 54% 47% 53% 46%;
-  /* MÊME dégradé que l'aura du hero (.hero-aura) : en grandissant, le cercle
-     devient l'aura du hero => le fondu final est invisible (vrai morph). */
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255, 60, 90, 0.30) 0%, rgba(255, 0, 40, 0.16) 20%, transparent 40%),
-    radial-gradient(circle at 50% 50%, transparent 33%, rgba(255, 0, 40, 0.38) 45%, rgba(179, 0, 28, 0.16) 57%, transparent 67%),
-    radial-gradient(circle at 50% 50%, transparent 55%, rgba(255, 60, 90, 0.16) 63%, transparent 76%);
-  /* flou FIXE léger : rasterisé une fois puis transformé en GPU => pas de saccade */
-  filter: blur(18px);
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  /* caché tant que l'animation n'a pas démarré (évite tout flash) */
-  opacity: 0;
-}
-/* Couche GPU dédiée : le titre (dégradé clip-text + drop-shadow) est rasterisé
-   une seule fois, puis seulement composité => apparition sans saccade. */
+/* Apparition douce du contenu du hero (plus d'animation d'intro au chargement) */
 .hero-reveal {
   will-change: transform, opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 @media (prefers-reduced-motion: no-preference) {
-  /* l'intro ne démarre qu'une fois la classe --play posée (frame propre) */
-  .hero-intro--play .hero-intro-veil {
-    animation: intro-veil 3.2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
-  }
-  .hero-intro--play .hero-intro-blob {
-    animation: intro-blob 3.2s cubic-bezier(0.33, 0, 0.2, 1) forwards;
-  }
   .hero-reveal {
-    animation: hero-reveal-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) 1.7s both;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-intro {
-    display: none !important;
-  }
-}
-@keyframes intro-veil {
-  0%,
-  32% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/* N'anime QUE transform + opacity (composités GPU) => aucune saccade.
-   La forme organique fixe + la rotation donnent l'effet de morph liquide. */
-@keyframes intro-blob {
-  0% {
-    transform: scale(0.5) translateZ(0) rotate(-8deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  /* le cercle grandit jusqu'à la taille de l'aura du hero et se fond PILE à la
-     fin, en même temps que le voile : les deux images sont identiques => le
-     cercle devient le dégradé sans aucune coupure. */
-  100% {
-    transform: scale(3.2) translateZ(0) rotate(16deg);
-    opacity: 0;
+    animation: hero-reveal-in 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
   }
 }
 @keyframes hero-reveal-in {
@@ -270,16 +196,13 @@ body {
   }
 }
 
-/* Ambiance DA — fixée derrière tout le contenu du site */
+/* Fond du site : noir plein, le grain seul donne la matière */
 .site-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(64% 52% at 50% -4%, rgba(255, 0, 40, 0.10), transparent 66%),
-    radial-gradient(50% 44% at 8% 104%, rgba(255, 0, 40, 0.07), transparent 66%),
-    radial-gradient(50% 46% at 96% 90%, rgba(255, 60, 90, 0.06), transparent 66%);
+  background: var(--background);
 }
 
 .site-bg::after {
@@ -292,52 +215,8 @@ body {
   opacity: 0.055;
 }
 
-@keyframes aura-breathe {
-  0%,
-  100% {
-    opacity: 0.85;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-@keyframes grain-shift {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(-4%, 3%);
-  }
-  50% {
-    transform: translate(3%, -2%);
-  }
-  75% {
-    transform: translate(-2%, -3%);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-/* Fond figé : une fois l'intro finie, le background reste exactement tel quel
-   (grand anneau centré + grain statique), sans respiration ni glissement. */
-.hero-aura {
-  animation: none;
-}
-
-.hero-grain {
-  animation: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .hero-aura,
-  .hero-grain {
-    animation: none;
   }
 }
