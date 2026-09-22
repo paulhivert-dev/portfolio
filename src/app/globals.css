@@ -10,7 +10,7 @@
 }
 
 :root {
-  --background: #141414;
+  --background: #0f0f0f;
   --foreground: #f2f0ec;
   --muted: #918d89;
   --border: #2b2b2b;
@@ -206,11 +206,11 @@ body {
   background:
     radial-gradient(
       115% 85% at 34% 10%,
-      #2b2b2b 0%,
-      #212121 26%,
-      #171717 52%,
-      #0e0e0e 78%,
-      #080808 100%
+      #1e1e1e 0%,
+      #171717 26%,
+      #101010 52%,
+      #090909 78%,
+      #040404 100%
     );
 }
 
@@ -221,7 +221,7 @@ body {
   background-image: var(--grain);
   background-size: 200px 200px;
   /* fusion normale : sur un fond aussi sombre, soft-light serait invisible */
-  opacity: 0.15;
+  opacity: 0.13;
 }
 
 @media (prefers-reduced-motion: reduce) {
