@@ -15,7 +15,7 @@ export default function PageGradient() {
       />
       {/* Grain */}
       <div
-        className="absolute inset-0 opacity-[0.055]"
+        className="absolute inset-0 opacity-[0.07]"
         style={{ backgroundImage: GRAIN, backgroundSize: "220px 220px" }}
       />
     </div>

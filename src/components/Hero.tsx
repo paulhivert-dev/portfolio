@@ -10,7 +10,7 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[88vh] items-center overflow-hidden px-6 sm:px-10"
     >
-      {/* Fond : noir plein */}
+      {/* Fond : gris très sombre, uni */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Grain argentique */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06] hero-grain"
+        className="pointer-events-none absolute inset-0 opacity-[0.075] hero-grain"
         style={{ backgroundImage: GRAIN, backgroundSize: "200px 200px" }}
       />
 

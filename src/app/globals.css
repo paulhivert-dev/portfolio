@@ -10,11 +10,11 @@
 }
 
 :root {
-  --background: #000000;
+  --background: #121212;
   --foreground: #f2f0ec;
-  --muted: #8a8784;
-  --border: #1f1f1f;
-  --card: #0b0b0b;
+  --muted: #918d89;
+  --border: #2b2b2b;
+  --card: #1b1b1b;
   /* Rouge de la couverture du portfolio 2026 */
   --accent: #ff0028;
 
@@ -211,8 +211,8 @@ body {
   inset: 0;
   background-image: var(--grain);
   background-size: 200px 200px;
-  /* soft-light est invisible sur du noir pur : fusion normale, très légère */
-  opacity: 0.055;
+  /* fusion normale : sur un fond aussi sombre, soft-light serait invisible */
+  opacity: 0.07;
 }
 
 @media (prefers-reduced-motion: reduce) {
