@@ -12,25 +12,20 @@ export default function CtaBand() {
       />
 
       <div className="relative mx-auto max-w-4xl text-center">
-        <h2 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
-          Prêt à{" "}
-          <span className="font-wordmark font-extrabold tracking-[-0.02em] text-accent">donner vie</span>{" "}
-          à votre projet{" "}?
+        <h2 className="font-wordmark mx-auto max-w-[22ch] text-[clamp(1.7rem,4.6vw,3.2rem)]">
+          prêt à donner vie à votre projet ?
         </h2>
 
-        <p className="mx-auto mt-7 max-w-xl text-base font-light leading-relaxed text-muted">
+        <p className="mx-auto mt-8 max-w-[34rem] text-[0.78rem] uppercase leading-[2] tracking-[0.12em] text-muted/80">
           Direction artistique, identité, affiches, motion… Discutons de votre
           prochain projet et donnons-lui une vraie présence.
         </p>
 
         <a
           href="#contacts"
-          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-medium lowercase text-black transition-colors hover:bg-foreground"
+          className="mt-12 inline-flex items-center gap-3 rounded-full border border-accent/40 px-8 py-4 text-[0.62rem] uppercase tracking-[0.34em] text-accent transition-colors hover:border-accent/75 hover:bg-accent/10 hover:text-foreground"
         >
-          travaillons ensemble
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-background/20 transition-transform duration-300 group-hover:translate-x-0.5">
-            →
-          </span>
+          Travaillons ensemble
         </a>
       </div>
     </section>

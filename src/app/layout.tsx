@@ -1,27 +1,20 @@
 import type { Metadata } from "next";
-import { Mulish, Syne, Anton } from "next/font/google";
+import { Jost, Comfortaa } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
-// Repli web proche d'Avenir
-const mulish = Mulish({
-  variable: "--font-mulish",
+// Texte courant : géométrique fine, lisible en capitales très espacées
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "600"],
+  weight: ["200", "300", "400"],
 });
 
-// Typo display du wordmark (titre du site)
-const syne = Syne({
-  variable: "--font-syne",
+// Typo d'affichage : géométrique arrondie, utilisée en bas-de-casse resserré
+const comfortaa = Comfortaa({
+  variable: "--font-comfortaa",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-});
-
-// Typo "poster" condensée bold pour le hero
-const anton = Anton({
-  variable: "--font-anton",
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400"],
 });
 
 export const metadata: Metadata = {
@@ -38,10 +31,15 @@ export default function RootLayout({
     <html
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${mulish.variable} ${syne.variable} ${anton.variable} h-full antialiased`}
+      className={`${jost.variable} ${comfortaa.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="site-bg" aria-hidden />
+        <div className="site-bg" aria-hidden>
+          <div className="fog" />
+          <div className="swirl" />
+          <div className="vignette" />
+          <div className="grain" />
+        </div>
         {children}
       </body>
     </html>

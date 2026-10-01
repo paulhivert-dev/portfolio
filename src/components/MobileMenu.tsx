@@ -46,7 +46,7 @@ export default function MobileMenu({ items }: { items: Item[] }) {
           className="mobile-menu fixed inset-0 z-[90] flex flex-col px-6 py-4"
           style={{
             background:
-              "var(--background)",
+              "var(--background-deep)",
           }}
         >
           {/* Barre du haut : wordmark + fermer */}
@@ -78,7 +78,7 @@ export default function MobileMenu({ items }: { items: Item[] }) {
                 key={s.id}
                 href={`/projets/${s.id}`}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/40 py-4 text-3xl font-light capitalize leading-tight text-foreground/90 transition-colors active:text-accent"
+                className="font-wordmark border-b border-border/40 py-4 text-2xl leading-tight transition-[filter] active:brightness-125"
                 style={{ animationDelay: `${0.04 + i * 0.045}s` }}
               >
                 {s.name}
@@ -87,7 +87,7 @@ export default function MobileMenu({ items }: { items: Item[] }) {
             <a
               href="#contacts"
               onClick={() => setOpen(false)}
-              className="py-4 text-3xl font-light leading-tight text-foreground/90 transition-colors active:text-accent"
+              className="font-wordmark py-4 text-2xl leading-tight transition-[filter] active:brightness-125"
               style={{ animationDelay: `${0.04 + items.length * 0.045}s` }}
             >
               Contacts

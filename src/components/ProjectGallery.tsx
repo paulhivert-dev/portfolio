@@ -66,7 +66,7 @@ export default function ProjectGallery({
         type="button"
         onClick={() => setOpen(i)}
         aria-label={`Agrandir ${title} — ${i + 1}`}
-        className={`block w-full cursor-pointer overflow-hidden rounded-2xl bg-card sm:rounded-3xl ${
+        className={`block w-full cursor-pointer overflow-hidden bg-card ${
           uniform ? "relative" : ""
         }`}
         style={uniform ? { aspectRatio: cellAspect } : undefined}
@@ -195,7 +195,7 @@ export default function ProjectGallery({
           )}
 
           {count > 1 && (
-            <span className="absolute bottom-5 left-1/2 -translate-x-1/2 font-mono text-xs tracking-wider text-white/60">
+            <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[0.6rem] uppercase tracking-[0.3em] text-white/60">
               {open + 1} / {count}
             </span>
           )}
