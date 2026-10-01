@@ -19,7 +19,7 @@ export default function Hero() {
 
         <div
           aria-hidden
-          className="mx-auto mt-12 mb-8 h-px w-[min(46rem,80%)]"
+          className="mx-auto mt-12 mb-9 h-px w-[min(46rem,80%)]"
           style={{
             background:
               "linear-gradient(90deg, transparent, rgba(190,206,218,0.35), transparent)",
@@ -28,11 +28,6 @@ export default function Hero() {
 
         <p className="text-[0.64rem] uppercase tracking-[0.42em] text-muted">
           {profile.role.join("  ·  ")}
-        </p>
-
-        <p className="mx-auto mt-10 max-w-[34rem] text-[0.72rem] uppercase leading-[2.1] tracking-[0.15em] text-muted/85">
-          Identités, affiches, motion design et photographie. Je construis des
-          images qui tiennent debout toutes seules.
         </p>
       </div>
 
