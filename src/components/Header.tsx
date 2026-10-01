@@ -1,10 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { profile, sections } from "@/data/portfolio";
 import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
+  // Barre invisible en haut de page, puis fond translucide dès qu'on défile
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+    <header
+      className={`sticky top-0 z-50 border-b transition-[background-color,backdrop-filter,border-color] duration-500 ${
+        scrolled
+          ? "border-border/60 bg-background/70 backdrop-blur-xl"
+          : "border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <Link
           href="/"
