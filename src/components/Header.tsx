@@ -17,10 +17,10 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-[background-color,backdrop-filter,border-color] duration-500 ${
+      className={`sticky top-0 z-50 transition-colors duration-500 ${
         scrolled
-          ? "border-border/60 bg-background/70 backdrop-blur-xl"
-          : "border-transparent bg-transparent"
+          ? "border-b border-border/60 bg-background/70 backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
