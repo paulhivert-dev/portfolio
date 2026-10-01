@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Contact from "@/components/Contact";
 import CtaBand from "@/components/CtaBand";
-import CategoryCard from "@/components/CategoryCard";
+import OtherCategories from "@/components/OtherCategories";
 import ProjectGallery from "@/components/ProjectGallery";
 import { sections, getProject, getProjectsWithSlugs } from "@/data/portfolio";
 
@@ -175,16 +175,7 @@ export default async function ProjectPage({
           </nav>
 
           {/* Autres catégories */}
-          <nav className="mt-32 border-t border-border/60 pt-14">
-            <p className="eyebrow mb-10">
-              Autres catégories <i />
-            </p>
-            <div className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
-              {others.map((s) => (
-                <CategoryCard key={s.id} section={s} />
-              ))}
-            </div>
-          </nav>
+          <OtherCategories sections={others} />
         </div>
       </main>
       <CtaBand />
