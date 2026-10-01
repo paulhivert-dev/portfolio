@@ -21,18 +21,16 @@
   /* Accent froid : liens, numéros, survols */
   --accent: #cfdcea;
 
-  /* Chrome froid des grands titres */
+  /* Blanc froid des grands titres : léger dégradé vertical, sans effet métal
+     (à cette graisse, les reflets cassaient le trait) */
   --metal: linear-gradient(
-    174deg,
+    180deg,
     #ffffff 0%,
-    #e3ecf5 16%,
-    #a8bdd1 34%,
-    #fbfdff 50%,
-    #93aac1 66%,
-    #dbe7f2 84%,
-    #6f8499 100%
+    #f1f6fb 40%,
+    #cfdce9 78%,
+    #b4c6d8 100%
   );
-  --metal-glow: rgba(170, 200, 230, 0.16);
+  --metal-glow: rgba(196, 220, 245, 0.2);
 
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -74,7 +72,7 @@ body {
   font-family: var(--font-comfortaa), "Helvetica Neue", sans-serif;
   font-weight: 300;
   text-transform: lowercase;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.058em;
   line-height: 1.02;
   background-image: var(--metal);
   -webkit-background-clip: text;
