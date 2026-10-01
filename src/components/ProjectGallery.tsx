@@ -123,19 +123,11 @@ export default function ProjectGallery({
           role="dialog"
           aria-modal="true"
           style={{
-            background:
-              "var(--background)",
+            background: "rgba(7, 10, 12, 0.93)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
           }}
         >
-          {/* halo rose-orange (DA) */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "var(--background)",
-            }}
-          />
           <button
             type="button"
             onClick={close}
@@ -160,7 +152,7 @@ export default function ProjectGallery({
           )}
 
           <figure
-            className="flex max-h-full max-w-full flex-col items-center"
+            className="relative z-10 flex max-h-full max-w-full flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -170,7 +162,7 @@ export default function ProjectGallery({
               height={visuals[open].h}
               sizes="100vw"
               priority
-              className="rounded-lg object-contain"
+              className="object-contain"
               style={{ width: "auto", height: "auto", maxWidth: "100%", maxHeight: "86vh" }}
             />
             {visuals[open].caption && (

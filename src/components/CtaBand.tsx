@@ -1,16 +1,6 @@
 export default function CtaBand() {
   return (
     <section className="relative overflow-hidden border-t border-border/60 px-6 py-28 sm:px-10 sm:py-36">
-      {/* Halo tan, discret, dans l'esprit de la DA */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "var(--background)",
-        }}
-      />
-
       <div className="relative mx-auto max-w-4xl text-center">
         <h2 className="font-wordmark mx-auto max-w-[22ch] text-[clamp(1.7rem,4.6vw,3.2rem)]">
           prêt à donner vie à votre projet ?
