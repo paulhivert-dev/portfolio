@@ -17,11 +17,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-500 ${
-        scrolled
-          ? "border-b border-border/60 bg-background/70 backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
+      className={`site-header ${scrolled ? "is-scrolled" : ""}`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <Link

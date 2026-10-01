@@ -91,6 +91,43 @@ body {
     drop-shadow(0 0 34px var(--metal-glow)) brightness(1.2);
 }
 
+/* Barre de navigation : rien au repos. Au défilement, un voile flou apparaît —
+   pas de cadre ni de filet : la couche déborde vers le bas et se dissout en
+   fondu (masque dégradé), pour que le texte reste posé dans le vide. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -3rem; /* déborde sous la barre : le flou n'a pas de bord net */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 14, 18, 0.7) 0%,
+    rgba(10, 14, 18, 0.42) 45%,
+    rgba(10, 14, 18, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%);
+}
+.site-header.is-scrolled::before {
+  opacity: 1;
+}
+.site-header > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Libellé de section : « 01 — à propos », suivi d'un filet qui file jusqu'au bord */
 .eyebrow {
   display: flex;
