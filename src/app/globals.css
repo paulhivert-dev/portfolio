@@ -48,8 +48,8 @@
   --font-sans: var(--font-jost), "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
   --font-brush: "Biro Script", "Brush Script MT", cursive;
   /* Typo d'affichage : géométrique arrondie, bas-de-casse, très resserrée */
-  --font-wordmark: var(--font-comfortaa), "Helvetica Neue", sans-serif;
-  --font-poster: var(--font-comfortaa), "Helvetica Neue", sans-serif;
+  --font-wordmark: var(--font-display), "Helvetica Neue", sans-serif;
+  --font-poster: var(--font-display), "Helvetica Neue", sans-serif;
 }
 
 html {
@@ -69,10 +69,12 @@ body {
 /* Grands titres : bas-de-casse, resserrés, remplis d'un chrome froid.
    Le dégradé est clippé sur le texte, d'où le `color: transparent`. */
 .font-wordmark {
-  font-family: var(--font-comfortaa), "Helvetica Neue", sans-serif;
-  font-weight: 300;
+  font-family: var(--font-display), "Helvetica Neue", sans-serif;
+  font-weight: 400;
   text-transform: lowercase;
-  letter-spacing: -0.058em;
+  /* le dessin colle déjà les lettres : pas d'approche négative, elles se
+     chevaucheraient */
+  letter-spacing: 0;
   line-height: 1.02;
   background-image: var(--metal);
   -webkit-background-clip: text;

@@ -22,7 +22,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <Link
           href="/"
-          className="shrink-0 font-[family-name:var(--font-comfortaa)] text-base font-light lowercase leading-none tracking-[-0.01em] text-foreground transition-colors hover:text-accent"
+          className="shrink-0 font-[family-name:var(--font-display)] text-base font-light lowercase leading-none tracking-[-0.01em] text-foreground transition-colors hover:text-accent"
         >
           {profile.wordmark}
         </Link>

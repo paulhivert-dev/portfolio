@@ -13,7 +13,7 @@ export default function Hero() {
           Portfolio — 2026
         </p>
 
-        <h1 className="font-wordmark text-[clamp(2.5rem,9.8vw,7.4rem)] tracking-[-0.07em]">
+        <h1 className="font-wordmark text-[clamp(2.6rem,10.5vw,8rem)]">
           {profile.name} hivert
         </h1>
 

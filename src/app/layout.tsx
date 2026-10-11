@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Jost, Comfortaa } from "next/font/google";
+import { Jost } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
@@ -10,11 +11,13 @@ const jost = Jost({
   weight: ["200", "300", "400"],
 });
 
-// Typo d'affichage : géométrique arrondie, utilisée en bas-de-casse resserré
-const comfortaa = Comfortaa({
-  variable: "--font-comfortaa",
-  subsets: ["latin"],
-  weight: ["300", "400"],
+// Typo d'affichage : dessinée pour le site (cf. paulhivert-site/typeface.py),
+// géométrique unicase — toutes les lettres à la même hauteur, trait d'épaisseur
+// constante. Remplacer ce fichier suffit à changer tout le titrage du site.
+const hivert = localFont({
+  src: "../fonts/HivertGeo.ttf",
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +34,7 @@ export default function RootLayout({
     <html
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${jost.variable} ${comfortaa.variable} h-full antialiased`}
+      className={`${jost.variable} ${hivert.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <div className="site-bg" aria-hidden>
