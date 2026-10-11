@@ -40,7 +40,7 @@ export default function Header() {
             href="#contacts"
             className="whitespace-nowrap text-[0.62rem] uppercase tracking-[0.26em] text-muted transition-colors hover:text-accent"
           >
-            Contact
+            Contacts
           </a>
         </nav>
         <MobileMenu items={sections.map((s) => ({ id: s.id, name: s.name }))} />
