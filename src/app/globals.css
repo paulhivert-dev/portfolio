@@ -10,32 +10,28 @@
 }
 
 :root {
-  /* DA « couverture 2027 » : ciel bleu, nuages pâles, lettrage crème.
+  /* DA « Daydreaming » : ciel turquoise grainé, lettrage crème doré.
      Couleurs relevées sur le visuel de Paul. */
-  --background: #2f78cf;      /* le bleu du ciel, assombri pour que le texte tienne */
-  --background-deep: #1b4f93; /* bords et vignettage */
-  --sky: #3d83db;
-  --cloud: #bcc7e5;
-  --foreground: #fdf4e3;      /* blanc chaud */
-  --muted: #d8dcf0;           /* bleu très pâle, pour le texte secondaire */
-  --fog: #e2e8f8;
-  --border: rgba(253, 229, 169, 0.22);
-  --card: #2a6ab8;
-  --accent: #fde5a9;          /* le crème des titres */
+  --background: #6f9ea6;      /* la valeur moyenne du ciel */
+  --background-deep: #2d7f8d; /* le bas du dégradé, plus saturé */
+  --sky: #9db5b9;             /* le haut, laiteux */
+  --cloud: #cfdcdb;
+  --foreground: #fdf1dc;      /* blanc chaud */
+  --muted: #cfdedd;           /* turquoise très pâle */
+  --fog: #e3eceb;
+  --border: rgba(250, 206, 136, 0.26);
+  --card: #5e939c;
+  --accent: #facd88;          /* le doré du lettrage */
 
-  /* Lettrage : crème légèrement dégradé, comme sur la couverture */
+  /* Lettrage : doré légèrement dégradé, comme sur le visuel */
   --metal: linear-gradient(
     180deg,
-    #fff8e8 0%,
-    #fde5a9 46%,
-    #f3cf86 80%,
-    #e2b96d 100%
+    #ffeec9 0%,
+    #facd88 48%,
+    #eeb96a 82%,
+    #d9a257 100%
   );
-  --metal-glow: rgba(253, 229, 169, 0.22);
-
-  /* Trame de points, écho à la trame du visuel */
-  --dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Ccircle cx='3' cy='3' r='1.1' fill='%23ffffff'/%3E%3C/svg%3E");
-
+  --metal-glow: rgba(250, 205, 136, 0.24);
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -171,7 +167,7 @@ body {
 .hero-decor .veil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(130% 100% at 50% 45%, transparent 58%, rgba(20, 60, 118, 0.42) 100%);
+  background: radial-gradient(130% 100% at 50% 45%, transparent 58%, rgba(16, 78, 90, 0.42) 100%);
 }
 .hero-decor .grain {
   position: absolute;
@@ -374,50 +370,53 @@ body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(
-    120% 90% at 55% 12%,
-    #4f93e4 0%,
-    #3d83db 32%,
-    #2f78cf 58%,
-    #22609f 100%
+  /* le dégradé relevé bande par bande sur le visuel : laiteux en haut,
+     franchement turquoise en bas */
+  background: linear-gradient(
+    180deg,
+    #a0b7ba 0%,
+    #9db5b9 24%,
+    #9ab3b7 40%,
+    #93b1b5 60%,
+    #7aa7ae 80%,
+    #4a95a0 92%,
+    #2d7f8d 100%
   );
 }
-/* Nuages : larges taches pâles, très floues */
+/* voiles clairs, comme les nuées du visuel */
 .site-bg .fog {
   position: absolute;
   inset: -20%;
-  filter: blur(80px);
-  opacity: 0.85;
+  filter: blur(90px);
+  opacity: 0.7;
   background:
-    radial-gradient(40% 44% at 28% 18%, rgba(224, 232, 250, 0.75) 0%, rgba(188, 199, 229, 0.35) 45%, transparent 72%),
-    radial-gradient(34% 36% at 76% 62%, rgba(214, 226, 248, 0.5) 0%, transparent 70%),
-    radial-gradient(30% 30% at 58% 92%, rgba(188, 199, 229, 0.4) 0%, transparent 70%);
+    radial-gradient(42% 40% at 24% 22%, rgba(236, 244, 242, 0.65) 0%, transparent 70%),
+    radial-gradient(36% 32% at 78% 54%, rgba(214, 232, 231, 0.4) 0%, transparent 72%);
 }
 .site-bg .swirl {
   position: absolute;
   left: 50%;
-  top: 38%;
-  width: 140vmin;
+  top: 40%;
+  width: 150vmin;
   height: 70vmin;
-  transform: translate(-50%, -50%) rotate(-12deg);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.5;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.35), rgba(224, 232, 250, 0.12) 55%, transparent 78%);
+  filter: blur(70px);
+  opacity: 0.4;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.3), transparent 76%);
 }
 .site-bg .vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(125% 100% at 50% 38%, transparent 48%, rgba(14, 48, 96, 0.55) 100%);
+  background: radial-gradient(130% 105% at 50% 36%, transparent 52%, rgba(16, 78, 90, 0.5) 100%);
 }
-/* Deux textures superposées : la trame de points du visuel, et le grain */
+/* le visuel est très grainé : c'est sa matière, on la rend franche */
 .site-bg .grain {
   position: absolute;
   inset: 0;
-  background-image: var(--dots), var(--grain);
-  background-size: 14px 14px, 200px 200px;
-  opacity: 0.09;
-  mix-blend-mode: overlay;
+  background-image: var(--grain);
+  background-size: 180px 180px;
+  opacity: 0.17;
 }
 
 @media (prefers-reduced-motion: reduce) {
