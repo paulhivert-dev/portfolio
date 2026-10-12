@@ -128,6 +128,40 @@ body {
   z-index: 1;
 }
 
+/* Décor d'arrivée : image plein cadre à l'ouverture, qui se dissout au
+   défilement pour rendre la main au fond gris. --decor est écrit par HeroDecor. */
+.hero-decor {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--decor, 1);
+  transition: opacity 0.12s linear;
+  will-change: opacity;
+}
+.hero-decor .grade {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  background: linear-gradient(200deg, rgba(126,170,190,.55) 0%, rgba(214,198,160,.25) 45%, rgba(40,52,62,.6) 100%);
+}
+.hero-decor .veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 95% at 50% 40%, rgba(10,14,18,.25) 0%, rgba(8,11,14,.78) 100%);
+}
+.hero-decor .grain {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 200px 200px;
+  opacity: 0.2;
+}
+/* Barres cinéma, comme sur la référence */
+.hero-decor .bar { position: absolute; left: 0; right: 0; height: 8vh; background: var(--background-deep) }
+.hero-decor .bar.top { top: 0 }
+.hero-decor .bar.bottom { bottom: 0 }
+
 /* Libellé de section : « 01 — à propos », suivi d'un filet qui file jusqu'au bord */
 .eyebrow {
   display: flex;
