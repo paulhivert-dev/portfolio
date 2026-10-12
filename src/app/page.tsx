@@ -12,7 +12,7 @@ export default function Home() {
       <HeroDecor />
       <Header />
       <main>
-        <Hero />
+        <Hero decor />
         <About />
         <CategoryGrid />
         <CtaBand />

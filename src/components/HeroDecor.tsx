@@ -2,12 +2,11 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { profile } from "@/data/portfolio";
 
 /**
- * Décor d'arrivée : une image plein cadre, étalonnée comme une image de film,
- * qui se dissout sur la première hauteur d'écran. Passé le hero, il ne reste
- * que le fond gris — un support neutre pour les informations.
+ * Décor d'arrivée : la couverture 2027 de Paul, plein cadre à l'ouverture, qui
+ * se dissout sur la première hauteur d'écran. Passé le hero, il ne reste que le
+ * fond gris — un support neutre pour les informations.
  *
  * L'opacité passe par la variable CSS --decor : le défilement n'écrit qu'une
  * valeur, le reste est fait par le compositeur, sans recalcul de mise en page.
@@ -36,19 +35,15 @@ export default function HeroDecor() {
   return (
     <div className="hero-decor" aria-hidden>
       <Image
-        src={profile.portrait}
+        src="/decor/cover-2027.webp"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover"
-        style={{ filter: "saturate(.75) contrast(1.04) brightness(.78)" }}
+        className="decor-img"
       />
-      <div className="grade" />
       <div className="veil" />
       <div className="grain" />
-      <div className="bar top" />
-      <div className="bar bottom" />
     </div>
   );
 }

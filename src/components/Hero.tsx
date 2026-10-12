@@ -2,11 +2,11 @@ import { profile } from "@/data/portfolio";
 
 // Le fond (brume + volute + grain) est rendu une seule fois pour tout le site
 // par .site-bg (cf. layout.tsx et globals.css) : le hero le laisse voir.
-export default function Hero() {
+export default function Hero({ decor = false }: { decor?: boolean }) {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pb-24 pt-28 text-center sm:px-10"
+      className={`relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pb-24 pt-28 text-center sm:px-10 ${decor ? "hero--decor" : ""}`}
     >
       <div className="hero-reveal relative z-10 mx-auto w-full max-w-6xl">
         <p className="mb-10 text-[0.6rem] uppercase tracking-[0.62em] text-fog/75 sm:mb-14">
