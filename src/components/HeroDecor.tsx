@@ -39,6 +39,8 @@ export default function HeroDecor() {
         alt=""
         fill
         priority
+        quality={100}
+        unoptimized
         sizes="100vw"
         className="decor-img"
       />
