@@ -145,7 +145,7 @@ body {
   opacity: var(--decor, 1);
   transition: opacity 0.12s linear;
   will-change: opacity;
-  background: #c9c8dd;
+  background: #7ba6ac;
   transform: translate3d(0, calc(var(--rise, 0) * -16vh), 0);
 }
 .hero-decor .frame {
@@ -153,14 +153,14 @@ body {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: max(100vw, calc(100svh * 1671 / 941));
-  height: max(100svh, calc(100vw * 941 / 1671));
+  width: max(100vw, calc(100svh * 736 / 1472));
+  height: max(100svh, calc(100vw * 1472 / 736));
 }
 /* en portrait, l'image entière plutôt qu'un cadrage qui couperait le titre */
 @media (max-aspect-ratio: 1 / 1) {
   .hero-decor .frame {
     width: 100vw;
-    height: calc(100vw * 941 / 1671);
+    height: calc(100vw * 1472 / 736);
   }
 }
 .hero-decor .frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill }
@@ -178,18 +178,26 @@ body {
   mix-blend-mode: overlay;
 }
 
-/* Les trois pièces de la fenêtre */
-.win { position: absolute; will-change: transform }
-.win img { width: 100%; height: 100%; display: block }
-.win-open  { left: 44.524%; top: 43.996%; width: 8.378%; height: 30.393% }
-.win-left  { left: 40.694%; top: 44.633%; width: 4.428%; height: 29.543%;
-  transform-origin: left center;
+/* La fenêtre, découpée dans la couverture et détourée, posée sur le ciel.
+   Les trois pièces vivent dans un cadre aux proportions de la fenêtre d'origine :
+   elles restent solidaires quelle que soit la taille de l'écran. */
+.window {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  translate: -50% -50%;
+  width: min(38vmin, 42%);
+  aspect-ratio: 276 / 286;
+}
+.window .win { position: absolute; will-change: transform }
+.window .win img { width: 100%; height: 100%; display: block }
+.win-open  { left: 23.2%; top: 0;    width: 50.7%; height: 100% }
+.win-left  { left: 0;     top: 2.1%; width: 26.8%; height: 97.2%;
   transform: translate3d(calc(var(--shut, 0) * 95%), 0, 0) }
-.win-right { left: 52.184%; top: 44.633%; width: 5.027%; height: 29.543%;
-  transform-origin: right center;
-  transform: translate3d(calc(var(--shut, 0) * -84%), 0, 0) }
-/* les battants s'assombrissent en se refermant, comme s'ils tournaient */
-.win-left img, .win-right img { filter: brightness(calc(1 - var(--shut, 0) * 0.22)) }
+.win-right { left: 69.6%; top: 2.1%; width: 30.4%; height: 97.2%;
+  transform: translate3d(calc(var(--shut, 0) * -83%), 0, 0) }
+/* les battants s'assombrissent en se refermant, comme s'ils pivotaient */
+.win-left img, .win-right img { filter: brightness(calc(1 - var(--shut, 0) * 0.18)) }
 
 /* Le hero de l'accueil laisse parler la couverture : son texte reste dans le
    code pour les moteurs et les lecteurs d'écran, mais n'est pas affiché. */

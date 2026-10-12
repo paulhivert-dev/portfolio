@@ -44,16 +44,18 @@ export default function HeroDecor() {
     return (
     <div className="hero-decor" aria-hidden>
       <div className="frame">
-        {/* la couverture, sa fenêtre retirée : elle est reconstituée au-dessus */}
-        <img src="/decor/cover-nowindow.webp" alt="" />
-        <div className="win win-open">
-          <img src="/decor/win-open.webp" alt="" />
-        </div>
-        <div className="win win-left">
-          <img src="/decor/win-left.webp" alt="" />
-        </div>
-        <div className="win win-right">
-          <img src="/decor/win-right.webp" alt="" />
+        {/* le ciel du visuel « Daydreaming », nettoyé de son lettrage */}
+        <img src="/decor/sky-2027.webp" alt="" />
+        <div className="window">
+          <div className="win win-open">
+            <img src="/decor/win-open.png" alt="" />
+          </div>
+          <div className="win win-left">
+            <img src="/decor/win-left.png" alt="" />
+          </div>
+          <div className="win win-right">
+            <img src="/decor/win-right.png" alt="" />
+          </div>
         </div>
       </div>
       <div className="veil" />
