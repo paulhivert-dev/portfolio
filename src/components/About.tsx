@@ -22,7 +22,7 @@ export default function About() {
             alt="Portrait de Paul Hivert"
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
-            className="object-cover grayscale brightness-90 contrast-105"
+            className="object-cover saturate-[.35] brightness-95 contrast-105"
             priority
           />
         </div>

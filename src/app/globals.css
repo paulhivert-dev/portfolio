@@ -10,27 +10,31 @@
 }
 
 :root {
-  /* DA « brume » : bleu-charbon désaturé, lumière diffuse, chrome froid */
-  --background: #0e1317;
-  --background-deep: #070a0c;
-  --foreground: #e9edf0;
-  --muted: #8b98a3;
-  --fog: #9fb0bd;
-  --border: #232c33;
-  --card: #11171c;
-  /* Accent froid : liens, numéros, survols */
-  --accent: #cfdcea;
+  /* DA « couverture 2027 » : ciel bleu, nuages pâles, lettrage crème.
+     Couleurs relevées sur le visuel de Paul. */
+  --background: #2f78cf;      /* le bleu du ciel, assombri pour que le texte tienne */
+  --background-deep: #1b4f93; /* bords et vignettage */
+  --sky: #3d83db;
+  --cloud: #bcc7e5;
+  --foreground: #fdf4e3;      /* blanc chaud */
+  --muted: #d8dcf0;           /* bleu très pâle, pour le texte secondaire */
+  --fog: #e2e8f8;
+  --border: rgba(253, 229, 169, 0.22);
+  --card: #2a6ab8;
+  --accent: #fde5a9;          /* le crème des titres */
 
-  /* Blanc froid des grands titres : léger dégradé vertical, sans effet métal
-     (à cette graisse, les reflets cassaient le trait) */
+  /* Lettrage : crème légèrement dégradé, comme sur la couverture */
   --metal: linear-gradient(
     180deg,
-    #ffffff 0%,
-    #f1f6fb 40%,
-    #cfdce9 78%,
-    #b4c6d8 100%
+    #fff8e8 0%,
+    #fde5a9 46%,
+    #f3cf86 80%,
+    #e2b96d 100%
   );
-  --metal-glow: rgba(196, 220, 245, 0.2);
+  --metal-glow: rgba(253, 229, 169, 0.22);
+
+  /* Trame de points, écho à la trame du visuel */
+  --dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Ccircle cx='3' cy='3' r='1.1' fill='%23ffffff'/%3E%3C/svg%3E");
 
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -149,7 +153,7 @@ body {
 .hero-decor .veil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(130% 100% at 50% 45%, transparent 55%, rgba(8, 11, 14, 0.45) 100%);
+  background: radial-gradient(130% 100% at 50% 45%, transparent 58%, rgba(20, 60, 118, 0.42) 100%);
 }
 .hero-decor .grain {
   position: absolute;
@@ -340,48 +344,49 @@ body {
   overflow: hidden;
   pointer-events: none;
   background: radial-gradient(
-    120% 90% at 62% 14%,
-    #27323b 0%,
-    #19222a 34%,
-    #0f151a 62%,
-    #080b0e 100%
+    120% 90% at 55% 12%,
+    #4f93e4 0%,
+    #3d83db 32%,
+    #2f78cf 58%,
+    #22609f 100%
   );
 }
+/* Nuages : larges taches pâles, très floues */
 .site-bg .fog {
   position: absolute;
   inset: -20%;
-  filter: blur(70px);
+  filter: blur(80px);
   opacity: 0.85;
   background:
-    radial-gradient(38% 46% at 66% 20%, rgba(203, 221, 233, 0.4) 0%, rgba(150, 175, 194, 0.15) 45%, transparent 72%),
-    radial-gradient(30% 34% at 32% 64%, rgba(132, 158, 178, 0.18) 0%, transparent 70%);
+    radial-gradient(40% 44% at 28% 18%, rgba(224, 232, 250, 0.75) 0%, rgba(188, 199, 229, 0.35) 45%, transparent 72%),
+    radial-gradient(34% 36% at 76% 62%, rgba(214, 226, 248, 0.5) 0%, transparent 70%),
+    radial-gradient(30% 30% at 58% 92%, rgba(188, 199, 229, 0.4) 0%, transparent 70%);
 }
-/* Volute : grande ellipse floue inclinée, écho au tissu en flou de mouvement */
 .site-bg .swirl {
   position: absolute;
   left: 50%;
-  top: 40%;
-  width: 130vmin;
-  height: 60vmin;
-  transform: translate(-50%, -50%) rotate(-14deg);
+  top: 38%;
+  width: 140vmin;
+  height: 70vmin;
+  transform: translate(-50%, -50%) rotate(-12deg);
   border-radius: 50%;
-  filter: blur(46px);
-  opacity: 0.45;
-  background:
-    radial-gradient(closest-side, rgba(226, 236, 243, 0.28), rgba(160, 186, 204, 0.11) 55%, transparent 78%),
-    radial-gradient(closest-side at 30% 60%, rgba(120, 150, 172, 0.2), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.5;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.35), rgba(224, 232, 250, 0.12) 55%, transparent 78%);
 }
 .site-bg .vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 95% at 55% 34%, transparent 46%, rgba(4, 6, 8, 0.8) 100%);
+  background: radial-gradient(125% 100% at 50% 38%, transparent 48%, rgba(14, 48, 96, 0.55) 100%);
 }
+/* Deux textures superposées : la trame de points du visuel, et le grain */
 .site-bg .grain {
   position: absolute;
   inset: 0;
-  background-image: var(--grain);
-  background-size: 200px 200px;
-  opacity: 0.14;
+  background-image: var(--dots), var(--grain);
+  background-size: 14px 14px, 200px 200px;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
 }
 
 @media (prefers-reduced-motion: reduce) {

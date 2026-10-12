@@ -123,7 +123,7 @@ export default function ProjectGallery({
           role="dialog"
           aria-modal="true"
           style={{
-            background: "rgba(7, 10, 12, 0.93)",
+            background: "rgba(16, 48, 95, 0.94)",
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
           }}
