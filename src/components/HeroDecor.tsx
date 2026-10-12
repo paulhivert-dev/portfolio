@@ -5,9 +5,9 @@ import { useEffect } from "react";
 /**
  * Ouverture de l'accueil, en trois temps pilotés par le défilement :
  *
- *   1. la couverture monte doucement — son texte s'échappe par le haut ;
- *   2. deux volets se referment sur l'écran, découpés dans la fenêtre du visuel ;
- *   3. ils s'écartent et laissent place à la suite de la page.
+ *   1. le ciel monte doucement — son lettrage s'échappe par le haut ;
+ *   2. il s'efface en même temps ;
+ *   3. le fond du site prend le relais pour porter la suite de la page.
  *
  * Tout passe par des variables CSS écrites dans une frame d'animation : le
  * compositeur fait le reste, sans recalcul de mise en page.
@@ -44,19 +44,8 @@ export default function HeroDecor() {
     return (
     <div className="hero-decor" aria-hidden>
       <div className="frame">
-        {/* le ciel du visuel « Daydreaming », nettoyé de son lettrage */}
-        <img src="/decor/sky-2027.webp" alt="" />
-        <div className="window">
-          <div className="win win-open">
-            <img src="/decor/win-open.png" alt="" />
-          </div>
-          <div className="win win-left">
-            <img src="/decor/win-left.png" alt="" />
-          </div>
-          <div className="win win-right">
-            <img src="/decor/win-right.png" alt="" />
-          </div>
-        </div>
+        {/* le ciel du visuel, élargi : la matière des côtés est reconstituée */}
+        <img src="/decor/sky-wide.webp" alt="" />
       </div>
       <div className="veil" />
       <div className="grain" />

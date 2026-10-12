@@ -153,14 +153,15 @@ body {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: max(100vw, calc(100svh * 736 / 1472));
-  height: max(100svh, calc(100vw * 1472 / 736));
+  width: max(100vw, calc(100svh * 3600 / 1472));
+  height: max(100svh, calc(100vw * 1472 / 3600));
 }
 /* en portrait, l'image entière plutôt qu'un cadrage qui couperait le titre */
 @media (max-aspect-ratio: 1 / 1) {
+  /* en portrait, on cadre sur la partie centrale du ciel */
   .hero-decor .frame {
-    width: 100vw;
-    height: calc(100vw * 1472 / 736);
+    width: calc(100svh * 3600 / 1472);
+    height: 100svh;
   }
 }
 .hero-decor .frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill }
@@ -177,27 +178,6 @@ body {
   opacity: 0.12;
   mix-blend-mode: overlay;
 }
-
-/* La fenêtre, découpée dans la couverture et détourée, posée sur le ciel.
-   Les trois pièces vivent dans un cadre aux proportions de la fenêtre d'origine :
-   elles restent solidaires quelle que soit la taille de l'écran. */
-.window {
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  translate: -50% -50%;
-  width: min(38vmin, 42%);
-  aspect-ratio: 276 / 286;
-}
-.window .win { position: absolute; will-change: transform }
-.window .win img { width: 100%; height: 100%; display: block }
-.win-open  { left: 23.2%; top: 0;    width: 50.7%; height: 100% }
-.win-left  { left: 0;     top: 2.1%; width: 26.8%; height: 97.2%;
-  transform: translate3d(calc(var(--shut, 0) * 95%), 0, 0) }
-.win-right { left: 69.6%; top: 2.1%; width: 30.4%; height: 97.2%;
-  transform: translate3d(calc(var(--shut, 0) * -83%), 0, 0) }
-/* les battants s'assombrissent en se refermant, comme s'ils pivotaient */
-.win-left img, .win-right img { filter: brightness(calc(1 - var(--shut, 0) * 0.18)) }
 
 /* Le hero de l'accueil laisse parler la couverture : son texte reste dans le
    code pour les moteurs et les lecteurs d'écran, mais n'est pas affiché. */
