@@ -164,6 +164,64 @@ body {
   mix-blend-mode: overlay;
 }
 
+
+/* ---------- Volets ----------
+   Redessinés en CSS plutôt que découpés dans la couverture : le battant d'origine
+   ne fait que 74 px de large, agrandi plein écran il était flou et se répétait.
+   Lames horizontales, cadre, et une ombre portée qui suit la fermeture.
+   --shut va de 0 (ouverts) à 1 (fermés). */
+.shutters {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.shutters .leaf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51vw;
+  will-change: transform;
+  background-color: #8e3f4a;
+  background-image:
+    /* lames : une arête claire, un creux sombre */
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 220, 206, 0.22) 0,
+      rgba(255, 220, 206, 0.22) 2px,
+      rgba(96, 22, 32, 0.55) 3px,
+      rgba(96, 22, 32, 0.8) 11px,
+      rgba(168, 86, 96, 0.35) 13px,
+      rgba(168, 86, 96, 0.1) 18px
+    ),
+    /* volume général du battant */
+    linear-gradient(90deg, rgba(40, 6, 12, 0.5) 0%, rgba(174, 96, 104, 0.25) 45%, rgba(26, 4, 8, 0.6) 100%);
+  box-shadow: 0 0 80px rgba(14, 44, 88, 0.6);
+}
+/* le montant du battant, côté charnière */
+.shutters .leaf::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2.2vw;
+  background: linear-gradient(90deg, rgba(255, 221, 207, 0.18), rgba(60, 12, 20, 0.5));
+}
+.shutters .leaf.left {
+  left: 0;
+  transform: translate3d(calc(-100% + var(--shut, 0) * 100%), 0, 0);
+}
+.shutters .leaf.left::after { right: 0 }
+.shutters .leaf.right {
+  right: 0;
+  transform: translate3d(calc(100% - var(--shut, 0) * 100%), 0, 0);
+}
+.shutters .leaf.right::after { left: 0; transform: scaleX(-1) }
+
+/* la couverture monte pendant que les volets se ferment */
+.hero-decor { transform: translate3d(0, calc(var(--rise, 0) * -16vh), 0) }
+
 /* Le hero de l'accueil laisse parler la couverture : son texte reste dans le
    code pour les moteurs et les lecteurs d'écran, mais n'est pas affiché. */
 .hero--decor .hero-reveal {
