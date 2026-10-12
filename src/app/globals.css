@@ -132,24 +132,42 @@ body {
   z-index: 1;
 }
 
-/* Décor d'arrivée : la couverture 2027 plein cadre à l'ouverture, qui se
-   dissout au défilement pour rendre la main au fond gris. --decor est écrit par
-   HeroDecor. L'image portant déjà le titre, le hero masque le sien. */
+/* ---------- Décor d'arrivée et volets ----------
+   La couverture est servie sans sa fenêtre (cover-nowindow) ; la fenêtre est
+   reconstituée en trois pièces découpées dans le visuel : l'ouverture avec le
+   personnage, et les deux battants, qui se referment au défilement.
+
+   Le cadre .frame reproduit à la main le cadrage « cover » : les pièces sont
+   positionnées en pourcentage de l'image, donc elles restent calées dessus quelle
+   que soit la forme de l'écran. --shut va de 0 (ouverts) à 1 (fermés). */
 .hero-decor {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  overflow: hidden;
   opacity: var(--decor, 1);
   transition: opacity 0.12s linear;
   will-change: opacity;
-  background: #c9c8dd; /* le bleu du bord de l'image */
+  background: #c9c8dd;
+  transform: translate3d(0, calc(var(--rise, 0) * -16vh), 0);
 }
-.hero-decor .decor-img { object-fit: cover; object-position: center }
-/* en portrait, un cadrage « cover » rognerait les côtés et couperait le titre */
+.hero-decor .frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: max(100vw, calc(100svh * 1671 / 941));
+  height: max(100svh, calc(100vw * 941 / 1671));
+}
+/* en portrait, l'image entière plutôt qu'un cadrage qui couperait le titre */
 @media (max-aspect-ratio: 1 / 1) {
-  .hero-decor .decor-img { object-fit: contain }
+  .hero-decor .frame {
+    width: 100vw;
+    height: calc(100vw * 941 / 1671);
+  }
 }
+.hero-decor .frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill }
 .hero-decor .veil {
   position: absolute;
   inset: 0;
@@ -164,63 +182,18 @@ body {
   mix-blend-mode: overlay;
 }
 
-
-/* ---------- Volets ----------
-   Redessinés en CSS plutôt que découpés dans la couverture : le battant d'origine
-   ne fait que 74 px de large, agrandi plein écran il était flou et se répétait.
-   Lames horizontales, cadre, et une ombre portée qui suit la fermeture.
-   --shut va de 0 (ouverts) à 1 (fermés). */
-.shutters {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.shutters .leaf {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 51vw;
-  will-change: transform;
-  background-color: #8e3f4a;
-  background-image:
-    /* lames : une arête claire, un creux sombre */
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 220, 206, 0.22) 0,
-      rgba(255, 220, 206, 0.22) 2px,
-      rgba(96, 22, 32, 0.55) 3px,
-      rgba(96, 22, 32, 0.8) 11px,
-      rgba(168, 86, 96, 0.35) 13px,
-      rgba(168, 86, 96, 0.1) 18px
-    ),
-    /* volume général du battant */
-    linear-gradient(90deg, rgba(40, 6, 12, 0.5) 0%, rgba(174, 96, 104, 0.25) 45%, rgba(26, 4, 8, 0.6) 100%);
-  box-shadow: 0 0 80px rgba(14, 44, 88, 0.6);
-}
-/* le montant du battant, côté charnière */
-.shutters .leaf::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 2.2vw;
-  background: linear-gradient(90deg, rgba(255, 221, 207, 0.18), rgba(60, 12, 20, 0.5));
-}
-.shutters .leaf.left {
-  left: 0;
-  transform: translate3d(calc(-100% + var(--shut, 0) * 100%), 0, 0);
-}
-.shutters .leaf.left::after { right: 0 }
-.shutters .leaf.right {
-  right: 0;
-  transform: translate3d(calc(100% - var(--shut, 0) * 100%), 0, 0);
-}
-.shutters .leaf.right::after { left: 0; transform: scaleX(-1) }
-
-/* la couverture monte pendant que les volets se ferment */
-.hero-decor { transform: translate3d(0, calc(var(--rise, 0) * -16vh), 0) }
+/* Les trois pièces de la fenêtre */
+.win { position: absolute; will-change: transform }
+.win img { width: 100%; height: 100%; display: block }
+.win-open  { left: 44.524%; top: 43.996%; width: 8.378%; height: 30.393% }
+.win-left  { left: 40.694%; top: 44.633%; width: 4.428%; height: 29.543%;
+  transform-origin: left center;
+  transform: translate3d(calc(var(--shut, 0) * 95%), 0, 0) }
+.win-right { left: 52.184%; top: 44.633%; width: 5.027%; height: 29.543%;
+  transform-origin: right center;
+  transform: translate3d(calc(var(--shut, 0) * -84%), 0, 0) }
+/* les battants s'assombrissent en se refermant, comme s'ils tournaient */
+.win-left img, .win-right img { filter: brightness(calc(1 - var(--shut, 0) * 0.22)) }
 
 /* Le hero de l'accueil laisse parler la couverture : son texte reste dans le
    code pour les moteurs et les lecteurs d'écran, mais n'est pas affiché. */

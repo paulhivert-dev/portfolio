@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 
 /**
  * Ouverture de l'accueil, en trois temps pilotés par le défilement :
@@ -42,37 +41,23 @@ export default function HeroDecor() {
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", update);
-      document.documentElement.style.removeProperty("--decor");
-      document.documentElement.style.removeProperty("--rise");
-      document.documentElement.style.removeProperty("--shut");
-    };
-  }, []);
-
-  return (
-    <>
-      <div className="hero-decor" aria-hidden>
-        <Image
-          src="/decor/cover-2027.webp"
-          alt=""
-          fill
-          priority
-          quality={100}
-          unoptimized
-          sizes="100vw"
-          className="decor-img"
-        />
-        <div className="veil" />
-        <div className="grain" />
+    return (
+    <div className="hero-decor" aria-hidden>
+      <div className="frame">
+        {/* la couverture, sa fenêtre retirée : elle est reconstituée au-dessus */}
+        <img src="/decor/cover-nowindow.webp" alt="" />
+        <div className="win win-open">
+          <img src="/decor/win-open.webp" alt="" />
+        </div>
+        <div className="win win-left">
+          <img src="/decor/win-left.webp" alt="" />
+        </div>
+        <div className="win win-right">
+          <img src="/decor/win-right.webp" alt="" />
+        </div>
       </div>
-
-      {/* Les volets : deux battants découpés dans la fenêtre de la couverture */}
-      <div className="shutters" aria-hidden>
-        <div className="leaf left" />
-        <div className="leaf right" />
-      </div>
-    </>
+      <div className="veil" />
+      <div className="grain" />
+    </div>
   );
 }
