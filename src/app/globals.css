@@ -10,28 +10,28 @@
 }
 
 :root {
-  /* DA « Daydreaming » : ciel turquoise grainé, lettrage crème doré.
-     Couleurs relevées sur le visuel de Paul. */
-  --background: #6f9ea6;      /* la valeur moyenne du ciel */
-  --background-deep: #2d7f8d; /* le bas du dégradé, plus saturé */
-  --sky: #9db5b9;             /* le haut, laiteux */
-  --cloud: #cfdcdb;
-  --foreground: #fdf1dc;      /* blanc chaud */
-  --muted: #cfdedd;           /* turquoise très pâle */
-  --fog: #e3eceb;
-  --border: rgba(250, 206, 136, 0.26);
-  --card: #5e939c;
-  --accent: #facd88;          /* le doré du lettrage */
+  /* DA « brume » : bleu-charbon désaturé, lumière diffuse, chrome froid */
+  --background: #0e1317;
+  --background-deep: #070a0c;
+  --foreground: #e9edf0;
+  --muted: #8b98a3;
+  --fog: #9fb0bd;
+  --border: #232c33;
+  --card: #11171c;
+  /* Accent froid : liens, numéros, survols */
+  --accent: #cfdcea;
 
-  /* Lettrage : doré légèrement dégradé, comme sur le visuel */
+  /* Blanc froid des grands titres : léger dégradé vertical, sans effet métal
+     (à cette graisse, les reflets cassaient le trait) */
   --metal: linear-gradient(
     180deg,
-    #ffeec9 0%,
-    #facd88 48%,
-    #eeb96a 82%,
-    #d9a257 100%
+    #ffffff 0%,
+    #f1f6fb 40%,
+    #cfdce9 78%,
+    #b4c6d8 100%
   );
-  --metal-glow: rgba(250, 205, 136, 0.24);
+  --metal-glow: rgba(196, 220, 245, 0.2);
+
   /* Grain argentique réutilisable partout */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -128,47 +128,28 @@ body {
   z-index: 1;
 }
 
-/* ---------- Décor d'arrivée et volets ----------
-   La couverture est servie sans sa fenêtre (cover-nowindow) ; la fenêtre est
-   reconstituée en trois pièces découpées dans le visuel : l'ouverture avec le
-   personnage, et les deux battants, qui se referment au défilement.
-
-   Le cadre .frame reproduit à la main le cadrage « cover » : les pièces sont
-   positionnées en pourcentage de l'image, donc elles restent calées dessus quelle
-   que soit la forme de l'écran. --shut va de 0 (ouverts) à 1 (fermés). */
+/* Décor d'arrivée : la couverture 2027 plein cadre à l'ouverture, qui se
+   dissout au défilement pour rendre la main au fond gris. --decor est écrit par
+   HeroDecor. L'image portant déjà le titre, le hero masque le sien. */
 .hero-decor {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  overflow: hidden;
   opacity: var(--decor, 1);
   transition: opacity 0.12s linear;
   will-change: opacity;
-  background: #7ba6ac;
-  transform: translate3d(0, calc(var(--rise, 0) * -16vh), 0);
+  background: #c9c8dd; /* le bleu du bord de l'image */
 }
-.hero-decor .frame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: max(100vw, calc(100svh * 3600 / 1472));
-  height: max(100svh, calc(100vw * 1472 / 3600));
-}
-/* en portrait, l'image entière plutôt qu'un cadrage qui couperait le titre */
+.hero-decor .decor-img { object-fit: cover; object-position: center }
+/* en portrait, un cadrage « cover » rognerait les côtés et couperait le titre */
 @media (max-aspect-ratio: 1 / 1) {
-  /* en portrait, on cadre sur la partie centrale du ciel */
-  .hero-decor .frame {
-    width: calc(100svh * 3600 / 1472);
-    height: 100svh;
-  }
+  .hero-decor .decor-img { object-fit: contain }
 }
-.hero-decor .frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill }
 .hero-decor .veil {
   position: absolute;
   inset: 0;
-  background: radial-gradient(130% 100% at 50% 45%, transparent 58%, rgba(16, 78, 90, 0.42) 100%);
+  background: radial-gradient(130% 100% at 50% 45%, transparent 55%, rgba(8, 11, 14, 0.45) 100%);
 }
 .hero-decor .grain {
   position: absolute;
@@ -358,53 +339,49 @@ body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  /* le dégradé relevé bande par bande sur le visuel : laiteux en haut,
-     franchement turquoise en bas */
-  background: linear-gradient(
-    180deg,
-    #a0b7ba 0%,
-    #9db5b9 24%,
-    #9ab3b7 40%,
-    #93b1b5 60%,
-    #7aa7ae 80%,
-    #4a95a0 92%,
-    #2d7f8d 100%
+  background: radial-gradient(
+    120% 90% at 62% 14%,
+    #27323b 0%,
+    #19222a 34%,
+    #0f151a 62%,
+    #080b0e 100%
   );
 }
-/* voiles clairs, comme les nuées du visuel */
 .site-bg .fog {
   position: absolute;
   inset: -20%;
-  filter: blur(90px);
-  opacity: 0.7;
+  filter: blur(70px);
+  opacity: 0.85;
   background:
-    radial-gradient(42% 40% at 24% 22%, rgba(236, 244, 242, 0.65) 0%, transparent 70%),
-    radial-gradient(36% 32% at 78% 54%, rgba(214, 232, 231, 0.4) 0%, transparent 72%);
+    radial-gradient(38% 46% at 66% 20%, rgba(203, 221, 233, 0.4) 0%, rgba(150, 175, 194, 0.15) 45%, transparent 72%),
+    radial-gradient(30% 34% at 32% 64%, rgba(132, 158, 178, 0.18) 0%, transparent 70%);
 }
+/* Volute : grande ellipse floue inclinée, écho au tissu en flou de mouvement */
 .site-bg .swirl {
   position: absolute;
   left: 50%;
   top: 40%;
-  width: 150vmin;
-  height: 70vmin;
-  transform: translate(-50%, -50%);
+  width: 130vmin;
+  height: 60vmin;
+  transform: translate(-50%, -50%) rotate(-14deg);
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.4;
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.3), transparent 76%);
+  filter: blur(46px);
+  opacity: 0.45;
+  background:
+    radial-gradient(closest-side, rgba(226, 236, 243, 0.28), rgba(160, 186, 204, 0.11) 55%, transparent 78%),
+    radial-gradient(closest-side at 30% 60%, rgba(120, 150, 172, 0.2), transparent 70%);
 }
 .site-bg .vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(130% 105% at 50% 36%, transparent 52%, rgba(16, 78, 90, 0.5) 100%);
+  background: radial-gradient(120% 95% at 55% 34%, transparent 46%, rgba(4, 6, 8, 0.8) 100%);
 }
-/* le visuel est très grainé : c'est sa matière, on la rend franche */
 .site-bg .grain {
   position: absolute;
   inset: 0;
   background-image: var(--grain);
-  background-size: 180px 180px;
-  opacity: 0.17;
+  background-size: 200px 200px;
+  opacity: 0.14;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -19,7 +19,7 @@ export default function CategoryCard({
         alt=""
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="scale-[1.02] object-cover opacity-80 saturate-[.45] brightness-[.62] contrast-105 transition duration-[1100ms] ease-out group-hover:scale-[1.07] group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-90"
+        className="scale-[1.02] object-cover opacity-70 grayscale brightness-50 contrast-105 transition duration-[1100ms] ease-out group-hover:scale-[1.07] group-hover:opacity-95 group-hover:brightness-75 group-hover:grayscale-[0.1]"
       />
       {/* Voile : garde le texte lisible quelle que soit l'image */}
       <div
