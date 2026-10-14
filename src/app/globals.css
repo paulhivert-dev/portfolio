@@ -128,49 +128,6 @@ body {
   z-index: 1;
 }
 
-/* Décor d'arrivée : la couverture 2027 plein cadre à l'ouverture, qui se
-   dissout au défilement pour rendre la main au fond gris. --decor est écrit par
-   HeroDecor. L'image portant déjà le titre, le hero masque le sien. */
-.hero-decor {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: var(--decor, 1);
-  transition: opacity 0.12s linear;
-  will-change: opacity;
-  background: #c9c8dd; /* le bleu du bord de l'image */
-}
-.hero-decor .decor-img { object-fit: cover; object-position: center }
-/* en portrait, un cadrage « cover » rognerait les côtés et couperait le titre */
-@media (max-aspect-ratio: 1 / 1) {
-  .hero-decor .decor-img { object-fit: contain }
-}
-.hero-decor .veil {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(130% 100% at 50% 45%, transparent 55%, rgba(8, 11, 14, 0.45) 100%);
-}
-.hero-decor .grain {
-  position: absolute;
-  inset: 0;
-  background-image: var(--grain);
-  background-size: 200px 200px;
-  opacity: 0.12;
-  mix-blend-mode: overlay;
-}
-
-/* Le hero de l'accueil laisse parler la couverture : son texte reste dans le
-   code pour les moteurs et les lecteurs d'écran, mais n'est pas affiché. */
-.hero--decor .hero-reveal {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 /* Libellé de section : « 01 — à propos », suivi d'un filet qui file jusqu'au bord */
 .eyebrow {
   display: flex;
